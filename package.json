@@ -65,7 +65,7 @@
     "@commitlint/prompt": "^16.2.3",
     "@compodoc/compodoc": "^1.1.19",
     "@semantic-release/github": "^8.0.4",
-    "@semantic-release/npm": "^8.0.3",
+    "@semantic-release/npm": "^9.0.1",
     "@storybook/addon-a11y": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addons": "^6.4.22",
