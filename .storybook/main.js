@@ -67,6 +67,7 @@ module.exports = {
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-essentials',
+    './addons/design-docs/register.js'
   ],
   webpackFinal: async (config) => {
     // Parse any node modules that do not support es5

@@ -22,6 +22,9 @@ export default {
         component: notes,
       },
     },
+    design: {
+      markdown: '# hello',
+    },
   },
   argTypes: {
     content: {
