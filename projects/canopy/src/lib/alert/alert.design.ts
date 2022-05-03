@@ -2,6 +2,8 @@ export const design = `
 #Alert
 Alerts are used to communicate important information to the user.
 
+Want to <a href="https://github.com/Legal-and-General/canopy/discussions" target="_blank">request a modification or a new feature</a>?
+
 The "alert" ARIA role is automatically added to the component if it's one of these variants: \`\`warning\`\`, \`\`error\`\`, \`\`success\`\`. Note that this role will tell the browser to send out an accessible alert event to assistive technology products which can then notify the user about it.
 
 A decorative icon is also added next to the heading if it's one of the these variants: \`\`info\`\`, \`\`warning\`\`, \`\`error\`\`, \`\`success\`\`.

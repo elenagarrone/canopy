@@ -18,7 +18,7 @@ addParameters({
       type: 'code',
       state: 'open',
     }
-  }
+  },
 });
 
 export const parameters = {
