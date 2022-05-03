@@ -4,6 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { LgAlertModule } from './alert.module';
 import { LgAlertComponent } from './alert.component';
 import { notes } from './alert.notes';
+import { design } from './alert.design';
 
 const variantTypes = ['generic', 'info', 'success', 'warning', 'error'];
 
@@ -23,6 +24,7 @@ export default {
       },
     },
     design: {
+      file: design,
       markdown: '# hello',
     },
   },
