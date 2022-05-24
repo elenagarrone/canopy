@@ -78,7 +78,7 @@ class ButtonComponentExampleComponent {
   }
 
   isDeprecated(): boolean {
-    return Boolean(deprecatedButtonVariants.find(variant => variant === this.variant));
+    return Boolean(deprecatedButtonVariants.find((variant) => variant === this.variant));
   }
 }
 
@@ -101,8 +101,8 @@ export default {
   argTypes: {
     variant: {
       options: [ ...buttonVariants ],
-      defaultValue: 'solid-primary',
       table: {
+        defaultValue: 'solid-primary',
         type: {
           summary: 'ButtonVariant',
         },
@@ -116,7 +116,7 @@ export default {
     },
     icon: {
       description: 'Icon to display',
-      options: [ 'None', ...lgIconsArray.map(i => i.name) ],
+      options: [ 'None', ...lgIconsArray.map((i) => i.name) ],
       table: {
         type: {
           type: { summary: 'string' },
@@ -140,9 +140,9 @@ export default {
 
 const iconArgType = {
   description: 'Icon to display',
-  options: lgIconsArray.map(i => i.name),
-  defaultValue: lgIconsArray[0].name,
+  options: lgIconsArray.map((i) => i.name),
   table: {
+    defaultValue: lgIconsArray[0].name,
     type: {
       type: { summary: 'string' },
     },
