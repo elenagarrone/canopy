@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
@@ -14,6 +15,7 @@ import type { PromoCardVariant } from '../promo-card.interface';
   templateUrl: './promo-card.component.html',
   styleUrls: [ './promo-card.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgPromoCardComponent {
   private _variant: PromoCardVariant;

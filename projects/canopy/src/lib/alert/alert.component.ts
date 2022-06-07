@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
@@ -14,6 +15,7 @@ import type { Variant } from '../variant/variant.interface';
   templateUrl: './alert.component.html',
   styleUrls: [ './alert.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgAlertComponent {
   private _variant: Variant;

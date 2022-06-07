@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
@@ -14,6 +15,7 @@ import type { ButtonVariant, ButtonIconPosition, ButtonSize } from './button.int
   templateUrl: './button.component.html',
   styleUrls: [ './button.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgButtonComponent {
   @HostBinding('class.lg-btn') class = true;

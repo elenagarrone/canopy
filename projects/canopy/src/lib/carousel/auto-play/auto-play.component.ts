@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
@@ -12,6 +13,7 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './auto-play.component.html',
   styleUrls: [ './auto-play.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgAutoplayComponent {
   @Input() pause: BehaviorSubject<boolean>;

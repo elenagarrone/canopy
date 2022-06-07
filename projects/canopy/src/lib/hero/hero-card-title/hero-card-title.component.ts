@@ -1,4 +1,10 @@
-import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+  ViewEncapsulation,
+} from '@angular/core';
 
 import type { HeadingLevel } from '../../heading';
 
@@ -7,6 +13,7 @@ import type { HeadingLevel } from '../../heading';
   templateUrl: './hero-card-title.component.html',
   styleUrls: [ './hero-card-title.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgHeroCardTitleComponent {
   @HostBinding('class.lg-hero-card-title') class = true;

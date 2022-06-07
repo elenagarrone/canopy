@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
@@ -23,6 +24,7 @@ export type BrandIconSize = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   templateUrl: './brand-icon.component.html',
   styleUrls: [ './brand-icon.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgBrandIconComponent {
   private svgElement: SVGElement;

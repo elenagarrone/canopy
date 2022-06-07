@@ -1,10 +1,16 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'lg-promo-card-footer',
   templateUrl: './promo-card-footer.component.html',
   styleUrls: [ './promo-card-footer.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgPromoCardFooterComponent {
   @HostBinding('class.lg-promo-card-footer') class = true;

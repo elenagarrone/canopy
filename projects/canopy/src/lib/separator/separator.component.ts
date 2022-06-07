@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
@@ -14,6 +15,7 @@ import type { SeparatorVariant } from './separator.interface';
   template: '',
   styleUrls: [ './separator.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgSeparatorComponent {
   private _variant: SeparatorVariant;

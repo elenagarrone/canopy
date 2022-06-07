@@ -1,10 +1,16 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'lg-hero-card-subtitle',
   templateUrl: './hero-card-subtitle.component.html',
   styleUrls: [ './hero-card-subtitle.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgHeroCardSubtitleComponent {
   @HostBinding('class.lg-hero-card-subtitle') class = true;

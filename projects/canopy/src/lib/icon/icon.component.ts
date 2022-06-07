@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
@@ -20,6 +21,7 @@ let nextUniqueId = 0;
   templateUrl: './icon.component.html',
   styleUrls: [ './icon.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgIconComponent {
   private svgIcon: SVGElement;

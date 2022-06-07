@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   HostBinding,
@@ -14,6 +15,7 @@ import { Link, SecondaryLink } from './footer.interface';
   templateUrl: './footer.component.html',
   styleUrls: [ './footer.component.scss' ],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LgFooterComponent {
   private _logo: string;
