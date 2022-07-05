@@ -179,9 +179,12 @@ export default {
 const defaultCardTemplate = `
 <lg-card>
   <lg-card-header>
-    <lg-card-title [headingLevel]="headingLevel">
-      {{title}}
-    </lg-card-title>
+    <lg-card-navigation-title *ngIf="link else noLink" [title]="title" [link]="link" [headingLevel]="headingLevel"></lg-card-navigation-title>
+    <ng-template #noLink>
+      <lg-card-title [headingLevel]="headingLevel">
+        {{title}}
+      </lg-card-title>
+    </ng-template>
   </lg-card-header>
   <lg-card-content>
     {{cardContent}} <a href="#">Test link</a>.
@@ -200,6 +203,7 @@ defaultCard.storyName = 'Standard';
 defaultCard.args = {
   headingLevel: 2,
   title: 'The title',
+  link: '',
   cardContent: content,
 };
 

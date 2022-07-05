@@ -1,0 +1,78 @@
+@import '../../../styles/mixins.scss';
+
+.lg-card-navigation-title {
+  --card-active-focus-border-bottom: var(--space-xxxs);
+
+  width: 100%;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: calc(-1 * var(--card-header-margin-bottom));
+    font-size: var(--text-fs-3-size);
+  }
+
+  .lg-icon {
+    margin-left: auto;
+    background: var(--link-color);
+    border-radius: var(--text-fs-3-size);
+    color: var(--color-white);
+  }
+
+  a {
+    &:active .lg-icon {
+      background: var(--link-active-color);
+    }
+
+    @include lg-link($default-color: var(--link-color), $hover-color: var(--link-color));
+
+    border-bottom: none;
+    padding: 0 0 var(--card-anchor-padding-bottom);
+    align-items: center;
+    display: flex;
+    margin-top: 0;
+    font-weight: var(--font-weight-bold);
+
+    @include lg-breakpoint('md') {
+      margin-top: calc(-1 * var(--space-xxs));
+      margin-right: calc(-1 * var(--space-lg));
+    }
+
+    &:focus,
+    &:active {
+      background: transparent;
+      color: var(--link-active-color);
+      $box-shadow-inset-width: -0.063rem;
+
+      border-bottom: var(--card-active-focus-border-bottom) solid var(--link-active-color);
+    }
+
+    &:focus {
+      @include lg-focus-outline(
+        var(--default-focus-color),
+        var(--default-inner-focus-color)
+      );
+
+      padding-bottom: calc(
+        var(--card-anchor-padding-bottom) - var(--card-active-focus-border-bottom)
+      ); // prevent bouncing effect
+    }
+
+    &:hover {
+      color: var(--link-color);
+    }
+
+    &:focus,
+    &:focus:hover {
+      background: transparent;
+    }
+
+    &:focus:hover {
+      padding-bottom: var(--card-anchor-padding-bottom);
+      color: var(--link-color);
+    }
+  }
+}
