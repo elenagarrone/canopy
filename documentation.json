@@ -24502,165 +24502,7 @@
         },
         {
             "name": "ReactiveFormComponent",
-            "id": "component-ReactiveFormComponent-57398d2833a0306d31271462b02595e8c61c114cf1d875756a204c5e669e986bc13ad5ceb598952ab67ad1dfb9d1ede72f66989d86542e6ede81bc72833ba1f0",
-            "file": "projects/canopy/src/lib/forms/date/date-field.stories.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lg-reactive-form",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "disabled",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 28,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "focus",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 25,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "hint",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 23,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 24,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "inputChange",
-                    "defaultValue": "new EventEmitter()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 39,
-                    "type": "EventEmitter<void>"
-                }
-            ],
-            "propertiesClass": [
-                {
-                    "name": "fb",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "FormBuilder",
-                    "optional": false,
-                    "description": "",
-                    "line": 43,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "form",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "FormGroup",
-                    "optional": false,
-                    "description": "",
-                    "line": 41
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';\nimport { moduleMetadata, Story } from '@storybook/angular';\n\nimport { LgHintModule } from '../hint';\n\nimport { notes } from './date-field.notes';\nimport { LgDateFieldComponent } from './date-field.component';\nimport { LgDateFieldModule } from './date-field.module';\n\nconst template = `\n<lg-date-field [focus]=\"focus\" formControlName=\"date\">\n  {{ label }}\n  <lg-hint *ngIf=\"hint\">{{ hint }}</lg-hint>\n</lg-date-field>\n`;\n\n@Component({\n  selector: 'lg-reactive-form',\n  template: ` <form [formGroup]=\"form\">${template}</form> `,\n})\nclass ReactiveFormComponent {\n  @Input() hint: string;\n  @Input() label: string;\n  @Input() focus: boolean;\n\n  @Input()\n  set disabled(disabled: boolean) {\n    if (disabled === true) {\n      this.form.controls.date.disable();\n    } else {\n      this.form.controls.date.enable();\n    }\n  }\n  get disabled(): boolean {\n    return this.form.controls.date.disabled;\n  }\n\n  @Output() inputChange: EventEmitter<void> = new EventEmitter();\n\n  form: FormGroup;\n\n  constructor(public fb: FormBuilder) {\n    this.form = this.fb.group({\n      date: { value: '1970-01-01', disabled: false },\n    });\n\n    this.form.valueChanges.subscribe(val => this.inputChange.emit(val));\n  }\n}\n\nexport default {\n  title: 'Components/Form/Date input',\n  component: LgDateFieldComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ ReactiveFormComponent ],\n      imports: [ ReactiveFormsModule, LgDateFieldModule, LgHintModule ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      description: {\n        component: notes,\n      },\n    },\n  },\n  argTypes: {\n    inputChange: {\n      action: 'Input change',\n      table: {\n        disable: true,\n      },\n    },\n    dateId: {\n      table: {\n        disable: true,\n      },\n    },\n    monthId: {\n      table: {\n        disable: true,\n      },\n    },\n    yearId: {\n      table: {\n        disable: true,\n      },\n    },\n    focus: {\n      description: 'Set the focus on the fieldset.',\n      table: {\n        type: {\n          summary: 'boolean',\n        },\n        defaultValue: {\n          summary: false,\n        },\n      },\n    },\n    disabled: {\n      description: 'Set the inputs to disabled.',\n      table: {\n        type: {\n          summary: 'boolean',\n        },\n        defaultValue: {\n          summary: false,\n        },\n      },\n    },\n    ariaDescribedBy: {\n      table: {\n        disable: true,\n      },\n    },\n    value: {\n      table: {\n        disable: true,\n      },\n    },\n    _hintElement: {\n      table: {\n        disable: true,\n      },\n    },\n    class: {\n      table: {\n        disable: true,\n      },\n    },\n    date: {\n      table: {\n        disable: true,\n      },\n    },\n    _validationElement: {\n      table: {\n        disable: true,\n      },\n    },\n    isControlInvalid: {\n      table: {\n        disable: true,\n      },\n    },\n    onChange: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnDestroy: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnInit: {\n      table: {\n        disable: true,\n      },\n    },\n    onBlur: {\n      table: {\n        disable: true,\n      },\n    },\n    onTouched: {\n      table: {\n        disable: true,\n      },\n    },\n    registerOnChange: {\n      table: {\n        disable: true,\n      },\n    },\n    registerOnTouched: {\n      table: {\n        disable: true,\n      },\n    },\n    setDisabledState: {\n      table: {\n        disable: true,\n      },\n    },\n    writeValue: {\n      table: {\n        disable: true,\n      },\n    },\n    formGroupDirective: {\n      table: {\n        disable: true,\n      },\n    },\n    validate: {\n      table: {\n        disable: true,\n      },\n    },\n    dateFormGroup: {\n      table: {\n        disable: true,\n      },\n    },\n    month: {\n      table: {\n        disable: true,\n      },\n    },\n    subscriptions: {\n      table: {\n        disable: true,\n      },\n    },\n    year: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n};\n\nconst dateInputStory: Story<LgDateFieldModule> = (args: LgDateFieldModule) => ({\n  props: args,\n  template: `\n  <lg-reactive-form\n    (inputChange)=\"inputChange($event)\"\n    [disabled]=\"disabled\"\n    [hint]=\"hint\"\n    [label]=\"label\"\n    [focus]=\"focus\"\n  ></lg-reactive-form>\n  `,\n});\n\nexport const dateInput = dateInputStory.bind({});\ndateInput.storyName = 'Date input';\n\ndateInput.args = {\n  disabled: false,\n  label: 'Date of birth',\n  hint: 'For example, 12 06 1983',\n  focus: false,\n};\n\ndateInput.parameters = {\n  docs: {\n    source: {\n      code: template,\n    },\n  },\n};\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 41,
-                "jsdoctags": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "accessors": {
-                "disabled": {
-                    "name": "disabled",
-                    "setSignature": {
-                        "name": "disabled",
-                        "type": "void",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "args": [
-                            {
-                                "name": "disabled",
-                                "type": "boolean",
-                                "deprecated": false,
-                                "deprecationMessage": ""
-                            }
-                        ],
-                        "returnType": "void",
-                        "line": 28,
-                        "jsdoctags": [
-                            {
-                                "name": "disabled",
-                                "type": "boolean",
-                                "deprecated": false,
-                                "deprecationMessage": "",
-                                "tagName": {
-                                    "text": "param"
-                                }
-                            }
-                        ]
-                    },
-                    "getSignature": {
-                        "name": "disabled",
-                        "type": "boolean",
-                        "returnType": "boolean",
-                        "line": 35
-                    }
-                }
-            }
-        },
-        {
-            "name": "ReactiveFormComponent",
-            "id": "component-ReactiveFormComponent-7b2f7e43cdd194ebeec2629902722c3d6670f8562ff79dcf519a09fc64108461528622dfac338e59f2f3bcece2766e5ccc6519e246d698bfbecbd8c2335dfca7-1",
+            "id": "component-ReactiveFormComponent-7b2f7e43cdd194ebeec2629902722c3d6670f8562ff79dcf519a09fc64108461528622dfac338e59f2f3bcece2766e5ccc6519e246d698bfbecbd8c2335dfca7",
             "file": "projects/canopy/src/lib/forms/checkbox-group/checkbox-group.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -24833,14 +24675,11 @@
                         "line": 40
                     }
                 }
-            },
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "ReactiveFormComponent-1"
+            }
         },
         {
             "name": "ReactiveFormComponent",
-            "id": "component-ReactiveFormComponent-fbfff472a9eebc6c3ba37cf20abdff9ffefbb137312532321c3c46b1db84b869ed2c2a82c2222521f30c9d677ab28f6105679c5aaa934d84282a45fd165218f4-2",
+            "id": "component-ReactiveFormComponent-fbfff472a9eebc6c3ba37cf20abdff9ffefbb137312532321c3c46b1db84b869ed2c2a82c2222521f30c9d677ab28f6105679c5aaa934d84282a45fd165218f4-1",
             "file": "projects/canopy/src/lib/forms/checkbox-group/filter-group.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -25001,6 +24840,167 @@
                         "type": "boolean",
                         "returnType": "boolean",
                         "line": 41
+                    }
+                }
+            },
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ReactiveFormComponent-1"
+        },
+        {
+            "name": "ReactiveFormComponent",
+            "id": "component-ReactiveFormComponent-57398d2833a0306d31271462b02595e8c61c114cf1d875756a204c5e669e986bc13ad5ceb598952ab67ad1dfb9d1ede72f66989d86542e6ede81bc72833ba1f0-2",
+            "file": "projects/canopy/src/lib/forms/date/date-field.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lg-reactive-form",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "focus",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hint",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "inputChange",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter<void>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "fb",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormBuilder",
+                    "optional": false,
+                    "description": "",
+                    "line": 43,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "form",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 41
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';\nimport { moduleMetadata, Story } from '@storybook/angular';\n\nimport { LgHintModule } from '../hint';\n\nimport { notes } from './date-field.notes';\nimport { LgDateFieldComponent } from './date-field.component';\nimport { LgDateFieldModule } from './date-field.module';\n\nconst template = `\n<lg-date-field [focus]=\"focus\" formControlName=\"date\">\n  {{ label }}\n  <lg-hint *ngIf=\"hint\">{{ hint }}</lg-hint>\n</lg-date-field>\n`;\n\n@Component({\n  selector: 'lg-reactive-form',\n  template: ` <form [formGroup]=\"form\">${template}</form> `,\n})\nclass ReactiveFormComponent {\n  @Input() hint: string;\n  @Input() label: string;\n  @Input() focus: boolean;\n\n  @Input()\n  set disabled(disabled: boolean) {\n    if (disabled === true) {\n      this.form.controls.date.disable();\n    } else {\n      this.form.controls.date.enable();\n    }\n  }\n  get disabled(): boolean {\n    return this.form.controls.date.disabled;\n  }\n\n  @Output() inputChange: EventEmitter<void> = new EventEmitter();\n\n  form: FormGroup;\n\n  constructor(public fb: FormBuilder) {\n    this.form = this.fb.group({\n      date: { value: '1970-01-01', disabled: false },\n    });\n\n    this.form.valueChanges.subscribe(val => this.inputChange.emit(val));\n  }\n}\n\nexport default {\n  title: 'Components/Form/Date input',\n  component: LgDateFieldComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ ReactiveFormComponent ],\n      imports: [ ReactiveFormsModule, LgDateFieldModule, LgHintModule ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      description: {\n        component: notes,\n      },\n    },\n  },\n  argTypes: {\n    inputChange: {\n      action: 'Input change',\n      table: {\n        disable: true,\n      },\n    },\n    dateId: {\n      table: {\n        disable: true,\n      },\n    },\n    monthId: {\n      table: {\n        disable: true,\n      },\n    },\n    yearId: {\n      table: {\n        disable: true,\n      },\n    },\n    focus: {\n      description: 'Set the focus on the fieldset.',\n      table: {\n        type: {\n          summary: 'boolean',\n        },\n        defaultValue: {\n          summary: false,\n        },\n      },\n    },\n    disabled: {\n      description: 'Set the inputs to disabled.',\n      table: {\n        type: {\n          summary: 'boolean',\n        },\n        defaultValue: {\n          summary: false,\n        },\n      },\n    },\n    ariaDescribedBy: {\n      table: {\n        disable: true,\n      },\n    },\n    value: {\n      table: {\n        disable: true,\n      },\n    },\n    _hintElement: {\n      table: {\n        disable: true,\n      },\n    },\n    class: {\n      table: {\n        disable: true,\n      },\n    },\n    date: {\n      table: {\n        disable: true,\n      },\n    },\n    _validationElement: {\n      table: {\n        disable: true,\n      },\n    },\n    isControlInvalid: {\n      table: {\n        disable: true,\n      },\n    },\n    onChange: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnDestroy: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnInit: {\n      table: {\n        disable: true,\n      },\n    },\n    onBlur: {\n      table: {\n        disable: true,\n      },\n    },\n    onTouched: {\n      table: {\n        disable: true,\n      },\n    },\n    registerOnChange: {\n      table: {\n        disable: true,\n      },\n    },\n    registerOnTouched: {\n      table: {\n        disable: true,\n      },\n    },\n    setDisabledState: {\n      table: {\n        disable: true,\n      },\n    },\n    writeValue: {\n      table: {\n        disable: true,\n      },\n    },\n    formGroupDirective: {\n      table: {\n        disable: true,\n      },\n    },\n    validate: {\n      table: {\n        disable: true,\n      },\n    },\n    dateFormGroup: {\n      table: {\n        disable: true,\n      },\n    },\n    month: {\n      table: {\n        disable: true,\n      },\n    },\n    subscriptions: {\n      table: {\n        disable: true,\n      },\n    },\n    year: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n};\n\nconst dateInputStory: Story<LgDateFieldModule> = (args: LgDateFieldModule) => ({\n  props: args,\n  template: `\n  <lg-reactive-form\n    (inputChange)=\"inputChange($event)\"\n    [disabled]=\"disabled\"\n    [hint]=\"hint\"\n    [label]=\"label\"\n    [focus]=\"focus\"\n  ></lg-reactive-form>\n  `,\n});\n\nexport const dateInput = dateInputStory.bind({});\ndateInput.storyName = 'Date input';\n\ndateInput.args = {\n  disabled: false,\n  label: 'Date of birth',\n  hint: 'For example, 12 06 1983',\n  focus: false,\n};\n\ndateInput.parameters = {\n  docs: {\n    source: {\n      code: template,\n    },\n  },\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 41,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "disabled": {
+                    "name": "disabled",
+                    "setSignature": {
+                        "name": "disabled",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "disabled",
+                                "type": "boolean",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 28,
+                        "jsdoctags": [
+                            {
+                                "name": "disabled",
+                                "type": "boolean",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "disabled",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 35
                     }
                 }
             },
@@ -39810,7 +39810,7 @@
                 "name": "nextUniqueId",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/forms/date/date-field.component.ts",
+                "file": "projects/canopy/src/lib/forms/hint/hint.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "number",
@@ -39820,7 +39820,7 @@
                 "name": "nextUniqueId",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/forms/hint/hint.component.ts",
+                "file": "projects/canopy/src/lib/forms/date/date-field.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "number",
@@ -40040,21 +40040,21 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/details/details.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\nThe Details component reduces page clutter and cognitive load by letting users reveal more information as and when they need it. It can also be used to communicate important imformation in a collapsed layout, similar to an Alert.\n\nThe \"alert\" ARIA role is automatically added to the component if it's one of these variants: \\`\\`warning\\`\\`, \\`\\`error\\`\\`, \\`\\`success\\`\\`. Note that this role will tell the browser to send out an accessible alert event to assistive technology products which can then notify the user about it.\n\nA decorative icon is also added next to the heading if it's one of the these variants: \\`\\`info\\`\\`, \\`\\`warning\\`\\`, \\`\\`error\\`\\`, \\`\\`success\\`\\`.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDetailsModule ],\n})\n~~~\n\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`isActive\\`\\` | Expand the details | boolean | false | no |\n| \\`\\`headingLevel\\`\\` | The level of the details heading: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n|\\`\\`variant\\`\\`| Applies colour treatment and ARIA role if applicable: \\`\\`generic\\`\\`, \\`\\`info\\`\\`, \\`\\`warning\\`\\`, \\`\\`error\\`\\`, \\`\\`success\\`\\` | string | 'generic' | No |\n| \\`\\`showIcon\\`\\` | Whether the icon should display on the warning, error or success variants | boolean | true | No |\n## Outputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`opened\\`\\` | Event emitted when the details are opened | EventEmitter<void> | n/a | No |\n| \\`\\`closed\\`\\` | Event emitted when the details are closed | EventEmitter<void> | n/a | No |\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
             },
             {
                 "name": "notes",
@@ -40090,21 +40090,21 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/heading/heading.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/header/header.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\nProvides a generic header for display at the top of the page.\nThe current implementation is brand agnostic but eventually the branding should be encapsulated into the component.\nThe component uses an attribute selector which allows you to use the html <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header\" target=\"_blank\">header</a> element as the host.\n\nThe logo height is set internally with different heights for different screen sizes, it can not currently be modified to ensure consistency.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeaderModule ],\n})\n~~~\n\nand for the HTML structure see the code snippets below.\n\n## Inputs\n### LgHeaderComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`logo\\`\\` | A url link to the logo | string | undefined | Yes |\n| \\`\\`logoAlt\\`\\` | alt text to display alongside the logo | string | '' | Yes |\n| \\`\\`logoHref\\`\\` | Url link if the logo is clickable | string | undefined | No |\n| \\`\\`secondaryLogo\\`\\` | A url link to the secondary logo | string | undefined | Yes |\n| \\`\\`secondaryLogoAlt\\`\\` | alt text to display alongside the secondary logo | string | '' | Yes |\n| \\`\\`secondaryLogoHref\\`\\` | Url link if the secondary logo is clickable | string | undefined | No |\n\n## Changing the width of the logos\nThe width of the logos can be changed by overriding the values of the below css variables:\n\n~~~css\n--header-logo-width\n--header-logo-width-lg\n--header-second-logo-width\n--header-second-logo-width-lg\n~~~\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/heading/heading.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
             },
             {
                 "name": "notes",
@@ -40330,21 +40330,21 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/forms/date/date-field.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nProvides a component for capturing and validating a date. Output is a concatenation of individual string values into a valid ISO 8601 date format 'YYYY-MM-DD'.\n\n## Usage\nImport the Date Input Module into your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDateFieldModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<form [formGroup]=\"form\" (ngSubmit)=\"...\" #validationForm=\"ngForm\">\n  <lg-date-field formControlName=\"date\">\n    Date of birth\n    <lg-hint>For example, 12 06 1983</lg-hint>\n    <lg-validation *ngIf=\"isControlInvalid(date, validationForm)\">\n      <ng-container *ngIf=\"date.hasError('invalidField')\">\n        Enter a valid {{ date.errors.invalidField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidFields')\">\n        Enter a valid {{ date.errors.invalidFields[0] }} and\n        {{ date.errors.invalidFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredField')\">\n        Date of birth must include a {{ date.errors.requiredField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredFields')\">\n        Date of birth must include a {{ date.errors.requiredFields[0] }} and\n        {{ date.errors.requiredFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidDate')\">\n        Enter a valid date of birth\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('futureDate')\">\n        Date must be in the past\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('required')\">\n        Enter a date of birth\n      </ng-container>\n    </lg-validation>\n  </lg-date-field>\n\n  <button type=\"submit\">Submit</button>\n</form>\n~~~\n\n**Note: for the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.**\n\n## Inputs\n\n### LgDateFieldComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`dateId\\`\\` | HTML ID attribute for the date input, auto generated if not provided | string | 'lg-input-date-\\${nextUniqueId++}' | No |\n| \\`\\`monthId\\`\\` | HTML ID attribute for the month input, auto generated if not provided | string | 'lg-input-month-\\${nextUniqueId++}' | No |\n| \\`\\`yearId\\`\\` | HTML ID attribute for the year input, auto generated if not provided | string | 'lg-input-year-\\${nextUniqueId++}' | No |\n| \\`\\`ariaDescribedBy\\`\\` | HTML ID for the corresponding element that describes the date field, if not provided it will use the hint field where appropriate | string | null | No |\n| \\`\\`focus\\`\\` | Set the focus on the fieldset | boolean | null | No |\n\n## Validation\nDate validation is quite complex with a range of different validation errors, where possible we have encapsulated as much of that complexity into the components as we can.\n\nInternally the date-field can determine if the entered date is a valid date. If additional validation is required such as checking for past or future dates this can be done with external validators.\n\nFor the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.\n\n### Internal validation\nIn some scenarios there could be multiple fields that are incorrect, to help guide the users to the correct issue the date field only returns the most significant validation error. Only one error should be shown at a time.\n\nOnce the user has rectified the first error the next error will take it's place if there is one. This allows us to write linear lists of validation messages without the need to apply complex logic in the applications.\n\nThe current significance of errors with their recommended messages is as follows.\n\n#### 1. Invalid fields\n\nOne field is invalid, this may be a non numerical character, or a number outside the valid range .e.g 13 for a month.\n\\`Enter a valid month\\`\n\n~~~json\n\n{ invalidField: 'month'}\n\n~~~\n\n\nAs above but with two fields displaying an error.\n\\`Enter a valid month and year\\`\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are invalid a generic 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Required fields\n\nIf one field is empty either through form submission or inline deletion of the content.\n\\`Date of birth must include month\\`\n\n~~~json\n\n{ requiredField: 'month'}\n\n~~~\n\nAs above but with two fields missing.\n\\`Date of birth must include a month and year\\`\n\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are missing an 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Invalid date\n\nIf all of the individual fields are correct but they do not concatenate to a valid date. e.g. 30 02 2020\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\\`Enter a valid date of birth\\`\n\n### External validation\n\nIt is also possible to provide your own custom validation messages using <a href=\"https://angular.io/guide/form-validation#custom-validators\" target=\"_blank\">custom validators</a>\nand the validation component. This is particularly useful for checking things like wether the date is in the past or the future. Under the hood the date field uses the <a href=\"https://date-fns.org/\" target=\"_blank\">date-fns</a> library as a peer dependency, to keep build size to a minimum it may be worth considering using the same library in your application.\n\n~~~js\nfunction notMondayValidator(): ValidatorFn {\n  return (control: AbstractControl): { [key: string]: any } | null => {\n    return getDay(parseISO(control.value)) === 'monday' ? { notMonday: true } : null;\n  };\n}\n...\nconst date = new FormControl('', [notMondayValidator()])\n~~~\n\n~~~html\n<lg-date-field formControlName=\"date\">\n  Date of appointment\n  <lg-hint>For example, 12 06 1983</lg-hint>\n  <lg-validation *ngIf=\"isControlInvalid(date, validationForm) && date.hasError('notMonday')\">\n    Date cannot be a Monday\n  </lg-validation>\n </lg-date-field>\n~~~\n\n### Additional validators\n\nTo aid with common validation needs some additional reactive form validators are provided.\n\n#### Future date validator\nThis validator checks if the specified date is in the future, if not it returns a futureDate error\n\n~~~js\nimport { futureDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [futureDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('futureDate')\">\n  Date must be in the future\n</ng-container>\n~~~\n\n#### Past date validator\nThis validator checks if the specified date is in the past, if not it returns a pastDate error\n\n~~~js\nimport { pastDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [pastDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('pastDate')\">\n  Date must be in the past\n</ng-container>\n~~~\n\n#### Before date validator\nThis validator checks if the specified date is before another specified date, if not it returns a beforeDate error.\nThe beforeDate error contains the date that it was compared against.\n\n~~~js\nimport { beforeDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [beforeDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('beforeDate')\">\n  Date must be before {{ date.errors.beforeDate.required }}\n</ng-container>\n~~~\n\n#### After date validator\nThis validator checks if the specified date is after another specified date, if not it returns a afterDate error.\nThe afterDate error contains the date that it was compared against.\n\n~~~js\nimport { afterDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [afterDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('afterDate')\">\n  Date must be after {{ date.errors.afterDate.required }}\n</ng-container>\n~~~\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/forms/checkbox-group/checkbox-group.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "(name: string) => `\nProvides a set of components to implement ${name} groups in a form. The ${name} Group component is a container which displays the label with an optional hint and should contain two or more Toggle components. The Toggle component represents a single ${name.toLowerCase()}. The Hint component may be used to provide extra context to the user.\n\n## Usage\nImport the CheckboxGroup and Toggle modules into your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgCheckboxGroupModule, LgToggleModule ],\n})\n~~~\n\n## Inputs\n\n### LgCheckboxGroupComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`id\\`\\` | HTML ID attribute, auto generated if not provided | string | 'lg-checkbox-group-id-\\${this.nextUniqueId}' | No |\n| \\`\\`name\\`\\` | Set the name value for all inputs in the group, auto-generated if not provided | string | 'lg-checkbox-group-\\${this.nextUniqueId}' | No |\n| \\`\\`value\\`\\` | HTML value attribute. Sets the default checked ${name.toLowerCase()} buttons, must match the values of the ${name.toLowerCase()} buttons | array of strings | null | No |\n| \\`\\`focus\\`\\` | Set the focus on the fieldset | boolean | null | No |\n| \\`\\`disabled\\`\\` | Set the inner ${name.toLowerCase()}s to disabled | boolean | false | No |\n| \\`\\`ariaDescribedBy\\`\\` | HTML ID for the corresponding element that describes the ${name.toLowerCase()}s, if not provided it will use the hint field where appropriate | boolean | null | No |\n${\n  name !== 'Filter'\n    ? '| ``inline`` | If true, displays the buttons inline rather than stacked | boolean | false | No |'\n    : ''\n}\n\n### LgToggleComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`id\\`\\` | HTML ID attribute, auto generated if not provided | string | 'lg-toggle-\\${++nextUniqueId}' | No |\n| \\`\\`name\\`\\` | HTML Name attribute, auto generated if not provided | string | 'lg-toggle-\\${++nextUniqueId}' | No |\n| \\`\\`value\\`\\` | HTML value attribute. Value that is set when the toggle is checked | string | null | No |\n| \\`\\`checked\\`\\` | Check status of the toggle | boolean | false | No |\n| \\`\\`focus\\`\\` | Set the focus on the input | boolean | null | No |\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/forms/date/date-field.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nProvides a component for capturing and validating a date. Output is a concatenation of individual string values into a valid ISO 8601 date format 'YYYY-MM-DD'.\n\n## Usage\nImport the Date Input Module into your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDateFieldModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<form [formGroup]=\"form\" (ngSubmit)=\"...\" #validationForm=\"ngForm\">\n  <lg-date-field formControlName=\"date\">\n    Date of birth\n    <lg-hint>For example, 12 06 1983</lg-hint>\n    <lg-validation *ngIf=\"isControlInvalid(date, validationForm)\">\n      <ng-container *ngIf=\"date.hasError('invalidField')\">\n        Enter a valid {{ date.errors.invalidField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidFields')\">\n        Enter a valid {{ date.errors.invalidFields[0] }} and\n        {{ date.errors.invalidFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredField')\">\n        Date of birth must include a {{ date.errors.requiredField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredFields')\">\n        Date of birth must include a {{ date.errors.requiredFields[0] }} and\n        {{ date.errors.requiredFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidDate')\">\n        Enter a valid date of birth\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('futureDate')\">\n        Date must be in the past\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('required')\">\n        Enter a date of birth\n      </ng-container>\n    </lg-validation>\n  </lg-date-field>\n\n  <button type=\"submit\">Submit</button>\n</form>\n~~~\n\n**Note: for the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.**\n\n## Inputs\n\n### LgDateFieldComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`dateId\\`\\` | HTML ID attribute for the date input, auto generated if not provided | string | 'lg-input-date-\\${nextUniqueId++}' | No |\n| \\`\\`monthId\\`\\` | HTML ID attribute for the month input, auto generated if not provided | string | 'lg-input-month-\\${nextUniqueId++}' | No |\n| \\`\\`yearId\\`\\` | HTML ID attribute for the year input, auto generated if not provided | string | 'lg-input-year-\\${nextUniqueId++}' | No |\n| \\`\\`ariaDescribedBy\\`\\` | HTML ID for the corresponding element that describes the date field, if not provided it will use the hint field where appropriate | string | null | No |\n| \\`\\`focus\\`\\` | Set the focus on the fieldset | boolean | null | No |\n\n## Validation\nDate validation is quite complex with a range of different validation errors, where possible we have encapsulated as much of that complexity into the components as we can.\n\nInternally the date-field can determine if the entered date is a valid date. If additional validation is required such as checking for past or future dates this can be done with external validators.\n\nFor the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.\n\n### Internal validation\nIn some scenarios there could be multiple fields that are incorrect, to help guide the users to the correct issue the date field only returns the most significant validation error. Only one error should be shown at a time.\n\nOnce the user has rectified the first error the next error will take it's place if there is one. This allows us to write linear lists of validation messages without the need to apply complex logic in the applications.\n\nThe current significance of errors with their recommended messages is as follows.\n\n#### 1. Invalid fields\n\nOne field is invalid, this may be a non numerical character, or a number outside the valid range .e.g 13 for a month.\n\\`Enter a valid month\\`\n\n~~~json\n\n{ invalidField: 'month'}\n\n~~~\n\n\nAs above but with two fields displaying an error.\n\\`Enter a valid month and year\\`\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are invalid a generic 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Required fields\n\nIf one field is empty either through form submission or inline deletion of the content.\n\\`Date of birth must include month\\`\n\n~~~json\n\n{ requiredField: 'month'}\n\n~~~\n\nAs above but with two fields missing.\n\\`Date of birth must include a month and year\\`\n\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are missing an 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Invalid date\n\nIf all of the individual fields are correct but they do not concatenate to a valid date. e.g. 30 02 2020\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\\`Enter a valid date of birth\\`\n\n### External validation\n\nIt is also possible to provide your own custom validation messages using <a href=\"https://angular.io/guide/form-validation#custom-validators\" target=\"_blank\">custom validators</a>\nand the validation component. This is particularly useful for checking things like wether the date is in the past or the future. Under the hood the date field uses the <a href=\"https://date-fns.org/\" target=\"_blank\">date-fns</a> library as a peer dependency, to keep build size to a minimum it may be worth considering using the same library in your application.\n\n~~~js\nfunction notMondayValidator(): ValidatorFn {\n  return (control: AbstractControl): { [key: string]: any } | null => {\n    return getDay(parseISO(control.value)) === 'monday' ? { notMonday: true } : null;\n  };\n}\n...\nconst date = new FormControl('', [notMondayValidator()])\n~~~\n\n~~~html\n<lg-date-field formControlName=\"date\">\n  Date of appointment\n  <lg-hint>For example, 12 06 1983</lg-hint>\n  <lg-validation *ngIf=\"isControlInvalid(date, validationForm) && date.hasError('notMonday')\">\n    Date cannot be a Monday\n  </lg-validation>\n </lg-date-field>\n~~~\n\n### Additional validators\n\nTo aid with common validation needs some additional reactive form validators are provided.\n\n#### Future date validator\nThis validator checks if the specified date is in the future, if not it returns a futureDate error\n\n~~~js\nimport { futureDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [futureDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('futureDate')\">\n  Date must be in the future\n</ng-container>\n~~~\n\n#### Past date validator\nThis validator checks if the specified date is in the past, if not it returns a pastDate error\n\n~~~js\nimport { pastDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [pastDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('pastDate')\">\n  Date must be in the past\n</ng-container>\n~~~\n\n#### Before date validator\nThis validator checks if the specified date is before another specified date, if not it returns a beforeDate error.\nThe beforeDate error contains the date that it was compared against.\n\n~~~js\nimport { beforeDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [beforeDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('beforeDate')\">\n  Date must be before {{ date.errors.beforeDate.required }}\n</ng-container>\n~~~\n\n#### After date validator\nThis validator checks if the specified date is after another specified date, if not it returns a afterDate error.\nThe afterDate error contains the date that it was compared against.\n\n~~~js\nimport { afterDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [afterDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('afterDate')\">\n  Date must be after {{ date.errors.afterDate.required }}\n</ng-container>\n~~~\n`"
             },
             {
                 "name": "notes",
@@ -41478,21 +41478,21 @@
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\n<lg-card *lgFeatureToggle=\"'firstFeature'\"><lg-card-content>Feature 1 showing</lg-card-content></lg-card>\n<lg-card *lgFeatureToggle=\"'secondFeature'\"><lg-card-content>Feature 2 not showing</lg-card-content></lg-card>\n<lg-card *lgFeatureToggle=\"'thirdFeature'\"><lg-card-content>Feature 3 showing</lg-card-content></lg-card>\n<lg-card *lgFeatureToggle=\"'fourthFeature'\"><lg-card-content>Feature 4 not showing</lg-card-content></lg-card>\n`"
-            },
-            {
-                "name": "template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/details/details.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\n<lg-details\n  [isActive]=\"isActive\"\n  [variant]=\"variant\"\n  [showIcon]=\"showIcon\"\n  (opened)=\"toggle('Detail opened')\"\n  (closed)=\"toggle('Detail closed')\">\n  <lg-details-panel-heading [headingLevel]=\"headingLevel\">{{ headingText }}</lg-details-panel-heading>\n  Give us a call on <a href=\"tel:08001234567\">0800 123 4567</a> and we'll be happy to help you change your\n  payment details\n</lg-details>\n`"
+            },
+            {
+                "name": "template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n<lg-card *lgFeatureToggle=\"'firstFeature'\"><lg-card-content>Feature 1 showing</lg-card-content></lg-card>\n<lg-card *lgFeatureToggle=\"'secondFeature'\"><lg-card-content>Feature 2 not showing</lg-card-content></lg-card>\n<lg-card *lgFeatureToggle=\"'thirdFeature'\"><lg-card-content>Feature 3 showing</lg-card-content></lg-card>\n<lg-card *lgFeatureToggle=\"'fourthFeature'\"><lg-card-content>Feature 4 not showing</lg-card-content></lg-card>\n`"
             },
             {
                 "name": "template",
@@ -41528,21 +41528,21 @@
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/heading/heading.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\n  <lg-heading [level]=\"level\">{{content}}</lg-heading>\n`"
-            },
-            {
-                "name": "template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\n  <header lg-header [logo]=\"logo\" [logoAlt]=\"logoAlt\" [logoHref]=\"logoHref\"></header>\n`"
+            },
+            {
+                "name": "template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/heading/heading.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n  <lg-heading [level]=\"level\">{{content}}</lg-heading>\n`"
             },
             {
                 "name": "template",
@@ -53876,18 +53876,6 @@
                     "defaultValue": "`\nDisplay data organised by heading and value. A Data Point can be used on it's own, or grouped into a Data Point List where each one will be displayed horizontally and given a list-item role.\n\nImport the Data Point module in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDataPointModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| headingLevel | Allows the heading level to be set | number | n/a | Yes |\n`"
                 }
             ],
-            "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
-                }
-            ],
             "projects/canopy/src/lib/details/details.notes.ts": [
                 {
                     "name": "notes",
@@ -53898,6 +53886,18 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\nThe Details component reduces page clutter and cognitive load by letting users reveal more information as and when they need it. It can also be used to communicate important imformation in a collapsed layout, similar to an Alert.\n\nThe \"alert\" ARIA role is automatically added to the component if it's one of these variants: \\`\\`warning\\`\\`, \\`\\`error\\`\\`, \\`\\`success\\`\\`. Note that this role will tell the browser to send out an accessible alert event to assistive technology products which can then notify the user about it.\n\nA decorative icon is also added next to the heading if it's one of the these variants: \\`\\`info\\`\\`, \\`\\`warning\\`\\`, \\`\\`error\\`\\`, \\`\\`success\\`\\`.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDetailsModule ],\n})\n~~~\n\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`isActive\\`\\` | Expand the details | boolean | false | no |\n| \\`\\`headingLevel\\`\\` | The level of the details heading: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n|\\`\\`variant\\`\\`| Applies colour treatment and ARIA role if applicable: \\`\\`generic\\`\\`, \\`\\`info\\`\\`, \\`\\`warning\\`\\`, \\`\\`error\\`\\`, \\`\\`success\\`\\` | string | 'generic' | No |\n| \\`\\`showIcon\\`\\` | Whether the icon should display on the warning, error or success variants | boolean | true | No |\n## Outputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`opened\\`\\` | Event emitted when the details are opened | EventEmitter<void> | n/a | No |\n| \\`\\`closed\\`\\` | Event emitted when the details are closed | EventEmitter<void> | n/a | No |\n`"
+                }
+            ],
+            "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
                 }
             ],
             "projects/canopy/src/lib/focus/focus.notes.ts": [
@@ -53936,18 +53936,6 @@
                     "defaultValue": "`\nThe grid directives are used to apply grid classes in order to create multi column layouts.\n\n## Usage\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgGridModule ],\n})\n~~~\n\nThere are three directives included in this module, which can all be added to Canopy or native HTML components.\nA simple one column responsive grid which expands to two columns for larger screen sizes could be created with the following markup:\n\n~~~html\n<div lgContainer>\n  <div lgRow>\n    <div [lgCol]=\"12\" [lgColMd]=\"6\">Column 1</div>\n    <div [lgCol]=\"12\" [lgColMd]=\"6\">Column 2</div>\n  </div>\n</div>\n~~~\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgContainer\\`\\` | Adds the grid container class to the element | null | null | No |\n| \\`\\`lgRow\\`\\` | Adds the row class to the element | null | null | No |\n| \\`\\`lgCol\\`\\` | Specifies the number of columns to fill in a 12 column layout | number (1-12) | null | Yes |\n| \\`\\`lgColMd\\`\\` | Specifies the number of columns to fill in a 12 column layout on a medium sized screen | number (1-12) | null | Yes |\n| \\`\\`lgColLg\\`\\` | Specifies the number of columns to fill in a 12 column layout on a large sized screen | number (1-12) | null | Yes |\n| \\`\\`lgColOffset\\`\\` | Specifies the number of columns to offset in a 12 column layout | number (0-11) | null | Yes |\n| \\`\\`lgColMdOffset\\`\\` | Specifies the number of columns to offset fill in a 12 column layout on a medium sized screen | number (0-11) | null | Yes |\n| \\`\\`lgColLgOffset\\`\\` | Specifies the number of columns to offset fill in a 12 column layout on a large sized screen | number (0-11) | null | Yes |\n`"
                 }
             ],
-            "projects/canopy/src/lib/heading/heading.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/heading/heading.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
-                }
-            ],
             "projects/canopy/src/lib/header/header.notes.ts": [
                 {
                     "name": "notes",
@@ -53958,6 +53946,18 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\nProvides a generic header for display at the top of the page.\nThe current implementation is brand agnostic but eventually the branding should be encapsulated into the component.\nThe component uses an attribute selector which allows you to use the html <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header\" target=\"_blank\">header</a> element as the host.\n\nThe logo height is set internally with different heights for different screen sizes, it can not currently be modified to ensure consistency.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeaderModule ],\n})\n~~~\n\nand for the HTML structure see the code snippets below.\n\n## Inputs\n### LgHeaderComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`logo\\`\\` | A url link to the logo | string | undefined | Yes |\n| \\`\\`logoAlt\\`\\` | alt text to display alongside the logo | string | '' | Yes |\n| \\`\\`logoHref\\`\\` | Url link if the logo is clickable | string | undefined | No |\n| \\`\\`secondaryLogo\\`\\` | A url link to the secondary logo | string | undefined | Yes |\n| \\`\\`secondaryLogoAlt\\`\\` | alt text to display alongside the secondary logo | string | '' | Yes |\n| \\`\\`secondaryLogoHref\\`\\` | Url link if the secondary logo is clickable | string | undefined | No |\n\n## Changing the width of the logos\nThe width of the logos can be changed by overriding the values of the below css variables:\n\n~~~css\n--header-logo-width\n--header-logo-width-lg\n--header-second-logo-width\n--header-second-logo-width-lg\n~~~\n`"
+                }
+            ],
+            "projects/canopy/src/lib/heading/heading.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/heading/heading.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
                 }
             ],
             "projects/canopy/src/lib/hero/hero.notes.ts": [
@@ -54234,18 +54234,6 @@
                     "defaultValue": "`\nProvides a container to group together two or more buttons and place them along a single line.\n\nUseful for forms where a 'Submit' and 'Cancel' button are placed side by side, for example.\n\nImport the button module in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgButtonModule ],\n})\n~~~\n`"
                 }
             ],
-            "projects/canopy/src/lib/forms/date/date-field.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/forms/date/date-field.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nProvides a component for capturing and validating a date. Output is a concatenation of individual string values into a valid ISO 8601 date format 'YYYY-MM-DD'.\n\n## Usage\nImport the Date Input Module into your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDateFieldModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<form [formGroup]=\"form\" (ngSubmit)=\"...\" #validationForm=\"ngForm\">\n  <lg-date-field formControlName=\"date\">\n    Date of birth\n    <lg-hint>For example, 12 06 1983</lg-hint>\n    <lg-validation *ngIf=\"isControlInvalid(date, validationForm)\">\n      <ng-container *ngIf=\"date.hasError('invalidField')\">\n        Enter a valid {{ date.errors.invalidField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidFields')\">\n        Enter a valid {{ date.errors.invalidFields[0] }} and\n        {{ date.errors.invalidFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredField')\">\n        Date of birth must include a {{ date.errors.requiredField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredFields')\">\n        Date of birth must include a {{ date.errors.requiredFields[0] }} and\n        {{ date.errors.requiredFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidDate')\">\n        Enter a valid date of birth\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('futureDate')\">\n        Date must be in the past\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('required')\">\n        Enter a date of birth\n      </ng-container>\n    </lg-validation>\n  </lg-date-field>\n\n  <button type=\"submit\">Submit</button>\n</form>\n~~~\n\n**Note: for the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.**\n\n## Inputs\n\n### LgDateFieldComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`dateId\\`\\` | HTML ID attribute for the date input, auto generated if not provided | string | 'lg-input-date-\\${nextUniqueId++}' | No |\n| \\`\\`monthId\\`\\` | HTML ID attribute for the month input, auto generated if not provided | string | 'lg-input-month-\\${nextUniqueId++}' | No |\n| \\`\\`yearId\\`\\` | HTML ID attribute for the year input, auto generated if not provided | string | 'lg-input-year-\\${nextUniqueId++}' | No |\n| \\`\\`ariaDescribedBy\\`\\` | HTML ID for the corresponding element that describes the date field, if not provided it will use the hint field where appropriate | string | null | No |\n| \\`\\`focus\\`\\` | Set the focus on the fieldset | boolean | null | No |\n\n## Validation\nDate validation is quite complex with a range of different validation errors, where possible we have encapsulated as much of that complexity into the components as we can.\n\nInternally the date-field can determine if the entered date is a valid date. If additional validation is required such as checking for past or future dates this can be done with external validators.\n\nFor the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.\n\n### Internal validation\nIn some scenarios there could be multiple fields that are incorrect, to help guide the users to the correct issue the date field only returns the most significant validation error. Only one error should be shown at a time.\n\nOnce the user has rectified the first error the next error will take it's place if there is one. This allows us to write linear lists of validation messages without the need to apply complex logic in the applications.\n\nThe current significance of errors with their recommended messages is as follows.\n\n#### 1. Invalid fields\n\nOne field is invalid, this may be a non numerical character, or a number outside the valid range .e.g 13 for a month.\n\\`Enter a valid month\\`\n\n~~~json\n\n{ invalidField: 'month'}\n\n~~~\n\n\nAs above but with two fields displaying an error.\n\\`Enter a valid month and year\\`\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are invalid a generic 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Required fields\n\nIf one field is empty either through form submission or inline deletion of the content.\n\\`Date of birth must include month\\`\n\n~~~json\n\n{ requiredField: 'month'}\n\n~~~\n\nAs above but with two fields missing.\n\\`Date of birth must include a month and year\\`\n\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are missing an 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Invalid date\n\nIf all of the individual fields are correct but they do not concatenate to a valid date. e.g. 30 02 2020\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\\`Enter a valid date of birth\\`\n\n### External validation\n\nIt is also possible to provide your own custom validation messages using <a href=\"https://angular.io/guide/form-validation#custom-validators\" target=\"_blank\">custom validators</a>\nand the validation component. This is particularly useful for checking things like wether the date is in the past or the future. Under the hood the date field uses the <a href=\"https://date-fns.org/\" target=\"_blank\">date-fns</a> library as a peer dependency, to keep build size to a minimum it may be worth considering using the same library in your application.\n\n~~~js\nfunction notMondayValidator(): ValidatorFn {\n  return (control: AbstractControl): { [key: string]: any } | null => {\n    return getDay(parseISO(control.value)) === 'monday' ? { notMonday: true } : null;\n  };\n}\n...\nconst date = new FormControl('', [notMondayValidator()])\n~~~\n\n~~~html\n<lg-date-field formControlName=\"date\">\n  Date of appointment\n  <lg-hint>For example, 12 06 1983</lg-hint>\n  <lg-validation *ngIf=\"isControlInvalid(date, validationForm) && date.hasError('notMonday')\">\n    Date cannot be a Monday\n  </lg-validation>\n </lg-date-field>\n~~~\n\n### Additional validators\n\nTo aid with common validation needs some additional reactive form validators are provided.\n\n#### Future date validator\nThis validator checks if the specified date is in the future, if not it returns a futureDate error\n\n~~~js\nimport { futureDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [futureDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('futureDate')\">\n  Date must be in the future\n</ng-container>\n~~~\n\n#### Past date validator\nThis validator checks if the specified date is in the past, if not it returns a pastDate error\n\n~~~js\nimport { pastDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [pastDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('pastDate')\">\n  Date must be in the past\n</ng-container>\n~~~\n\n#### Before date validator\nThis validator checks if the specified date is before another specified date, if not it returns a beforeDate error.\nThe beforeDate error contains the date that it was compared against.\n\n~~~js\nimport { beforeDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [beforeDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('beforeDate')\">\n  Date must be before {{ date.errors.beforeDate.required }}\n</ng-container>\n~~~\n\n#### After date validator\nThis validator checks if the specified date is after another specified date, if not it returns a afterDate error.\nThe afterDate error contains the date that it was compared against.\n\n~~~js\nimport { afterDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [afterDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('afterDate')\">\n  Date must be after {{ date.errors.afterDate.required }}\n</ng-container>\n~~~\n`"
-                }
-            ],
             "projects/canopy/src/lib/forms/checkbox-group/checkbox-group.notes.ts": [
                 {
                     "name": "notes",
@@ -54256,6 +54244,18 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "(name: string) => `\nProvides a set of components to implement ${name} groups in a form. The ${name} Group component is a container which displays the label with an optional hint and should contain two or more Toggle components. The Toggle component represents a single ${name.toLowerCase()}. The Hint component may be used to provide extra context to the user.\n\n## Usage\nImport the CheckboxGroup and Toggle modules into your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgCheckboxGroupModule, LgToggleModule ],\n})\n~~~\n\n## Inputs\n\n### LgCheckboxGroupComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`id\\`\\` | HTML ID attribute, auto generated if not provided | string | 'lg-checkbox-group-id-\\${this.nextUniqueId}' | No |\n| \\`\\`name\\`\\` | Set the name value for all inputs in the group, auto-generated if not provided | string | 'lg-checkbox-group-\\${this.nextUniqueId}' | No |\n| \\`\\`value\\`\\` | HTML value attribute. Sets the default checked ${name.toLowerCase()} buttons, must match the values of the ${name.toLowerCase()} buttons | array of strings | null | No |\n| \\`\\`focus\\`\\` | Set the focus on the fieldset | boolean | null | No |\n| \\`\\`disabled\\`\\` | Set the inner ${name.toLowerCase()}s to disabled | boolean | false | No |\n| \\`\\`ariaDescribedBy\\`\\` | HTML ID for the corresponding element that describes the ${name.toLowerCase()}s, if not provided it will use the hint field where appropriate | boolean | null | No |\n${\n  name !== 'Filter'\n    ? '| ``inline`` | If true, displays the buttons inline rather than stacked | boolean | false | No |'\n    : ''\n}\n\n### LgToggleComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`id\\`\\` | HTML ID attribute, auto generated if not provided | string | 'lg-toggle-\\${++nextUniqueId}' | No |\n| \\`\\`name\\`\\` | HTML Name attribute, auto generated if not provided | string | 'lg-toggle-\\${++nextUniqueId}' | No |\n| \\`\\`value\\`\\` | HTML value attribute. Value that is set when the toggle is checked | string | null | No |\n| \\`\\`checked\\`\\` | Check status of the toggle | boolean | false | No |\n| \\`\\`focus\\`\\` | Set the focus on the input | boolean | null | No |\n`"
+                }
+            ],
+            "projects/canopy/src/lib/forms/date/date-field.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/forms/date/date-field.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nProvides a component for capturing and validating a date. Output is a concatenation of individual string values into a valid ISO 8601 date format 'YYYY-MM-DD'.\n\n## Usage\nImport the Date Input Module into your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDateFieldModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<form [formGroup]=\"form\" (ngSubmit)=\"...\" #validationForm=\"ngForm\">\n  <lg-date-field formControlName=\"date\">\n    Date of birth\n    <lg-hint>For example, 12 06 1983</lg-hint>\n    <lg-validation *ngIf=\"isControlInvalid(date, validationForm)\">\n      <ng-container *ngIf=\"date.hasError('invalidField')\">\n        Enter a valid {{ date.errors.invalidField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidFields')\">\n        Enter a valid {{ date.errors.invalidFields[0] }} and\n        {{ date.errors.invalidFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredField')\">\n        Date of birth must include a {{ date.errors.requiredField }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('requiredFields')\">\n        Date of birth must include a {{ date.errors.requiredFields[0] }} and\n        {{ date.errors.requiredFields[1] }}\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('invalidDate')\">\n        Enter a valid date of birth\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('futureDate')\">\n        Date must be in the past\n      </ng-container>\n      <ng-container *ngIf=\"date.hasError('required')\">\n        Enter a date of birth\n      </ng-container>\n    </lg-validation>\n  </lg-date-field>\n\n  <button type=\"submit\">Submit</button>\n</form>\n~~~\n\n**Note: for the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.**\n\n## Inputs\n\n### LgDateFieldComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`dateId\\`\\` | HTML ID attribute for the date input, auto generated if not provided | string | 'lg-input-date-\\${nextUniqueId++}' | No |\n| \\`\\`monthId\\`\\` | HTML ID attribute for the month input, auto generated if not provided | string | 'lg-input-month-\\${nextUniqueId++}' | No |\n| \\`\\`yearId\\`\\` | HTML ID attribute for the year input, auto generated if not provided | string | 'lg-input-year-\\${nextUniqueId++}' | No |\n| \\`\\`ariaDescribedBy\\`\\` | HTML ID for the corresponding element that describes the date field, if not provided it will use the hint field where appropriate | string | null | No |\n| \\`\\`focus\\`\\` | Set the focus on the fieldset | boolean | null | No |\n\n## Validation\nDate validation is quite complex with a range of different validation errors, where possible we have encapsulated as much of that complexity into the components as we can.\n\nInternally the date-field can determine if the entered date is a valid date. If additional validation is required such as checking for past or future dates this can be done with external validators.\n\nFor the validation to work properly it's very important to include the \\`ngForm\\` on the form tag and for the submit button to be within the form.\n\n### Internal validation\nIn some scenarios there could be multiple fields that are incorrect, to help guide the users to the correct issue the date field only returns the most significant validation error. Only one error should be shown at a time.\n\nOnce the user has rectified the first error the next error will take it's place if there is one. This allows us to write linear lists of validation messages without the need to apply complex logic in the applications.\n\nThe current significance of errors with their recommended messages is as follows.\n\n#### 1. Invalid fields\n\nOne field is invalid, this may be a non numerical character, or a number outside the valid range .e.g 13 for a month.\n\\`Enter a valid month\\`\n\n~~~json\n\n{ invalidField: 'month'}\n\n~~~\n\n\nAs above but with two fields displaying an error.\n\\`Enter a valid month and year\\`\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are invalid a generic 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Required fields\n\nIf one field is empty either through form submission or inline deletion of the content.\n\\`Date of birth must include month\\`\n\n~~~json\n\n{ requiredField: 'month'}\n\n~~~\n\nAs above but with two fields missing.\n\\`Date of birth must include a month and year\\`\n\n\n~~~json\n\n{ invalidFields: ['day', 'month']}\n\n~~~\n\nIf all three fields are missing an 'invalidDate' message is provided.\n\\`Enter a valid date of birth\\`\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\n#### 2. Invalid date\n\nIf all of the individual fields are correct but they do not concatenate to a valid date. e.g. 30 02 2020\n\n~~~json\n\n{ invalidDate: true }\n\n~~~\n\\`Enter a valid date of birth\\`\n\n### External validation\n\nIt is also possible to provide your own custom validation messages using <a href=\"https://angular.io/guide/form-validation#custom-validators\" target=\"_blank\">custom validators</a>\nand the validation component. This is particularly useful for checking things like wether the date is in the past or the future. Under the hood the date field uses the <a href=\"https://date-fns.org/\" target=\"_blank\">date-fns</a> library as a peer dependency, to keep build size to a minimum it may be worth considering using the same library in your application.\n\n~~~js\nfunction notMondayValidator(): ValidatorFn {\n  return (control: AbstractControl): { [key: string]: any } | null => {\n    return getDay(parseISO(control.value)) === 'monday' ? { notMonday: true } : null;\n  };\n}\n...\nconst date = new FormControl('', [notMondayValidator()])\n~~~\n\n~~~html\n<lg-date-field formControlName=\"date\">\n  Date of appointment\n  <lg-hint>For example, 12 06 1983</lg-hint>\n  <lg-validation *ngIf=\"isControlInvalid(date, validationForm) && date.hasError('notMonday')\">\n    Date cannot be a Monday\n  </lg-validation>\n </lg-date-field>\n~~~\n\n### Additional validators\n\nTo aid with common validation needs some additional reactive form validators are provided.\n\n#### Future date validator\nThis validator checks if the specified date is in the future, if not it returns a futureDate error\n\n~~~js\nimport { futureDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [futureDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('futureDate')\">\n  Date must be in the future\n</ng-container>\n~~~\n\n#### Past date validator\nThis validator checks if the specified date is in the past, if not it returns a pastDate error\n\n~~~js\nimport { pastDateValidator } from '@legal-and-general/canopy';\n\nconst control = new FormControl('', {\n  validators: [pastDateValidator()]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('pastDate')\">\n  Date must be in the past\n</ng-container>\n~~~\n\n#### Before date validator\nThis validator checks if the specified date is before another specified date, if not it returns a beforeDate error.\nThe beforeDate error contains the date that it was compared against.\n\n~~~js\nimport { beforeDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [beforeDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('beforeDate')\">\n  Date must be before {{ date.errors.beforeDate.required }}\n</ng-container>\n~~~\n\n#### After date validator\nThis validator checks if the specified date is after another specified date, if not it returns a afterDate error.\nThe afterDate error contains the date that it was compared against.\n\n~~~js\nimport { afterDateValidator } from '@legal-and-general/canopy';\nimport parseISO from 'date-fns/parseISO';\n\nconst control = new FormControl('', {\n  validators: [afterDateValidator(parseISO('2010-01-15'))]\n});\n~~~\n\n~~~html\n<ng-container *ngIf=\"date.hasError('afterDate')\">\n  Date must be after {{ date.errors.afterDate.required }}\n</ng-container>\n~~~\n`"
                 }
             ],
             "projects/canopy/src/lib/forms/input/input.notes.ts": [
