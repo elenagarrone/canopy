@@ -1,10 +1,7 @@
 export const notes = `
-<br>
-<img src="docs/accordion/hero.png" alt="">
-<br>
-
 The accordion component reduces page clutter and cognitive load by letting users reveal sections of information as and when they need it.
 
+![Accordion - example](docs/accordion/hero.png)
 
 ## Usage
 
@@ -15,19 +12,22 @@ Information that is important or relevant to most users should not be hidden wit
 Accordions work best for simple content and links but can support rich content (sound, video, imagery, etc), if required.
 
 <br>
+### Development
 Import the accordion module into your module:
 
-~~~js
+\`\`\`js
 @NgModule({
   ...
   imports: [ ..., LgAccordionModule ],
 })
-~~~
+\`\`\`
+
+
 
 and in your HTML:
 
-~~~html
-  <lg-accordion [headingLevel]="2">
+\`\`\`html
+<lg-accordion [headingLevel]="2">
     <lg-accordion-item [isActive]="isActive" (opened)="handleItemOpened()" (closed)="handleItemClosed()">
       <lg-accordion-panel-heading>Item 1</lg-accordion-panel-heading>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -53,70 +53,71 @@ and in your HTML:
       </ng-template>
     </lg-accordion-item>
   </lg-accordion>
-~~~
+\`\`\`
+
+For additional information on how to use these components read the [section below](#).
 
 ## How it works
 
 Accordions have a chevron to indicate that they are interactive, but clicking anywhere on the bar will expand or collapse the content within. By default, several accordion sections can be expanded at once. If you need to, you can limit the number of open accordion sections to one. The first accordion is usually expanded by default.
 
-
 ## Do's and don'ts
 
-<img src="docs/accordion/do.png" alt="">
-<img src="docs/accordion/dont.png" alt="">
+### Do
 
-- Do
- - Do use to hide secondary information from view
- - Do make the label as short and descriptive as possible
+![Accordion - do](docs/accordion/do.png)
 
-- Don't
- - Don't use to hide key information
+- Do use to hide secondary information from view
+- Do make the label as short and descriptive as possible
+
+### Don't
+
+![Accordion - don't](docs/accordion/dont.png)
+
+- Don't use to hide key information
+
+## Additional development details
+
+### Accordion Inputs
+
+| Name             | Description                                                  | Type    | Default | Required |
+| ---------------- | ------------------------------------------------------------ | ------- | ------- | -------- |
+| \`\`multi\`\`        | Set false to only allow a single panel to be open at a time  | boolean | true    | No       |
+| \`\`headingLevel\`\` | The level of the accordion headings: \`\`1\`\`, \`\`2\`\`, \`\`3\`\`, \`\`4\`\`, \`\`5\`\`, \`\`6\`\` | number  | n/a     | Yes      |
+
+### Accordion Item Inputs
+
+| Name         | Description                            | Type    | Default | Required |
+| ------------ | -------------------------------------- | ------- | ------- | -------- |
+| \`\`isActive\`\` | The active state of the accordion item | boolean | false   | No       |
+
+### Accordion Item Outputs
+
+| Name       | Description                                     | Type               | Default | Required |
+| ---------- | ----------------------------------------------- | ------------------ | ------- | -------- |
+| \`\`opened\`\` | Event emitted when the accordion item is opened | EventEmitter<void> | n/a     | No       |
+| \`\`closed\`\` | Event emitted when the accordion item is closed | EventEmitter<void> | n/a     | No       |
+
+### Lazy content initialisation
+
+Wrap the panel content in a ng-template with the lgAccordionContent directive to only initialise and render the panel when it is first opened.
 
 
- ## Research on this pattern
+## Research on this pattern
 
- This component is based on best practice and has not had specific usability testing.
-
-------
-
-<br>
-
-## Accordion Inputs
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| \`\`multi\`\` | Set false to only allow a single panel to be open at a time | boolean | true | No |
-| \`\`headingLevel\`\` | The level of the accordion headings: \`\`1\`\`, \`\`2\`\`, \`\`3\`\`, \`\`4\`\`, \`\`5\`\`, \`\`6\`\` | number | n/a | Yes |
-
-## Accordion Item Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| \`\`isActive\`\` | The active state of the accordion item | boolean | false | No |
-
-
-## Accordion Item Outputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| \`\`opened\`\` | Event emitted when the accordion item is opened | EventEmitter<void> | n/a | No |
-| \`\`closed\`\` | Event emitted when the accordion item is closed | EventEmitter<void> | n/a | No |
-
-
-## Lazy content initialisation
-
-Wrap the panel content in a \`ng-template\` with the \`lgAccordionContent\` directive to only initialise and render
-the panel when it is first opened.
-
-------
-
-<br>
+This component is based on best practice and has not had specific usability testing.
 
 ## Related
 
 Consider using an accordion instead of the **details component** if there are multiple related sections of content. **Tabs** would be an alternative way to display if there's a large amount of content.
 
+- Card
+- Details
+- Tabs
 
 ## Help improve this page
 
-Help make sure this page is useful, relevant and up-to-date by [sending us your feedback](https://forms.office.com/Pages/ResponsePage.aspx?id=q7pG0gDM0k68TvikbLxZDQ1_laRfjYtHphdHLNQMn65UOEEwQ0FFU0RSRUNTVFFLU0wxV0lFOVJZWSQlQCN0PWcu)
+Help make sure this page is useful, relevant and up-to-date by [sending us your feedback](https://forms.office.com/Pages/ResponsePage.aspx?id=q7pG0gDM0k68TvikbLxZDQ1_laRfjYtHphdHLNQMn65UOEEwQ0FFU0RSRUNTVFFLU0wxV0lFOVJZWSQlQCN0PWcu).
+
+## Example
 `;
