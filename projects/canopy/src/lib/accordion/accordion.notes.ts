@@ -1,8 +1,22 @@
 export const notes = `
-Accordions allow users to quickly expand and collapse grouped sections of content.
+<br>
+<img src="docs/accordion/hero.png" alt="">
+<br>
+
+The accordion component reduces page clutter and cognitive load by letting users reveal sections of information as and when they need it.
 
 
 ## Usage
+
+Use the accordion component to hide sections of content to make pages easier to scan.
+
+Information that is important or relevant to most users should not be hidden within this component and should be displayed on the page instead.
+
+Accordions work best for simple content and links but can support rich content (sound, video, imagery, etc), if required.
+
+<br>
+Import the accordion module into your module:
+
 ~~~js
 @NgModule({
   ...
@@ -41,6 +55,32 @@ and in your HTML:
   </lg-accordion>
 ~~~
 
+## How it works
+
+Accordions have a chevron to indicate that they are interactive, but clicking anywhere on the bar will expand or collapse the content within. By default, several accordion sections can be expanded at once. If you need to, you can limit the number of open accordion sections to one. The first accordion is usually expanded by default.
+
+
+## Do's and don'ts
+
+<img src="docs/accordion/do.png" alt="">
+<img src="docs/accordion/dont.png" alt="">
+
+- Do
+ - Do use to hide secondary information from view
+ - Do make the label as short and descriptive as possible
+
+- Don't
+ - Don't use to hide key information
+
+
+ ## Research on this pattern
+
+ This component is based on best practice and has not had specific usability testing.
+
+------
+
+<br>
+
 ## Accordion Inputs
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
@@ -66,4 +106,17 @@ and in your HTML:
 
 Wrap the panel content in a \`ng-template\` with the \`lgAccordionContent\` directive to only initialise and render
 the panel when it is first opened.
+
+------
+
+<br>
+
+## Related
+
+Consider using an accordion instead of the **details component** if there are multiple related sections of content. **Tabs** would be an alternative way to display if there's a large amount of content.
+
+
+## Help improve this page
+
+Help make sure this page is useful, relevant and up-to-date by [sending us your feedback](https://forms.office.com/Pages/ResponsePage.aspx?id=q7pG0gDM0k68TvikbLxZDQ1_laRfjYtHphdHLNQMn65UOEEwQ0FFU0RSRUNTVFFLU0wxV0lFOVJZWSQlQCN0PWcu)
 `;
