@@ -28910,6 +28910,94 @@
                     }
                 }
             }
+        },
+        {
+            "name": "WelcomeBenefitsCardsComponent",
+            "id": "component-WelcomeBenefitsCardsComponent-f4a95ea8f74b6661a566aaaaa25c2bda35c5277d24989d4444e69c87ffc1a12ad99e280b013914a67d5ef70c6c0814555f49f654544386a49f7120e409f32d4f",
+            "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lg-welcome-benefits-cards",
+            "styleUrls": [],
+            "styles": [],
+            "template": "welcomeBenefitsCards",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Meta, moduleMetadata, Story } from '@storybook/angular';\nimport { Component } from '@angular/core';\n\nimport {\n  lgBrandIconAccessible,\n  lgBrandIconCustomer,\n  lgBrandIconDesignLibrary, LgBrandIconModule,\n  LgBrandIconRegistry,\n  lgBrandIconStopwatch,\n} from '../brand-icon';\n\nconst welcomeHeadingTemplate = `\n  <h1 class=\"lg-font--expressive lg-font-size-7\">\n    <span class=\"welcome-heading no-wrap\">Welcome to Canopy,</span>\n    <br/>\n    <span class=\"no-wrap\">The digital design system</span>\n    <br/>\n    <span class=\"no-wrap\">from Legal and General.</span>\n  </h1>\n  `;\n\n@Component({\n  selector: 'lg-welcome-h1',\n  template: welcomeHeadingTemplate,\n})\nclass WelcomeHeadingComponent {}\n\nconst welcomeBenefitsCards = `\n  <div class=\"welcome\">\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"stopwatch\"></lg-brand-icon>\n      <p>Reduce time and cost of building applications</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"design-library\"></lg-brand-icon>\n      <p>Ready-made researched and tested design patterns</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"customer\"></lg-brand-icon>\n      <p>Consistent customer experience</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <img src=\"landg-logo-colour.svg\" alt=\"\"/>\n      <p>Plays nicely with L&G brand assets</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"accessible\"></lg-brand-icon>\n      <p>Accessible to a minimum of AA compliance</p>\n    </div>\n  </div>\n`;\n\n@Component({\n  selector: 'lg-welcome-benefits-cards',\n  template: welcomeBenefitsCards,\n})\nclass WelcomeBenefitsCardsComponent {\n  constructor(private brandIconRegistry: LgBrandIconRegistry) {\n    this.brandIconRegistry.registerBrandIcon([\n      lgBrandIconStopwatch,\n      lgBrandIconDesignLibrary,\n      lgBrandIconCustomer,\n      lgBrandIconAccessible,\n    ]);\n  }\n}\n\nexport default {\n  // title: 'Internal Welcome',\n  title: 'A Welcome',\n  decorators: [\n    moduleMetadata({\n      declarations: [ WelcomeHeadingComponent, WelcomeBenefitsCardsComponent ],\n      imports: [ LgBrandIconModule ],\n    }),\n  ],\n  parameters: {\n    viewMode: 'story',\n    previewTabs: { 'storybook/docs/panel': { hidden: true } },\n  },\n} as Meta;\n\nconst headingTemplate: Story<WelcomeHeadingComponent> = (args: WelcomeHeadingComponent) => ({\n  props: args,\n  template: welcomeHeadingTemplate,\n  styles: [\n    `\n      .welcome-heading {\n        color: var(--color-super-blue);\n      }\n    `,\n  ],\n});\n\nexport const headingStory = headingTemplate.bind({});\nheadingStory.storyName = 'Heading cards';\n\nconst benefitsTemplate: Story<WelcomeBenefitsCardsComponent> = (args: WelcomeBenefitsCardsComponent) => ({\n  props: args,\n  template: welcomeBenefitsCards,\n  styles: [\n    `\n      .welcome {\n        --brand-icon-fill-primary: var(--color-sky-blue);\n      }\n    `\n  ],\n});\n\nexport const benefitsStory = benefitsTemplate.bind({});\nbenefitsStory.storyName = 'Benefits cards';\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "brandIconRegistry",
+                        "type": "LgBrandIconRegistry",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 61,
+                "jsdoctags": [
+                    {
+                        "name": "brandIconRegistry",
+                        "type": "LgBrandIconRegistry",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "WelcomeHeadingComponent",
+            "id": "component-WelcomeHeadingComponent-f4a95ea8f74b6661a566aaaaa25c2bda35c5277d24989d4444e69c87ffc1a12ad99e280b013914a67d5ef70c6c0814555f49f654544386a49f7120e409f32d4f",
+            "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lg-welcome-h1",
+            "styleUrls": [],
+            "styles": [],
+            "template": "welcomeHeadingTemplate",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Meta, moduleMetadata, Story } from '@storybook/angular';\nimport { Component } from '@angular/core';\n\nimport {\n  lgBrandIconAccessible,\n  lgBrandIconCustomer,\n  lgBrandIconDesignLibrary, LgBrandIconModule,\n  LgBrandIconRegistry,\n  lgBrandIconStopwatch,\n} from '../brand-icon';\n\nconst welcomeHeadingTemplate = `\n  <h1 class=\"lg-font--expressive lg-font-size-7\">\n    <span class=\"welcome-heading no-wrap\">Welcome to Canopy,</span>\n    <br/>\n    <span class=\"no-wrap\">The digital design system</span>\n    <br/>\n    <span class=\"no-wrap\">from Legal and General.</span>\n  </h1>\n  `;\n\n@Component({\n  selector: 'lg-welcome-h1',\n  template: welcomeHeadingTemplate,\n})\nclass WelcomeHeadingComponent {}\n\nconst welcomeBenefitsCards = `\n  <div class=\"welcome\">\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"stopwatch\"></lg-brand-icon>\n      <p>Reduce time and cost of building applications</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"design-library\"></lg-brand-icon>\n      <p>Ready-made researched and tested design patterns</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"customer\"></lg-brand-icon>\n      <p>Consistent customer experience</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <img src=\"landg-logo-colour.svg\" alt=\"\"/>\n      <p>Plays nicely with L&G brand assets</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"accessible\"></lg-brand-icon>\n      <p>Accessible to a minimum of AA compliance</p>\n    </div>\n  </div>\n`;\n\n@Component({\n  selector: 'lg-welcome-benefits-cards',\n  template: welcomeBenefitsCards,\n})\nclass WelcomeBenefitsCardsComponent {\n  constructor(private brandIconRegistry: LgBrandIconRegistry) {\n    this.brandIconRegistry.registerBrandIcon([\n      lgBrandIconStopwatch,\n      lgBrandIconDesignLibrary,\n      lgBrandIconCustomer,\n      lgBrandIconAccessible,\n    ]);\n  }\n}\n\nexport default {\n  // title: 'Internal Welcome',\n  title: 'A Welcome',\n  decorators: [\n    moduleMetadata({\n      declarations: [ WelcomeHeadingComponent, WelcomeBenefitsCardsComponent ],\n      imports: [ LgBrandIconModule ],\n    }),\n  ],\n  parameters: {\n    viewMode: 'story',\n    previewTabs: { 'storybook/docs/panel': { hidden: true } },\n  },\n} as Meta;\n\nconst headingTemplate: Story<WelcomeHeadingComponent> = (args: WelcomeHeadingComponent) => ({\n  props: args,\n  template: welcomeHeadingTemplate,\n  styles: [\n    `\n      .welcome-heading {\n        color: var(--color-super-blue);\n      }\n    `,\n  ],\n});\n\nexport const headingStory = headingTemplate.bind({});\nheadingStory.storyName = 'Heading cards';\n\nconst benefitsTemplate: Story<WelcomeBenefitsCardsComponent> = (args: WelcomeBenefitsCardsComponent) => ({\n  props: args,\n  template: welcomeBenefitsCards,\n  styles: [\n    `\n      .welcome {\n        --brand-icon-fill-primary: var(--color-sky-blue);\n      }\n    `\n  ],\n});\n\nexport const benefitsStory = benefitsTemplate.bind({});\nbenefitsStory.storyName = 'Benefits cards';\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
         }
     ],
     "modules": [
@@ -32264,10 +32352,30 @@
                 "defaultValue": "[\n  { size: '7', px: { sm: '52', lg: '56' } },\n  { size: '6', px: { sm: '44', lg: '48' } },\n  { size: '5', px: { sm: '36', lg: '40' } },\n  { size: '4', px: { sm: '28', lg: '32' } },\n  { size: '3', px: { sm: '24' } },\n  { size: '2', px: { sm: '20' } },\n  { size: '1', px: { sm: '16' } },\n  { size: '0-8', px: { sm: '14' } },\n  { size: '0-6', px: { sm: '13' } },\n]"
             },
             {
+                "name": "benefitsStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "benefitsTemplate.bind({})"
+            },
+            {
+                "name": "benefitsTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<WelcomeBenefitsCardsComponent>",
+                "defaultValue": "(args: WelcomeBenefitsCardsComponent) => ({\n  props: args,\n  template: welcomeBenefitsCards,\n  styles: [\n    `\n      .welcome {\n        --brand-icon-fill-primary: var(--color-sky-blue);\n      }\n    `\n  ],\n})"
+            },
+            {
                 "name": "bodyHTML",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/hero/hero.stories.ts",
+                "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -32277,7 +32385,7 @@
                 "name": "bodyHTML",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
+                "file": "projects/canopy/src/lib/hero/hero.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -32517,21 +32625,21 @@
                 "name": "code",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/forms/toggle/switch.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\n<lg-switch\n  formControlName=\"umbrella\"\n  [value]=\"true\"\n  [checked]=\"umbrella.value\"\n  [focus]=\"focus\"\n  (blur)=\"toggleBlur.emit($event)\"\n>\n  {{ label }}\n</lg-switch>\n`"
-            },
-            {
-                "name": "code",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/forms/toggle/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\n<lg-checkbox\n  formControlName=\"umbrella\"\n  [value]=\"true\"\n  [size]=\"sm\"\n  [checked]=\"umbrella.value\"\n  [focus]=\"focus\"\n  (blur)=\"toggleBlur.emit($event)\"\n>\n  {{ label }}\n</lg-checkbox>\n`"
+            },
+            {
+                "name": "code",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/forms/toggle/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n<lg-switch\n  formControlName=\"umbrella\"\n  [value]=\"true\"\n  [checked]=\"umbrella.value\"\n  [focus]=\"focus\"\n  (blur)=\"toggleBlur.emit($event)\"\n>\n  {{ label }}\n</lg-switch>\n`"
             },
             {
                 "name": "colours",
@@ -32607,21 +32715,21 @@
                 "name": "components",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/card/card.module.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n  LgCardComponent,\n  LgCardHeaderComponent,\n  LgCardTitleComponent,\n  LgCardFooterComponent,\n  LgCardSubtitleComponent,\n  LgCardPrincipleDataPointComponent,\n  LgCardPrincipleDataPointLabelComponent,\n  LgCardPrincipleDataPointValueComponent,\n  LgCardPrincipleDataPointDateComponent,\n  LgCardContentComponent,\n  LgCardToggableContentComponent,\n]"
-            },
-            {
-                "name": "components",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/carousel/carousel.module.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[ LgCarouselItemComponent, LgCarouselComponent ]"
+            },
+            {
+                "name": "components",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/card/card.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  LgCardComponent,\n  LgCardHeaderComponent,\n  LgCardTitleComponent,\n  LgCardFooterComponent,\n  LgCardSubtitleComponent,\n  LgCardPrincipleDataPointComponent,\n  LgCardPrincipleDataPointLabelComponent,\n  LgCardPrincipleDataPointValueComponent,\n  LgCardPrincipleDataPointDateComponent,\n  LgCardContentComponent,\n  LgCardToggableContentComponent,\n]"
             },
             {
                 "name": "components",
@@ -32647,21 +32755,21 @@
                 "name": "components",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/primary-message/primary-message.module.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n  LgPrimaryMessageComponent,\n  LgPrimaryMessageTitleComponent,\n  LgPrimaryMessageDescriptionComponent,\n]"
-            },
-            {
-                "name": "components",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/promo-card/promo-card.module.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\n  LgPromoCardComponent,\n  LgPromoCardListComponent,\n  LgPromoCardTitleComponent,\n  LgPromoCardFooterComponent,\n  LgPromoCardContentComponent,\n  LgPromoCardImageComponent,\n  LgPromoCardListTitleComponent,\n]"
+            },
+            {
+                "name": "components",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/primary-message/primary-message.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  LgPrimaryMessageComponent,\n  LgPrimaryMessageTitleComponent,\n  LgPrimaryMessageDescriptionComponent,\n]"
             },
             {
                 "name": "components",
@@ -33037,21 +33145,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy-test-app/src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true,\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy-test-app/src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false,\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy-test-app/src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n}"
             },
             {
                 "name": "exampleButtonTemplate",
@@ -33552,6 +33660,26 @@
                 "deprecationMessage": "",
                 "type": "string",
                 "defaultValue": "'header'"
+            },
+            {
+                "name": "headingStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "headingTemplate.bind({})"
+            },
+            {
+                "name": "headingTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<WelcomeHeadingComponent>",
+                "defaultValue": "(args: WelcomeHeadingComponent) => ({\n  props: args,\n  template: welcomeHeadingTemplate,\n  styles: [\n    `\n      .welcome-heading {\n        color: var(--color-super-blue);\n      }\n    `,\n  ],\n})"
             },
             {
                 "name": "heroImg",
@@ -41417,6 +41545,16 @@
                 "name": "nextUniqueId",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/canopy/src/lib/forms/label/label.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "0"
+            },
+            {
+                "name": "nextUniqueId",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/canopy/src/lib/forms/input/input-field.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -41428,16 +41566,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/canopy/src/lib/forms/input/input.directive.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "number",
-                "defaultValue": "0"
-            },
-            {
-                "name": "nextUniqueId",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/canopy/src/lib/forms/label/label.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "number",
@@ -41547,16 +41675,6 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/data-point/data-point.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nDisplay data organised by heading and value. A Data Point can be used on it's own, or grouped into a Data Point List where each one will be displayed horizontally and given a list-item role.\n\nImport the Data Point module in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDataPointModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| headingLevel | Allows the heading level to be set | number | n/a | Yes |\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/carousel/carousel.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -41567,21 +41685,31 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/filter-container/filter-container.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\nAn expanding panel which reveals filter controls, which filter a set of results.\n\nThe toggle button is always positioned to the right of the containing element.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgFilterContainerModule ],\n})\n~~~\n\nPlease see the code below to view how to implement the pattern.\n\nThe toggle button **must have** the \\`lgButtonToggle\\` directive on it for the component to work properly.\n\nMore information on how to use the \\`lgButtonToggle\\` directive is available in the <a href=\"./?path=/docs/components-button-guide--page\">button documentation</a>. Note that there is no need to set the \\`id\\` and \\`ariaControls\\` properties in this case as they are already handled by the \\`LgFilterContainerComponent\\`.\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/data-point/data-point.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nDisplay data organised by heading and value. A Data Point can be used on it's own, or grouped into a Data Point List where each one will be displayed horizontally and given a list-item role.\n\nImport the Data Point module in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDataPointModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| headingLevel | Allows the heading level to be set | number | n/a | Yes |\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
             },
             {
                 "name": "notes",
@@ -41627,11 +41755,11 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/heading/heading.notes.ts",
+                "file": "projects/canopy/src/lib/hero-img/hero-img.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
+                "defaultValue": "(imageBackgroundHeroHTML: string) => `\nProvides a hero component that can used to display a hero banner with a background image and a content container. Content container can be used to display page title, subtitle and buttons.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeroImgModule ],\n})\n~~~\n\nand in your HTML...\n\n~~~html\n${imageBackgroundHeroHTML}\n~~~\n\n### LgHeroImgComponent\nThis is the hero banner with a background image that runs across the top of the page. It also controls the functionality to create the \\`overlap\\` between the page content.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`overlap\\`\\` | The amount that the page content overlaps the hero component (rem) | number | 2 | No |\n| \\`\\`imageUrl\\`\\` | Background image url | string | n/a | Yes |\n\n\n#### Configure Grid\n\n~~~html\n<lg-hero-img [overlap]=\"2\">\n  <div lgContainer>\n    <div lgRow>\n      <div [lgCol]=\"12\">\n        <lg-hero-img-card>\n          ...\n        </lg-hero-img-card>\n      </div>\n    </div>\n  </div>\n</lg-hero-img>\n~~~\n\n### LgHeroImgCardComponent\nA container component for displaying content within the hero area. The hero and hero card components are agnostic of the grid layout of the page. You will need to wrap the hero card component with the specific grid that is required.\n\n### LgHeroImgCardTitleComponent\nThis is where the main hero title should be provided. It should be located inside the hero card.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the hero card heading: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n### LgHeroCardSubtitleComponent\nIf the hero has a subtitle it should be located within this component.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the heading in the label: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n`"
             },
             {
                 "name": "notes",
@@ -41657,16 +41785,6 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/hero-img/hero-img.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "(imageBackgroundHeroHTML: string) => `\nProvides a hero component that can used to display a hero banner with a background image and a content container. Content container can be used to display page title, subtitle and buttons.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeroImgModule ],\n})\n~~~\n\nand in your HTML...\n\n~~~html\n${imageBackgroundHeroHTML}\n~~~\n\n### LgHeroImgComponent\nThis is the hero banner with a background image that runs across the top of the page. It also controls the functionality to create the \\`overlap\\` between the page content.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`overlap\\`\\` | The amount that the page content overlaps the hero component (rem) | number | 2 | No |\n| \\`\\`imageUrl\\`\\` | Background image url | string | n/a | Yes |\n\n\n#### Configure Grid\n\n~~~html\n<lg-hero-img [overlap]=\"2\">\n  <div lgContainer>\n    <div lgRow>\n      <div [lgCol]=\"12\">\n        <lg-hero-img-card>\n          ...\n        </lg-hero-img-card>\n      </div>\n    </div>\n  </div>\n</lg-hero-img>\n~~~\n\n### LgHeroImgCardComponent\nA container component for displaying content within the hero area. The hero and hero card components are agnostic of the grid layout of the page. You will need to wrap the hero card component with the specific grid that is required.\n\n### LgHeroImgCardTitleComponent\nThis is where the main hero title should be provided. It should be located inside the hero card.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the hero card heading: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n### LgHeroCardSubtitleComponent\nIf the hero has a subtitle it should be located within this component.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the heading in the label: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/icon/icon.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -41687,11 +41805,11 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/page/page.notes.ts",
+                "file": "projects/canopy/src/lib/heading/heading.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\nProvides a page layout with content projection slots for standard header and footer.\n\n## Usage\nThe page component works best when combined with the <a href=\"./?path=/docs/directives-grid--grid\">grid module</a> which can be used to provide a responsive layout for the main content.\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgGridModule, LgPageModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-page>\n  <header lg-header></header>\n  <div lgContainer>\n    <div lgRow>\n      <div\n          lgCol=\"12\"\n          lgColMd=\"8\"\n          lgColMdOffset=\"2\"\n          lgColLg=\"6\"\n          lgColLgOffset=\"3\"\n        >\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card1Content}}</lg-card-content></lg-card>\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card2Content}}</lg-card-content></lg-card>\n      </div>\n    </div>\n  </div>\n  <footer lg-footer></footer>\n</lg-page>\n~~~\n\n## Inputs\n\n### LgPageComponent\n\nContent projection slots\n\n| Name | Description |\n|------|-------------|\n| \\`\\`lg-header\\`\\` | Provides a slot for the standard header component\n| \\`\\`lg-footer\\`\\` | Provides a slot for the standard footer component\n| \\`\\`<default>\\`\\` | Any other components are projected into the central column\n\nIt is possible to wrap the lg-header and lg-footer components and still use the page component.\nYou can do this by using the <a href=\"https://medium.com/ignite-ui/using-ng-content-ngprojectas-1664d7c1d3b\" target=\"_blank\">ngProjectAs</a> attribute.\n\n~~~html\n<lg-page>\n  <app-header ngProjectAs=\"[lg-header]\"></app-header>\n  <router-outlet></router-outlet>\n  <app-footer ngProjectAs=\"[lg-footer]\"></app-footer>\n</lg-page>\n~~~\n`"
+                "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
             },
             {
                 "name": "notes",
@@ -41707,21 +41825,31 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/primary-message/primary-message.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nThe Primary Message is used to communicate key information to the user.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgPrimaryMessageModule ],\n})\n~~~\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`hasRole\\`\\` | If false, removes the role \\`\\`alert\\`\\` from the component | boolean | true | No |\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/promo-card/promo-card.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\nPromo Cards allow you to arrange content in a card-like manner for promotional purposes. Promo Cards are organised by a\nPromo Card List and will be displayed in columns on desktops and stacked on mobile devices.\n\n### Content guidelines\n\nEach Promo Card should respect the following conventions:\n\n- Title - max 33 characters (with spaces)\n- Content - max 140 characters (with spaces)\n- Button - max 20 characters (with spaces)\n- Image - max 620px x 620px\n\nThis is not enforced in the code, but it should be followed as close as possible to ensure optimal user experience.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgPromoCardModule ],\n})\n~~~\n\nand in your HTML, place your Promo Cards in your Promo Card List:\n\n~~~html\n<lg-promo-card-list>\n  <lg-separator [variant]=\"dotted\" lgMargin=\"none\"></lg-separator>\n  <lg-promo-card-list-title [headingLevel]=\"headingLevel\">\n    Get more from Legal &amp; General\n  </lg-promo-card-list-title>\n  <lg-promo-card\n    [variant]=\"variant\">\n    <lg-promo-card-image [imageUrl]=\"imageUrl\"></lg-promo-card-image>\n    <lg-promo-card-title [headingLevel]=\"headingLevelInner\">\n      Need help with Care?\n    </lg-promo-card-title>\n    <lg-promo-card-content>\n      <p>Our care service can help you understand, find and fund care for you or a loved one.</p>\n    </lg-promo-card-content>\n    <lg-promo-card-footer>\n      <button\n        lgMarginBottom=\"none\"\n        lg-button\n        type=\"button\"\n        [variant]=\"variant\">\n        Find out more\n      </button>\n    </lg-promo-card-footer>\n  </lg-promo-card>\n</lg-promo-card-list>\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | Allows the card (list) heading level to be set | number | n/a | Yes |\n| \\`\\`variant\\`\\` | The variant of promo card: \\`\\`solid-white\\`\\`, \\`\\`solid-green\\`\\` | PromoCardVariant | 'solid-white' | No |\n| \\`\\`imageUrl\\`\\` | Identifies the card image | string | n/a | Yes |\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/page/page.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nProvides a page layout with content projection slots for standard header and footer.\n\n## Usage\nThe page component works best when combined with the <a href=\"./?path=/docs/directives-grid--grid\">grid module</a> which can be used to provide a responsive layout for the main content.\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgGridModule, LgPageModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-page>\n  <header lg-header></header>\n  <div lgContainer>\n    <div lgRow>\n      <div\n          lgCol=\"12\"\n          lgColMd=\"8\"\n          lgColMdOffset=\"2\"\n          lgColLg=\"6\"\n          lgColLgOffset=\"3\"\n        >\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card1Content}}</lg-card-content></lg-card>\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card2Content}}</lg-card-content></lg-card>\n      </div>\n    </div>\n  </div>\n  <footer lg-footer></footer>\n</lg-page>\n~~~\n\n## Inputs\n\n### LgPageComponent\n\nContent projection slots\n\n| Name | Description |\n|------|-------------|\n| \\`\\`lg-header\\`\\` | Provides a slot for the standard header component\n| \\`\\`lg-footer\\`\\` | Provides a slot for the standard footer component\n| \\`\\`<default>\\`\\` | Any other components are projected into the central column\n\nIt is possible to wrap the lg-header and lg-footer components and still use the page component.\nYou can do this by using the <a href=\"https://medium.com/ignite-ui/using-ng-content-ngprojectas-1664d7c1d3b\" target=\"_blank\">ngProjectAs</a> attribute.\n\n~~~html\n<lg-page>\n  <app-header ngProjectAs=\"[lg-header]\"></app-header>\n  <router-outlet></router-outlet>\n  <app-footer ngProjectAs=\"[lg-footer]\"></app-footer>\n</lg-page>\n~~~\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/primary-message/primary-message.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nThe Primary Message is used to communicate key information to the user.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgPrimaryMessageModule ],\n})\n~~~\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`hasRole\\`\\` | If false, removes the role \\`\\`alert\\`\\` from the component | boolean | true | No |\n`"
             },
             {
                 "name": "notes",
@@ -41767,16 +41895,6 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/side-nav/side-nav.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nSide Navs are components that allow the user to define a series of navigation items that display content in a predefined area.\n\n### Side Nav Bar\nHere is where the navigation menu items are put. The links, once clicked on, will display their routes'\ncontent in the Side Nav Content component.\nOn mobile devices, the menu is below the content area, instead of to the left.\n\n### Side Nav Bar Link\nThis \\`lgSideNavBarLink\\` directive applies the appropriate styling to the links. It also emits an event when the link is activated.\n\n### Side Nav Bar Footer\nThe footer is below the navigation items and can hold different kinds of content (e.g. a button).\n\n### Side Nav Content\nThis is the predefined area where content is shown. It should always contain a router outlet to be able to display\nthe different nav item routes.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSideNavModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-side-nav>\n  <lg-side-nav-bar label=\"Side Nav Demo\">\n    <a id=\"side-nav-0\"\n       [routerLink]=\"'firstPage'\"\n       [isActive]=\"true\"\n       lgSideNavBarLink\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Overview</lg-side-nav-bar-item-heading>\n      </lg-side-nav-bar-item>\n    </a>\n    <a id=\"side-nav-1\"\n       [routerLink]=\"'secondPage'\"\n       lgSideNavBarLink\n      >\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Personal details</lg-side-nav-bar-item-heading>\n          <lg-side-nav-bar-item-content>Your name, date of birth, marital status and National Insurance Number.</lg-side-nav-bar-item-content>\n      </lg-side-nav-bar-item>\n    </a>\n    <lg-side-nav-bar-footer>\n      <a lg-button lgMarginTop=\"xxl\" variant=\"secondary-dark\" [fullWidth]=\"false\" href=\"#\">Logout</a>\n    </lg-side-nav-bar-footer>\n  </lg-side-nav-bar>\n  <lg-side-nav-content tabindex=\"0\">\n    <router-outlet></router-outlet>\n  </lg-side-nav-content>\n</lg-side-nav>\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-------:|:--------:|\n| isActive | specifies whether or not the navigation link is in an active state | boolean | false | No\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/skeleton/skeleton.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -41787,21 +41905,11 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/spacing/spacing.notes.ts",
+                "file": "projects/canopy/src/lib/side-nav/side-nav.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "(name: string) => `\nThis directive allows for custom ${name.toLowerCase()} to be added without the need to write additional CSS. It's useful for overriding the default ${name.toLowerCase()} on Canopy components, as well as general use within your app. Using this directive ensures that your ${name.toLowerCase()} adheres to the prededfined spacing variables and breakpoints in Canopy. The spacing variables are also available as CSS custom properties (CSS variables) which can be viewed in _**canopy/projects/canopy/src/styles/spacing.scss**_.\n\n## Usage\n\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., Lg${name}Module ],\n})\n~~~\n\nIn your HTML apply the directive to the relevant component. If the default \\`\\`lg${name}\\`\\` attribute has no value, the default ${name.toLowerCase()} will remain. You can also override individual ${name.toLowerCase()} such as \\`\\`${name.toLowerCase()}-top\\`\\` by applying the relevant selector/input (.e.g \\`\\`Lg${name}Top\\`\\` - see **Inputs** below).\n\nPass in either a **Standard Spacing Variant** or a **Responsive Spacing object** (see below).\n\n~~~html\nStandard spacing variant\n<lg-card lg${name}=\"sm\"></lg-card>\n\nResponsive spacing object\n<lg-card [lg${name}]=\"{ md: 'lg', lg: 'xxxl' }\"></lg-card>\n~~~\n\n## Standard vs Responsive Spacing\n\n### Standard Spacing Variant\n\nThis is set of predefined variants which will apply the same ${name.toLowerCase()} at all breakpoints, as defined by the \\`\\`SpacingVariant\\`\\` type. These are:\n\n~~~bash\n'none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxxl'\n~~~\n\n### Repsonsive Spacing Object\n\nYou can apply a responsive spacing object instead, which will apply different ${name.toLowerCase()} at the specified breakpoints, as defined by the \\`\\`SpacingResponsive\\`\\` type. Example:\n\n~~~js\n{\n  md: \"lg\",\n  lg: \"xxxl\"\n}\n~~~\n\nEach **key** is a mobile-first breakpoint from the standard list of available breakpoints: \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`.\n\nEach **value** is a standard spacing variant.\n\nIn the example above, the ${name.toLowerCase()} at the \\`\\`md\\`\\` breakpoint will be \\`\\`lg\\`\\`, and at the \\`\\`lg\\`\\` will be \\`\\`xxxl\\`\\`.\n\n\n### Standard variant examples\n\nApply \\`\\`xxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}Bottom=\"xxl\"></lg-card>\n\n~~~\n\nApply \\`\\`sm\\`\\` ${name.toLowerCase()} to the left and right\n\n~~~html\n\n<lg-card lg${name}Horizontal=\"sm\"></lg-card>\n\n~~~\n\nApply \\`\\`xl\\`\\` ${name.toLowerCase()} all round, but \\`\\`xxxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}=\"xl\" lg${name}Bottom=\"xxxl\"></lg-card>\n\n~~~\n\nApply \\`\\`lg\\`\\` ${name.toLowerCase()} to the top and bottom\n\n~~~html\n\n<lg-card lg${name}Vertical=\"lg\"></lg-card>\n\n~~~\n\n### Responsive examples\n\n\nAt the \\`\\`sm\\`\\` breakpoint apply \\`\\`xl\\`\\` ${name.toLowerCase()}, then at the \\`\\`md\\`\\` breakpoint apply \\`\\`xxxl\\`\\` ${name.toLowerCase()}, all around the component.\n\n~~~html\n\n<lg-card [lg${name}]=\"{ sm: 'lg', md: 'xxxl' }\"></lg-card>\n\n~~~\n\nAt the \\`\\`md\\`\\` breakpoint apply \\`\\`md\\`\\` ${name.toLowerCase()}, then at the \\`\\`lg\\`\\` breakpoint apply \\`\\`sm\\`\\` ${name.toLowerCase()}, at the bottom of the component.\n\n~~~html\n\n<lg-card [lg${name}Bottom]=\"{ md: 'md', lg: 'sm' }\"></lg-card>\n\n~~~\n\n## Inputs\n\nThe current available spacing variants are \\`\\`none\\`\\`, \\`\\`xxxs\\`\\`, \\`\\`xxs\\`\\`, \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`, \\`\\`xxxl\\`\\`, \\`\\`xxxxxl\\`\\`.\n\nThe current available breakpoints are \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lg${name}\\`\\` | The ${name.toLowerCase()} variant applied to all sides | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Top\\`\\` | The ${name.toLowerCase()} variant applied to the top | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Right\\`\\` | The ${name.toLowerCase()} variant applied to the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Bottom\\`\\` | The ${name.toLowerCase()} variant applied to the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Left\\`\\` | The ${name.toLowerCase()} variant applied to the left | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Horizontal\\`\\` | The ${name.toLowerCase()} variant applied to the left and the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Vertical\\`\\` | The ${name.toLowerCase()} variant applied to the top and the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n`"
-            },
-            {
-                "name": "notes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/canopy/src/lib/spinner/spinner.notes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\nLoading spinners are used to notify the users that the next action is being loaded.\nThey are normally used on form submissions or loading cards when the data retrieval is typically slow.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSpinnerModule ],\n})\n~~~\n\nThe spinner component should always be used together with the \\`\\`LgSrAlertMessageDirective\\`\\` as screen reader users should\nbe notified when something has finished loading.\n\n## Inputs\n\n### LgSpinnerComponent\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`variant\\`\\` | The spinner variant | SpinnerVariant ['dark', 'light', 'color', 'inherit'] | 'dark' | No |\n| \\`\\`size\\`\\` | The size of the spinner | SpinnerSize ['sm', 'md'] | 'md' | No |\n| \\`\\`text\\`\\` | The text to show under the spinner | string | undefined | No |\n\nIf the \\`\\`variant\\`\\` is set to  \\`\\`'inherit'\\`\\`, then it will inherit the font colour of it's parent element. This is used on the loading button, where the spinner inherits the font colour of the button.\n`"
+                "defaultValue": "`\nSide Navs are components that allow the user to define a series of navigation items that display content in a predefined area.\n\n### Side Nav Bar\nHere is where the navigation menu items are put. The links, once clicked on, will display their routes'\ncontent in the Side Nav Content component.\nOn mobile devices, the menu is below the content area, instead of to the left.\n\n### Side Nav Bar Link\nThis \\`lgSideNavBarLink\\` directive applies the appropriate styling to the links. It also emits an event when the link is activated.\n\n### Side Nav Bar Footer\nThe footer is below the navigation items and can hold different kinds of content (e.g. a button).\n\n### Side Nav Content\nThis is the predefined area where content is shown. It should always contain a router outlet to be able to display\nthe different nav item routes.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSideNavModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-side-nav>\n  <lg-side-nav-bar label=\"Side Nav Demo\">\n    <a id=\"side-nav-0\"\n       [routerLink]=\"'firstPage'\"\n       [isActive]=\"true\"\n       lgSideNavBarLink\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Overview</lg-side-nav-bar-item-heading>\n      </lg-side-nav-bar-item>\n    </a>\n    <a id=\"side-nav-1\"\n       [routerLink]=\"'secondPage'\"\n       lgSideNavBarLink\n      >\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Personal details</lg-side-nav-bar-item-heading>\n          <lg-side-nav-bar-item-content>Your name, date of birth, marital status and National Insurance Number.</lg-side-nav-bar-item-content>\n      </lg-side-nav-bar-item>\n    </a>\n    <lg-side-nav-bar-footer>\n      <a lg-button lgMarginTop=\"xxl\" variant=\"secondary-dark\" [fullWidth]=\"false\" href=\"#\">Logout</a>\n    </lg-side-nav-bar-footer>\n  </lg-side-nav-bar>\n  <lg-side-nav-content tabindex=\"0\">\n    <router-outlet></router-outlet>\n  </lg-side-nav-content>\n</lg-side-nav>\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-------:|:--------:|\n| isActive | specifies whether or not the navigation link is in an active state | boolean | false | No\n`"
             },
             {
                 "name": "notes",
@@ -41817,6 +41925,16 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/canopy/src/lib/spacing/spacing.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(name: string) => `\nThis directive allows for custom ${name.toLowerCase()} to be added without the need to write additional CSS. It's useful for overriding the default ${name.toLowerCase()} on Canopy components, as well as general use within your app. Using this directive ensures that your ${name.toLowerCase()} adheres to the prededfined spacing variables and breakpoints in Canopy. The spacing variables are also available as CSS custom properties (CSS variables) which can be viewed in _**canopy/projects/canopy/src/styles/spacing.scss**_.\n\n## Usage\n\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., Lg${name}Module ],\n})\n~~~\n\nIn your HTML apply the directive to the relevant component. If the default \\`\\`lg${name}\\`\\` attribute has no value, the default ${name.toLowerCase()} will remain. You can also override individual ${name.toLowerCase()} such as \\`\\`${name.toLowerCase()}-top\\`\\` by applying the relevant selector/input (.e.g \\`\\`Lg${name}Top\\`\\` - see **Inputs** below).\n\nPass in either a **Standard Spacing Variant** or a **Responsive Spacing object** (see below).\n\n~~~html\nStandard spacing variant\n<lg-card lg${name}=\"sm\"></lg-card>\n\nResponsive spacing object\n<lg-card [lg${name}]=\"{ md: 'lg', lg: 'xxxl' }\"></lg-card>\n~~~\n\n## Standard vs Responsive Spacing\n\n### Standard Spacing Variant\n\nThis is set of predefined variants which will apply the same ${name.toLowerCase()} at all breakpoints, as defined by the \\`\\`SpacingVariant\\`\\` type. These are:\n\n~~~bash\n'none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxxl'\n~~~\n\n### Repsonsive Spacing Object\n\nYou can apply a responsive spacing object instead, which will apply different ${name.toLowerCase()} at the specified breakpoints, as defined by the \\`\\`SpacingResponsive\\`\\` type. Example:\n\n~~~js\n{\n  md: \"lg\",\n  lg: \"xxxl\"\n}\n~~~\n\nEach **key** is a mobile-first breakpoint from the standard list of available breakpoints: \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`.\n\nEach **value** is a standard spacing variant.\n\nIn the example above, the ${name.toLowerCase()} at the \\`\\`md\\`\\` breakpoint will be \\`\\`lg\\`\\`, and at the \\`\\`lg\\`\\` will be \\`\\`xxxl\\`\\`.\n\n\n### Standard variant examples\n\nApply \\`\\`xxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}Bottom=\"xxl\"></lg-card>\n\n~~~\n\nApply \\`\\`sm\\`\\` ${name.toLowerCase()} to the left and right\n\n~~~html\n\n<lg-card lg${name}Horizontal=\"sm\"></lg-card>\n\n~~~\n\nApply \\`\\`xl\\`\\` ${name.toLowerCase()} all round, but \\`\\`xxxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}=\"xl\" lg${name}Bottom=\"xxxl\"></lg-card>\n\n~~~\n\nApply \\`\\`lg\\`\\` ${name.toLowerCase()} to the top and bottom\n\n~~~html\n\n<lg-card lg${name}Vertical=\"lg\"></lg-card>\n\n~~~\n\n### Responsive examples\n\n\nAt the \\`\\`sm\\`\\` breakpoint apply \\`\\`xl\\`\\` ${name.toLowerCase()}, then at the \\`\\`md\\`\\` breakpoint apply \\`\\`xxxl\\`\\` ${name.toLowerCase()}, all around the component.\n\n~~~html\n\n<lg-card [lg${name}]=\"{ sm: 'lg', md: 'xxxl' }\"></lg-card>\n\n~~~\n\nAt the \\`\\`md\\`\\` breakpoint apply \\`\\`md\\`\\` ${name.toLowerCase()}, then at the \\`\\`lg\\`\\` breakpoint apply \\`\\`sm\\`\\` ${name.toLowerCase()}, at the bottom of the component.\n\n~~~html\n\n<lg-card [lg${name}Bottom]=\"{ md: 'md', lg: 'sm' }\"></lg-card>\n\n~~~\n\n## Inputs\n\nThe current available spacing variants are \\`\\`none\\`\\`, \\`\\`xxxs\\`\\`, \\`\\`xxs\\`\\`, \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`, \\`\\`xxxl\\`\\`, \\`\\`xxxxxl\\`\\`.\n\nThe current available breakpoints are \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lg${name}\\`\\` | The ${name.toLowerCase()} variant applied to all sides | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Top\\`\\` | The ${name.toLowerCase()} variant applied to the top | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Right\\`\\` | The ${name.toLowerCase()} variant applied to the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Bottom\\`\\` | The ${name.toLowerCase()} variant applied to the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Left\\`\\` | The ${name.toLowerCase()} variant applied to the left | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Horizontal\\`\\` | The ${name.toLowerCase()} variant applied to the left and the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Vertical\\`\\` | The ${name.toLowerCase()} variant applied to the top and the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/canopy/src/lib/table/table.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -41827,11 +41945,11 @@
                 "name": "notes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/tabs/tabs.notes.ts",
+                "file": "projects/canopy/src/lib/spinner/spinner.notes.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\nThe tabs component lets users navigate between related sections of content, displaying one section at a time.\n\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgTabsModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-tabs label=\"Title\" (tabEvent)=\"tabEvent($event)\">\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 1</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere nec leo nec hendrerit. Pellentesque eu lacinia tortor. Donec urna felis, dictum et faucibus et, interdum ut urna. Nam eleifend eleifend mi vel blandit. Morbi rutrum a odio in pharetra. Quisque vitae lacus efficitur, elementum mauris in, porta nisl. Praesent porttitor accumsan ante, sed efficitur nunc placerat in. Etiam non lorem leo. Aenean magna lacus, iaculis at velit non, congue commodo dui. Pellentesque tempus elementum tempor.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 2</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Maecenas laoreet tristique ligula, mollis ullamcorper est faucibus eget. Aenean quis placerat arcu. Sed efficitur odio nunc, id facilisis orci accumsan eget. Nunc feugiat elit eget imperdiet faucibus. Maecenas faucibus sit amet nisi a ultricies. Donec id scelerisque ante, eget tempus dui. Fusce semper ex eu lorem pellentesque tristique. Proin non augue quis orci lobortis rhoncus. Aliquam quis luctus ipsum. Maecenas vulputate porta mauris, id lacinia turpis feugiat sed. Aenean et commodo elit, a dignissim massa. Fusce facilisis laoreet orci quis vehicula. Curabitur eu lacus vitae libero laoreet hendrerit at quis magna.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 3</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Phasellus enim sem, dignissim nec ullamcorper id, euismod in magna. Sed at egestas urna. Donec at nibh eros. Pellentesque at nunc in elit egestas pellentesque a quis nunc. Praesent commodo risus in metus tincidunt pretium. Nulla vehicula sem lectus, ac eleifend velit pellentesque a. Proin et varius ante, nec venenatis nulla. Pellentesque pharetra risus lorem, et congue ligula interdum volutpat. Donec ut iaculis metus. Nunc rutrum vestibulum ex nec condimentum. Pellentesque nec volutpat quam. Etiam tortor arcu, eleifend ut ante id, ullamcorper tristique libero. Praesent imperdiet, orci in tincidunt aliquet, quam sapien convallis nunc, non maximus dui lacus sed lacus. Suspendisse ut tortor dui.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 4</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Pellentesque finibus ac libero ac rutrum. Morbi faucibus, dui et efficitur posuere, urna ipsum vehicula dui, in placerat risus felis et lectus. Vivamus imperdiet nulla nisi, eget varius mi cursus nec. Suspendisse quis risus eleifend, pretium lectus eget, condimentum leo. Aliquam faucibus at mi sit amet volutpat. Nunc nec orci sapien. Duis augue quam, bibendum in enim a, ultricies luctus mi. Aliquam eleifend magna est, eget sagittis massa malesuada quis. Maecenas mattis tortor sit amet mi sagittis, vitae aliquam dui rhoncus. Aenean sed erat eu ante ornare sollicitudin in et est.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n</lg-tabs>\n~~~\n\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`label\\`\\` | The value to apply to the aria label | string | tabs | Yes |\n\n## Outputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`tabEvent\\`\\` | Event emitted when the selected tab changes | EventEmitter<{ index: number }> | n/a | No |\n`"
+                "defaultValue": "`\nLoading spinners are used to notify the users that the next action is being loaded.\nThey are normally used on form submissions or loading cards when the data retrieval is typically slow.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSpinnerModule ],\n})\n~~~\n\nThe spinner component should always be used together with the \\`\\`LgSrAlertMessageDirective\\`\\` as screen reader users should\nbe notified when something has finished loading.\n\n## Inputs\n\n### LgSpinnerComponent\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`variant\\`\\` | The spinner variant | SpinnerVariant ['dark', 'light', 'color', 'inherit'] | 'dark' | No |\n| \\`\\`size\\`\\` | The size of the spinner | SpinnerSize ['sm', 'md'] | 'md' | No |\n| \\`\\`text\\`\\` | The text to show under the spinner | string | undefined | No |\n\nIf the \\`\\`variant\\`\\` is set to  \\`\\`'inherit'\\`\\`, then it will inherit the font colour of it's parent element. This is used on the loading button, where the spinner inherits the font colour of the button.\n`"
             },
             {
                 "name": "notes",
@@ -41842,6 +41960,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\nThis directive allows you to add one of the five common colour variants to any Canopy component, such as \\`\\`info\\`\\` and \\`\\`success\\`\\`.\n\nThey are already applied to existing Canopy components which use these variants out of the box, such as <a href=\"./?path=/story/components-alert--standard\">Alert</a>, <a href=\"./?path=/story/components-details--standard\">Detail</a> and <a href=\"./?path=/story/components-form-form-validation--form-validation\">Form Validation</a>, but this directive allows you to use them anywhere where required.\n\nThis can be useful where you need the particular colour treatment (like the \\`\\`success\\`\\` variant for example), but your use-case does not fit one of the existing components.\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgVariantModule ],\n})\n~~~\n\n## Inputs\n\nThe current available variants are:\n* \\`\\`generic\\`\\`\n* \\`\\`info\\`\\`\n* \\`\\`success\\`\\`\n* \\`\\`warning\\`\\`\n* \\`\\`error\\`\\`\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgVariant\\`\\` | The name of variant desired | string | null | No |\n`"
+            },
+            {
+                "name": "notes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/tabs/tabs.notes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\nThe tabs component lets users navigate between related sections of content, displaying one section at a time.\n\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgTabsModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-tabs label=\"Title\" (tabEvent)=\"tabEvent($event)\">\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 1</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere nec leo nec hendrerit. Pellentesque eu lacinia tortor. Donec urna felis, dictum et faucibus et, interdum ut urna. Nam eleifend eleifend mi vel blandit. Morbi rutrum a odio in pharetra. Quisque vitae lacus efficitur, elementum mauris in, porta nisl. Praesent porttitor accumsan ante, sed efficitur nunc placerat in. Etiam non lorem leo. Aenean magna lacus, iaculis at velit non, congue commodo dui. Pellentesque tempus elementum tempor.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 2</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Maecenas laoreet tristique ligula, mollis ullamcorper est faucibus eget. Aenean quis placerat arcu. Sed efficitur odio nunc, id facilisis orci accumsan eget. Nunc feugiat elit eget imperdiet faucibus. Maecenas faucibus sit amet nisi a ultricies. Donec id scelerisque ante, eget tempus dui. Fusce semper ex eu lorem pellentesque tristique. Proin non augue quis orci lobortis rhoncus. Aliquam quis luctus ipsum. Maecenas vulputate porta mauris, id lacinia turpis feugiat sed. Aenean et commodo elit, a dignissim massa. Fusce facilisis laoreet orci quis vehicula. Curabitur eu lacus vitae libero laoreet hendrerit at quis magna.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 3</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Phasellus enim sem, dignissim nec ullamcorper id, euismod in magna. Sed at egestas urna. Donec at nibh eros. Pellentesque at nunc in elit egestas pellentesque a quis nunc. Praesent commodo risus in metus tincidunt pretium. Nulla vehicula sem lectus, ac eleifend velit pellentesque a. Proin et varius ante, nec venenatis nulla. Pellentesque pharetra risus lorem, et congue ligula interdum volutpat. Donec ut iaculis metus. Nunc rutrum vestibulum ex nec condimentum. Pellentesque nec volutpat quam. Etiam tortor arcu, eleifend ut ante id, ullamcorper tristique libero. Praesent imperdiet, orci in tincidunt aliquet, quam sapien convallis nunc, non maximus dui lacus sed lacus. Suspendisse ut tortor dui.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n  <lg-tab-item>\n    <lg-tab-item-heading>Tab 4</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">\n        <p>Pellentesque finibus ac libero ac rutrum. Morbi faucibus, dui et efficitur posuere, urna ipsum vehicula dui, in placerat risus felis et lectus. Vivamus imperdiet nulla nisi, eget varius mi cursus nec. Suspendisse quis risus eleifend, pretium lectus eget, condimentum leo. Aliquam faucibus at mi sit amet volutpat. Nunc nec orci sapien. Duis augue quam, bibendum in enim a, ultricies luctus mi. Aliquam eleifend magna est, eget sagittis massa malesuada quis. Maecenas mattis tortor sit amet mi sagittis, vitae aliquam dui rhoncus. Aenean sed erat eu ante ornare sollicitudin in et est.</p>\n      </div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n</lg-tabs>\n~~~\n\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`label\\`\\` | The value to apply to the aria label | string | tabs | Yes |\n\n## Outputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`tabEvent\\`\\` | Event emitted when the selected tab changes | EventEmitter<{ index: number }> | n/a | No |\n`"
             },
             {
                 "name": "notes",
@@ -43045,11 +43173,11 @@
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/heading/heading.stories.ts",
+                "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n  <lg-heading [level]=\"level\">{{content}}</lg-heading>\n`"
+                "defaultValue": "`\n${imageBackgroundHeroHTML}\n${bodyHTML}\n`"
             },
             {
                 "name": "template",
@@ -43065,21 +43193,21 @@
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\n${imageBackgroundHeroHTML}\n${bodyHTML}\n`"
-            },
-            {
-                "name": "template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/link-menu/link-menu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\n<lg-link-menu>\n  <a href=\"#\" *ngFor=\"let item of menuItems\">\n    <lg-link-menu-item>\n      <lg-link-menu-item-heading>{{ item.title }}</lg-link-menu-item-heading>\n      <lg-link-menu-item-content *ngIf=\"item.description\">\n        {{ item.description }}\n      </lg-link-menu-item-content>\n    </lg-link-menu-item>\n  </a>\n</lg-link-menu>`"
+            },
+            {
+                "name": "template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/heading/heading.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n  <lg-heading [level]=\"level\">{{content}}</lg-heading>\n`"
             },
             {
                 "name": "template",
@@ -43145,16 +43273,6 @@
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/spinner/spinner.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\n<lg-spinner [size]=\"size\" [variant]=\"variant\" [text]=\"text ? text : null\"></lg-spinner>\n`"
-            },
-            {
-                "name": "template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/canopy/src/lib/sr-alert-message/sr-alert-message.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -43165,11 +43283,11 @@
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/tabs/tabs.stories.ts",
+                "file": "projects/canopy/src/lib/spinner/spinner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n<lg-tabs\n  label=\"Annuities\"\n  (tabEvent)=\"tabEvent($event)\"\n  [lgMarginRight]=\"'none'\"\n  [lgMarginBottom]=\"'none'\"\n  [lgMarginLeft]=\"'none'\"\n>\n  <lg-tab-item *ngFor=\"let tab of tabs\">\n    <lg-tab-item-heading>{{ tab.header }}</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">{{ tab.content }}</div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n</lg-tabs>\n`"
+                "defaultValue": "`\n<lg-spinner [size]=\"size\" [variant]=\"variant\" [text]=\"text ? text : null\"></lg-spinner>\n`"
             },
             {
                 "name": "template",
@@ -43185,21 +43303,21 @@
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/alert/docs/alert.stories.ts",
+                "file": "projects/canopy/src/lib/tabs/tabs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n<lg-alert\n  [showIcon]=\"showIcon\"\n  [variant]=\"variant\">\n  {{content}} Here is some <a href=\"#\"> link text</a>.\n</lg-alert>\n`"
+                "defaultValue": "`\n<lg-tabs\n  label=\"Annuities\"\n  (tabEvent)=\"tabEvent($event)\"\n  [lgMarginRight]=\"'none'\"\n  [lgMarginBottom]=\"'none'\"\n  [lgMarginLeft]=\"'none'\"\n>\n  <lg-tab-item *ngFor=\"let tab of tabs\">\n    <lg-tab-item-heading>{{ tab.header }}</lg-tab-item-heading>\n    <lg-tab-item-content>\n      <div class=\"lg-tabs__content-section\">{{ tab.content }}</div>\n    </lg-tab-item-content>\n  </lg-tab-item>\n</lg-tabs>\n`"
             },
             {
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/canopy/src/lib/button/docs/button-group.stories.ts",
+                "file": "projects/canopy/src/lib/alert/docs/alert.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n<lg-button-group>\n  <button\n    lg-button\n    variant=\"primary-dark\"\n  >Button</button>\n  <a\n    lg-button\n    href=\"#\"\n    variant=\"secondary-dark\"\n  >Link</a>\n</lg-button-group>\n`"
+                "defaultValue": "`\n<lg-alert\n  [showIcon]=\"showIcon\"\n  [variant]=\"variant\">\n  {{content}} Here is some <a href=\"#\"> link text</a>.\n</lg-alert>\n`"
             },
             {
                 "name": "template",
@@ -43290,6 +43408,16 @@
                 "deprecationMessage": "",
                 "type": "string",
                 "defaultValue": "'<p>{{text | kebabCase}}</p>'"
+            },
+            {
+                "name": "template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/button/docs/button-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n<lg-button-group>\n  <button\n    lg-button\n    variant=\"primary-dark\"\n  >Button</button>\n  <a\n    lg-button\n    href=\"#\"\n    variant=\"secondary-dark\"\n  >Link</a>\n</lg-button-group>\n`"
             },
             {
                 "name": "textWithDoubleIcon",
@@ -43530,6 +43658,26 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[ 'generic', 'info', 'success', 'warning', 'error' ]"
+            },
+            {
+                "name": "welcomeBenefitsCards",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n  <div class=\"welcome\">\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"stopwatch\"></lg-brand-icon>\n      <p>Reduce time and cost of building applications</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"design-library\"></lg-brand-icon>\n      <p>Ready-made researched and tested design patterns</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"customer\"></lg-brand-icon>\n      <p>Consistent customer experience</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <img src=\"landg-logo-colour.svg\" alt=\"\"/>\n      <p>Plays nicely with L&G brand assets</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"accessible\"></lg-brand-icon>\n      <p>Accessible to a minimum of AA compliance</p>\n    </div>\n  </div>\n`"
+            },
+            {
+                "name": "welcomeHeadingTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n  <h1 class=\"lg-font--expressive lg-font-size-7\">\n    <span class=\"welcome-heading no-wrap\">Welcome to Canopy,</span>\n    <br/>\n    <span class=\"no-wrap\">The digital design system</span>\n    <br/>\n    <span class=\"no-wrap\">from Legal and General.</span>\n  </h1>\n  `"
             },
             {
                 "name": "withButtonSuffix",
@@ -45170,6 +45318,120 @@
                     "defaultValue": "`\n<lg-font-sizes-panel [isProductiveFont]=\"isProductiveFont\"></lg-font-sizes-panel>\n`"
                 }
             ],
+            "projects/canopy/src/lib/docs/welcome.stories.ts": [
+                {
+                    "name": "benefitsStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "benefitsTemplate.bind({})"
+                },
+                {
+                    "name": "benefitsTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<WelcomeBenefitsCardsComponent>",
+                    "defaultValue": "(args: WelcomeBenefitsCardsComponent) => ({\n  props: args,\n  template: welcomeBenefitsCards,\n  styles: [\n    `\n      .welcome {\n        --brand-icon-fill-primary: var(--color-sky-blue);\n      }\n    `\n  ],\n})"
+                },
+                {
+                    "name": "headingStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "headingTemplate.bind({})"
+                },
+                {
+                    "name": "headingTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<WelcomeHeadingComponent>",
+                    "defaultValue": "(args: WelcomeHeadingComponent) => ({\n  props: args,\n  template: welcomeHeadingTemplate,\n  styles: [\n    `\n      .welcome-heading {\n        color: var(--color-super-blue);\n      }\n    `,\n  ],\n})"
+                },
+                {
+                    "name": "welcomeBenefitsCards",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n  <div class=\"welcome\">\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"stopwatch\"></lg-brand-icon>\n      <p>Reduce time and cost of building applications</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"design-library\"></lg-brand-icon>\n      <p>Ready-made researched and tested design patterns</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"customer\"></lg-brand-icon>\n      <p>Consistent customer experience</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <img src=\"landg-logo-colour.svg\" alt=\"\"/>\n      <p>Plays nicely with L&G brand assets</p>\n    </div>\n\n    <div class=\"welcome-card\">\n      <lg-brand-icon name=\"accessible\"></lg-brand-icon>\n      <p>Accessible to a minimum of AA compliance</p>\n    </div>\n  </div>\n`"
+                },
+                {
+                    "name": "welcomeHeadingTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n  <h1 class=\"lg-font--expressive lg-font-size-7\">\n    <span class=\"welcome-heading no-wrap\">Welcome to Canopy,</span>\n    <br/>\n    <span class=\"no-wrap\">The digital design system</span>\n    <br/>\n    <span class=\"no-wrap\">from Legal and General.</span>\n  </h1>\n  `"
+                }
+            ],
+            "projects/canopy/src/lib/hero-img/hero-img.stories.ts": [
+                {
+                    "name": "bodyHTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n  <div lgContainer>\n    <div lgRow>\n      <div [lgCol]=\"12\">\n        <lg-card>\n          <lg-card-content>\n            <p>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n            Fusce iaculis nunc vel pulvinar molestie. Quisque porta\n            interdum ligula, in pellentesque purus ultrices sed.\n            Praesent euismod nisi neque, eget varius eros consequat\n            eget. Morbi vulputate tincidunt risus, quis facilisis dui\n            interdum nec. Vestibulum et vulputate purus. Phasellus in\n            luctus nunc, vehicula convallis erat. Nunc dignissim nulla\n            at mattis efficitur. Nunc tempor auctor enim, in hendrerit\n            neque blandit sit amet. Donec efficitur mauris ut molestie\n            lobortis. Integer nec consectetur odio, ut aliquam tortor.\n            </p>\n          </lg-card-content>\n        </lg-card>\n      </div>\n    </div>\n  </div>\n`"
+                },
+                {
+                    "name": "heroImg",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "heroImgStory.bind({})"
+                },
+                {
+                    "name": "heroImgStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LgHeroImgComponent>",
+                    "defaultValue": "(args: LgHeroImgComponent) => ({\n  props: args,\n  template,\n})"
+                },
+                {
+                    "name": "imageBackgroundHeroHTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n  <lg-hero-img [imageUrl]=\"imageUrl\" [overlap]=\"overlap\">\n    <div lgContainer>\n      <div lgRow>\n        <div [lgCol]=\"12\" [lgColLg]=\"6\" [lgColMd]=\"12\">\n          <lg-hero-img-card>\n            <lg-hero-img-card-title [headingLevel]=\"1\">\n              {{title}}\n            </lg-hero-img-card-title>\n            <lg-hero-img-card-subtitle [headingLevel]=\"2\">\n              {{subTitle}}\n            </lg-hero-img-card-subtitle>\n          </lg-hero-img-card>\n        </div>\n      </div>\n    </div>\n  </lg-hero-img>\n`"
+                },
+                {
+                    "name": "template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n${imageBackgroundHeroHTML}\n${bodyHTML}\n`"
+                }
+            ],
             "projects/canopy/src/lib/hero/hero.stories.ts": [
                 {
                     "name": "bodyHTML",
@@ -45260,58 +45522,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`<lg-hero [overlap]=\"overlap\" lgMarginTop=\"none\">${productHeroHTML}</lg-hero>${bodyHTML}`"
-                }
-            ],
-            "projects/canopy/src/lib/hero-img/hero-img.stories.ts": [
-                {
-                    "name": "bodyHTML",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\n  <div lgContainer>\n    <div lgRow>\n      <div [lgCol]=\"12\">\n        <lg-card>\n          <lg-card-content>\n            <p>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n            Fusce iaculis nunc vel pulvinar molestie. Quisque porta\n            interdum ligula, in pellentesque purus ultrices sed.\n            Praesent euismod nisi neque, eget varius eros consequat\n            eget. Morbi vulputate tincidunt risus, quis facilisis dui\n            interdum nec. Vestibulum et vulputate purus. Phasellus in\n            luctus nunc, vehicula convallis erat. Nunc dignissim nulla\n            at mattis efficitur. Nunc tempor auctor enim, in hendrerit\n            neque blandit sit amet. Donec efficitur mauris ut molestie\n            lobortis. Integer nec consectetur odio, ut aliquam tortor.\n            </p>\n          </lg-card-content>\n        </lg-card>\n      </div>\n    </div>\n  </div>\n`"
-                },
-                {
-                    "name": "heroImg",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "heroImgStory.bind({})"
-                },
-                {
-                    "name": "heroImgStory",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<LgHeroImgComponent>",
-                    "defaultValue": "(args: LgHeroImgComponent) => ({\n  props: args,\n  template,\n})"
-                },
-                {
-                    "name": "imageBackgroundHeroHTML",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\n  <lg-hero-img [imageUrl]=\"imageUrl\" [overlap]=\"overlap\">\n    <div lgContainer>\n      <div lgRow>\n        <div [lgCol]=\"12\" [lgColLg]=\"6\" [lgColMd]=\"12\">\n          <lg-hero-img-card>\n            <lg-hero-img-card-title [headingLevel]=\"1\">\n              {{title}}\n            </lg-hero-img-card-title>\n            <lg-hero-img-card-subtitle [headingLevel]=\"2\">\n              {{subTitle}}\n            </lg-hero-img-card-subtitle>\n          </lg-hero-img-card>\n        </div>\n      </div>\n    </div>\n  </lg-hero-img>\n`"
-                },
-                {
-                    "name": "template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/hero-img/hero-img.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\n${imageBackgroundHeroHTML}\n${bodyHTML}\n`"
                 }
             ],
             "projects/canopy/src/lib/brand-icon/brand-icons.interface.ts": [
@@ -50886,18 +51096,6 @@
                     "defaultValue": "[\n  LgAccordionComponent,\n  LgAccordionItemComponent,\n  LgAccordionPanelHeadingComponent,\n  LgAccordionItemContentDirective,\n]"
                 }
             ],
-            "projects/canopy/src/lib/card/card.module.ts": [
-                {
-                    "name": "components",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/card/card.module.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  LgCardComponent,\n  LgCardHeaderComponent,\n  LgCardTitleComponent,\n  LgCardFooterComponent,\n  LgCardSubtitleComponent,\n  LgCardPrincipleDataPointComponent,\n  LgCardPrincipleDataPointLabelComponent,\n  LgCardPrincipleDataPointValueComponent,\n  LgCardPrincipleDataPointDateComponent,\n  LgCardContentComponent,\n  LgCardToggableContentComponent,\n]"
-                }
-            ],
             "projects/canopy/src/lib/carousel/carousel.module.ts": [
                 {
                     "name": "components",
@@ -50908,6 +51106,18 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[ LgCarouselItemComponent, LgCarouselComponent ]"
+                }
+            ],
+            "projects/canopy/src/lib/card/card.module.ts": [
+                {
+                    "name": "components",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/card/card.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  LgCardComponent,\n  LgCardHeaderComponent,\n  LgCardTitleComponent,\n  LgCardFooterComponent,\n  LgCardSubtitleComponent,\n  LgCardPrincipleDataPointComponent,\n  LgCardPrincipleDataPointLabelComponent,\n  LgCardPrincipleDataPointValueComponent,\n  LgCardPrincipleDataPointDateComponent,\n  LgCardContentComponent,\n  LgCardToggableContentComponent,\n]"
                 }
             ],
             "projects/canopy/src/lib/link-menu/link-menu.module.ts": [
@@ -50934,18 +51144,6 @@
                     "defaultValue": "[\n  LgModalComponent,\n  LgModalTriggerDirective,\n  LgModalHeaderComponent,\n  LgModalBodyComponent,\n  LgModalFooterComponent,\n  LgModalBodyTimerComponent,\n]"
                 }
             ],
-            "projects/canopy/src/lib/primary-message/primary-message.module.ts": [
-                {
-                    "name": "components",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/primary-message/primary-message.module.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  LgPrimaryMessageComponent,\n  LgPrimaryMessageTitleComponent,\n  LgPrimaryMessageDescriptionComponent,\n]"
-                }
-            ],
             "projects/canopy/src/lib/promo-card/promo-card.module.ts": [
                 {
                     "name": "components",
@@ -50956,6 +51154,18 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n  LgPromoCardComponent,\n  LgPromoCardListComponent,\n  LgPromoCardTitleComponent,\n  LgPromoCardFooterComponent,\n  LgPromoCardContentComponent,\n  LgPromoCardImageComponent,\n  LgPromoCardListTitleComponent,\n]"
+                }
+            ],
+            "projects/canopy/src/lib/primary-message/primary-message.module.ts": [
+                {
+                    "name": "components",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/primary-message/primary-message.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  LgPrimaryMessageComponent,\n  LgPrimaryMessageTitleComponent,\n  LgPrimaryMessageDescriptionComponent,\n]"
                 }
             ],
             "projects/canopy/src/lib/side-nav/side-nav.module.ts": [
@@ -51892,18 +52102,6 @@
                     "defaultValue": "`\n<p><strong>Change viewport width to see the card appear at specified breakpoint</strong></p>\n<pre>lgShowAt=\"{{lgShowAt}}\"</pre>\n<lg-separator></lg-separator>\n${directiveTemplate}\n`"
                 }
             ],
-            "projects/canopy-test-app/src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy-test-app/src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true,\n}"
-                }
-            ],
             "projects/canopy-test-app/src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -51914,6 +52112,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n}"
+                }
+            ],
+            "projects/canopy-test-app/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy-test-app/src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n}"
                 }
             ],
             "projects/canopy/src/lib/quick-action/quick-action.stories.ts": [
@@ -55442,6 +55652,18 @@
                     "defaultValue": "0"
                 }
             ],
+            "projects/canopy/src/lib/forms/label/label.component.ts": [
+                {
+                    "name": "nextUniqueId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/forms/label/label.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "0"
+                }
+            ],
             "projects/canopy/src/lib/forms/input/input-field.component.ts": [
                 {
                     "name": "nextUniqueId",
@@ -55460,18 +55682,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/canopy/src/lib/forms/input/input.directive.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "defaultValue": "0"
-                }
-            ],
-            "projects/canopy/src/lib/forms/label/label.component.ts": [
-                {
-                    "name": "nextUniqueId",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/forms/label/label.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "number",
@@ -55598,18 +55808,6 @@
                     "defaultValue": "`\nProvides a way of adding common brand icons.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgBrandIconModule ],\n})\n~~~\n\nImport the \\`LgBrandIconRegistry\\` service and register your brand icons inside your module:\n\n~~~js\n// import the desired icon\nimport { lgBrandIconSun } from '@legal-and-general/canopy';\n\nexport class AppModule {\n  constructor(private brandIconRegistry: LgBrandIconRegistry) {\n    // register the icon using the \\`brandIconRegistry\\` service\n    this.brandIconRegistry.registerBrandIcon([\n      lgBrandIconSun\n    ]);\n  }\n}\n~~~\n\nYour HTML:\n\n~~~html\n<!-- with default size and colour -->\n<lg-brand-icon name=\"sun\"></lg-brand-icon>\n\n<!-- with a size set -->\n<lg-brand-icon name=\"sun\" size=\"sm\"></lg-brand-icon>\n\n<!-- with a colour set -->\n<lg-brand-icon name=\"sun\" colour=\"--color-lily-green\"></lg-brand-icon>\n\n<!-- with the half tone colour set -->\n<lg-brand-icon name=\"sun\" halfToneColour=\"--color-lily-green\"></lg-brand-icon>\n\n<!-- with the outlines colour set -->\n<lg-brand-icon name=\"sun\" outlinesColour=\"--color-lily-green\"></lg-brand-icon>\n~~~\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`name\\`\\` | the name of the icon | string | undefined | yes |\n| \\`\\`size\\`\\` | the size of the icon | BrandIconSize | 'sm' | no |\n| \\`\\`colour\\`\\` | the specific colour of the icon (for global colours see the \"Branding\" section below) | css variable as a string | undefined | no |\n| \\`\\`halfToneColour\\`\\` | the specific half tone (dots) colour of the icon | string * | undefined | no |\n| \\`\\`outlinesColour\\`\\` | the specific outlines colour of the icon | string * | undefined | no |\n\n\\\\* if using a css variable only specify \\`--the-variable\\`\n\n_Note that all the colour inputs can be made invisible by passing \\`--color-transparent\\`._\n\n## Branding / Colours\nThe yellow fill colour of the brand icons can be changed globally  by overriding the \\`--brand-icon-fill-primary\\` css variable. Note that changing this variable will update the fill colour of all the icons.\n\nTo change the colour of a specific icon use the \\`colour\\` input on the component.\n\nThe half tone and outlines colours can only be applied to a specific icon using the inputs on the component.\n`"
                 }
             ],
-            "projects/canopy/src/lib/data-point/data-point.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/data-point/data-point.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nDisplay data organised by heading and value. A Data Point can be used on it's own, or grouped into a Data Point List where each one will be displayed horizontally and given a list-item role.\n\nImport the Data Point module in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDataPointModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| headingLevel | Allows the heading level to be set | number | n/a | Yes |\n`"
-                }
-            ],
             "projects/canopy/src/lib/carousel/carousel.notes.ts": [
                 {
                     "name": "notes",
@@ -55622,18 +55820,6 @@
                     "defaultValue": "`\nCarousels allow customers to quickly navigate through grouped sections of content.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgCarouselModule ],\n})\n~~~\n\n## Inputs\n\n| Name                  | Description                                                                                              |  Type   |  Default  | Required |\n| --------------------- | -------------------------------------------------------------------------------------------------------- | :-----: | :-------: | :------: |\n| \\`\\`loopMode\\`\\`      | Allows the carousel to navigation to loop when the first or last item is active.                         | boolean |   false   |   No     |\n| \\`\\`slideDuration\\`\\` | Duration in milliseconds of the transition between slides.                                               | number  |   500     |   No     |\n| \\`\\`description\\`\\`   | Text used to describe the carousel content for screen readers. This is visually hidden.                  | string  | undefined |   Yes    |\n| \\`\\`headingLevel\\`\\`  | The heading level of the description: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\`   | number  | undefined |   Yes    |\n| \\`\\`autoPlay\\`\\`      | Enables auto play mode when set to true.                                                                 | boolean |   false   |   No     |\n| \\`\\`autoPlayDelay\\`\\` | Delay time in milliseconds to switch to next slide when autoPlay mode is set to true.                    | number  |   2000    |   No     |\n\n\\`PlayCarousel\\` and \\`PauseCarousel\\` methods can be exposed by targeting the Carousel with \\`ViewChild\\` decorators.\n`"
                 }
             ],
-            "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
-                }
-            ],
             "projects/canopy/src/lib/filter-container/filter-container.notes.ts": [
                 {
                     "name": "notes",
@@ -55644,6 +55830,30 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\nAn expanding panel which reveals filter controls, which filter a set of results.\n\nThe toggle button is always positioned to the right of the containing element.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgFilterContainerModule ],\n})\n~~~\n\nPlease see the code below to view how to implement the pattern.\n\nThe toggle button **must have** the \\`lgButtonToggle\\` directive on it for the component to work properly.\n\nMore information on how to use the \\`lgButtonToggle\\` directive is available in the <a href=\"./?path=/docs/components-button-guide--page\">button documentation</a>. Note that there is no need to set the \\`id\\` and \\`ariaControls\\` properties in this case as they are already handled by the \\`LgFilterContainerComponent\\`.\n`"
+                }
+            ],
+            "projects/canopy/src/lib/data-point/data-point.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/data-point/data-point.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nDisplay data organised by heading and value. A Data Point can be used on it's own, or grouped into a Data Point List where each one will be displayed horizontally and given a list-item role.\n\nImport the Data Point module in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgDataPointModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| headingLevel | Allows the heading level to be set | number | n/a | Yes |\n`"
+                }
+            ],
+            "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/feature-toggle/feature-toggle.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nThis module allows you to enable and disable features by using the \\`lgFeatureToggle\\` directive and passing an observable of the toggle's configuration to the module.\n\n## Usage\n\nImport the module in your core component, e.g.:\n\n~~~\n@NgModule({\n  ...\n  imports: [\n    ...,\n    LgFeatureToggleModule.forRoot({\n      deps: [Store],\n      useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n    })\n  ],\n})\n~~~\n\nand also import \\`LgFeatureToggleModule\\` (without the \\`forRoot\\`) in the modules that will need it.\n\n\\`useFactory\\` returns an observable of a config file structured as below:\n\n~~~\n{\n  \"exampleFeature\": true,\n  \"anotherExampleFeature\": false\n}\n~~~\n\nThe default behaviour is to show a feature if it's undefined, but we can override it by passing an optional object with defaultHide set to true like this:\n\n~~~\nLgFeatureToggleModule.forRoot({\n  deps: [Store],\n  useFactory: (store: Store<CoreState>) => store.select(getFeatureToggles)\n  },\n  {\n    defaultHide: true\n  }\n)\n~~~\n\nIn your component(s) add the structural directive like in the example below:\n\n~~~\n<div *lgFeatureToggle=\"'exampleFeature'\">\n  <p>The enabled feature</p>\n</div>\n\n<div *lgFeatureToggle=\"'anotherExampleFeature'\">\n  <p>The disabled feature</p>\n</div>\n~~~\n\n## FeatureToggleGuard configuration\n\nTo use the FeatureToggleGuard you need to add it to your routes configuration in the usual canActive, canActivateChild, canLoad, and then add in the data property like\n\n~~~\ndata: {\n  featureToggle: 'myToggle',\n},\n~~~\n\nif you use canActivateChild, child route definitions can add its own featureToggle in their data, and the path is only valid when all the featureToggle flags of each route segment are true\n\nExample with a lazy loading route\n\n~~~\n{\n  path: 'parent',\n  loadChildren: () => import('./parent/parent.module').then(m => m.ParentnModule),\n  canActivate: [ FeatureToggleGuard ],\n  canActivateChild: [ FeatureToggleGuard ],\n  canLoad: [ FeatureToggleGuard ],\n  data: {\n    featureToggle: 'parentToggle',\n  },\n},\n~~~\n\nExample of inner routes (route definition inside ParentModule)\n\n~~~\n{\n  path: 'child',\n  component: ChildContainerComponent,\n  data: {\n    featureToggle: 'childToggle',\n  },\n},\n~~~\n`"
                 }
             ],
             "projects/canopy/src/lib/focus/focus.notes.ts": [
@@ -55694,16 +55904,16 @@
                     "defaultValue": "`\nProvides a generic header for display at the top of the page.\nThe current implementation is brand agnostic but eventually the branding should be encapsulated into the component.\nThe component uses an attribute selector which allows you to use the html <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header\" target=\"_blank\">header</a> element as the host.\n\nThe logo height is set internally with different heights for different screen sizes, it can not currently be modified to ensure consistency.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeaderModule ],\n})\n~~~\n\nand for the HTML structure see the code snippets below.\n\n## Inputs\n### LgHeaderLogoComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`src\\`\\` | A url src for the logo | string | undefined | Yes |\n| \\`\\`alt\\`\\` | alt text to display alongside the logo | string | '' | Yes |\n| \\`\\`href\\`\\` | Url link if the logo is clickable | string | undefined | No |\n\n## Changing the width of the logos\nThe width of the logos can be changed by overriding the values of the below css variables:\n\n~~~css\n--header-logo-width\n--header-logo-width-lg\n--header-second-logo-width\n--header-second-logo-width-lg\n~~~\n`"
                 }
             ],
-            "projects/canopy/src/lib/heading/heading.notes.ts": [
+            "projects/canopy/src/lib/hero-img/hero-img.notes.ts": [
                 {
                     "name": "notes",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/canopy/src/lib/heading/heading.notes.ts",
+                    "file": "projects/canopy/src/lib/hero-img/hero-img.notes.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
+                    "defaultValue": "(imageBackgroundHeroHTML: string) => `\nProvides a hero component that can used to display a hero banner with a background image and a content container. Content container can be used to display page title, subtitle and buttons.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeroImgModule ],\n})\n~~~\n\nand in your HTML...\n\n~~~html\n${imageBackgroundHeroHTML}\n~~~\n\n### LgHeroImgComponent\nThis is the hero banner with a background image that runs across the top of the page. It also controls the functionality to create the \\`overlap\\` between the page content.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`overlap\\`\\` | The amount that the page content overlaps the hero component (rem) | number | 2 | No |\n| \\`\\`imageUrl\\`\\` | Background image url | string | n/a | Yes |\n\n\n#### Configure Grid\n\n~~~html\n<lg-hero-img [overlap]=\"2\">\n  <div lgContainer>\n    <div lgRow>\n      <div [lgCol]=\"12\">\n        <lg-hero-img-card>\n          ...\n        </lg-hero-img-card>\n      </div>\n    </div>\n  </div>\n</lg-hero-img>\n~~~\n\n### LgHeroImgCardComponent\nA container component for displaying content within the hero area. The hero and hero card components are agnostic of the grid layout of the page. You will need to wrap the hero card component with the specific grid that is required.\n\n### LgHeroImgCardTitleComponent\nThis is where the main hero title should be provided. It should be located inside the hero card.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the hero card heading: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n### LgHeroCardSubtitleComponent\nIf the hero has a subtitle it should be located within this component.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the heading in the label: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n`"
                 }
             ],
             "projects/canopy/src/lib/hero/hero.notes.ts": [
@@ -55730,18 +55940,6 @@
                     "defaultValue": "`\nThis directive allows for media queries to be added to components, so they can be hidden at the desired breakpoint, without the need to write additional CSS.\n\nFor example, you may need to hide a component on wider viewports, such as desktop.\n\nIt uses global CSS responsive utility classes to add the relevant classes.\n\nIt has a sibling directive: \\`\\`LgShowAt\\`\\`.\n\n## Usage\n\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHideAtModule ],\n})\n~~~\n\n## Inputs\n\nThe current available breakpoints are \\`sm\\`, \\`md\\`, \\`lg\\`, \\`xl\\`, and \\`xxl\\`.\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgHideAt\\`\\` | The name of the breakpoint applied | string | null | No |\n`"
                 }
             ],
-            "projects/canopy/src/lib/hero-img/hero-img.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/hero-img/hero-img.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "(imageBackgroundHeroHTML: string) => `\nProvides a hero component that can used to display a hero banner with a background image and a content container. Content container can be used to display page title, subtitle and buttons.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeroImgModule ],\n})\n~~~\n\nand in your HTML...\n\n~~~html\n${imageBackgroundHeroHTML}\n~~~\n\n### LgHeroImgComponent\nThis is the hero banner with a background image that runs across the top of the page. It also controls the functionality to create the \\`overlap\\` between the page content.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`overlap\\`\\` | The amount that the page content overlaps the hero component (rem) | number | 2 | No |\n| \\`\\`imageUrl\\`\\` | Background image url | string | n/a | Yes |\n\n\n#### Configure Grid\n\n~~~html\n<lg-hero-img [overlap]=\"2\">\n  <div lgContainer>\n    <div lgRow>\n      <div [lgCol]=\"12\">\n        <lg-hero-img-card>\n          ...\n        </lg-hero-img-card>\n      </div>\n    </div>\n  </div>\n</lg-hero-img>\n~~~\n\n### LgHeroImgCardComponent\nA container component for displaying content within the hero area. The hero and hero card components are agnostic of the grid layout of the page. You will need to wrap the hero card component with the specific grid that is required.\n\n### LgHeroImgCardTitleComponent\nThis is where the main hero title should be provided. It should be located inside the hero card.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the hero card heading: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n### LgHeroCardSubtitleComponent\nIf the hero has a subtitle it should be located within this component.\n\n#### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the heading in the label: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | n/a | Yes |\n\n`"
-                }
-            ],
             "projects/canopy/src/lib/icon/icon.notes.ts": [
                 {
                     "name": "notes",
@@ -55766,16 +55964,16 @@
                     "defaultValue": "`\nLink menu is used to list an array of links.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgLinkMenuModule ],\n})\n~~~\n`"
                 }
             ],
-            "projects/canopy/src/lib/page/page.notes.ts": [
+            "projects/canopy/src/lib/heading/heading.notes.ts": [
                 {
                     "name": "notes",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/canopy/src/lib/page/page.notes.ts",
+                    "file": "projects/canopy/src/lib/heading/heading.notes.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "`\nProvides a page layout with content projection slots for standard header and footer.\n\n## Usage\nThe page component works best when combined with the <a href=\"./?path=/docs/directives-grid--grid\">grid module</a> which can be used to provide a responsive layout for the main content.\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgGridModule, LgPageModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-page>\n  <header lg-header></header>\n  <div lgContainer>\n    <div lgRow>\n      <div\n          lgCol=\"12\"\n          lgColMd=\"8\"\n          lgColMdOffset=\"2\"\n          lgColLg=\"6\"\n          lgColLgOffset=\"3\"\n        >\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card1Content}}</lg-card-content></lg-card>\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card2Content}}</lg-card-content></lg-card>\n      </div>\n    </div>\n  </div>\n  <footer lg-footer></footer>\n</lg-page>\n~~~\n\n## Inputs\n\n### LgPageComponent\n\nContent projection slots\n\n| Name | Description |\n|------|-------------|\n| \\`\\`lg-header\\`\\` | Provides a slot for the standard header component\n| \\`\\`lg-footer\\`\\` | Provides a slot for the standard footer component\n| \\`\\`<default>\\`\\` | Any other components are projected into the central column\n\nIt is possible to wrap the lg-header and lg-footer components and still use the page component.\nYou can do this by using the <a href=\"https://medium.com/ignite-ui/using-ng-content-ngprojectas-1664d7c1d3b\" target=\"_blank\">ngProjectAs</a> attribute.\n\n~~~html\n<lg-page>\n  <app-header ngProjectAs=\"[lg-header]\"></app-header>\n  <router-outlet></router-outlet>\n  <app-footer ngProjectAs=\"[lg-footer]\"></app-footer>\n</lg-page>\n~~~\n`"
+                    "defaultValue": "`\nThis component allows for headings to be set dynamically.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgHeadingModule ],\n})\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`level\\`\\` | The heading level | number | undefined | Yes |\n`"
                 }
             ],
             "projects/canopy/src/lib/modal/modal.notes.ts": [
@@ -55790,18 +55988,6 @@
                     "defaultValue": "`\nProvides a modal component for displaying content.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgModalModule ],\n})\n~~~\n\nOpening and closing the modal is possible by using the \\`\\`ModalService\\`\\`.\nImport the service:\n\n~~~js\n  constructor(\n    private modalService: LgModalService,\n    ...\n  ) {}\n~~~\n\nTo open the modal:\n\n~~~js\n\n  this.modalService.open(<modal-id>)\n\n~~~\n\nand to close it:\n\n~~~js\n\n  this.modalService.close(<modal-id>)\n\n~~~\n\n## Inputs\n\n### LgModalComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`id\\`\\` | The unique id of the modal | string | undefined | Yes |\n\n### LgModalHeaderComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | The level of the modal heading: \\`\\`1\\`\\`, \\`\\`2\\`\\`, \\`\\`3\\`\\`, \\`\\`4\\`\\`, \\`\\`5\\`\\`, \\`\\`6\\`\\` | number | 2 | No |\n\n### LgModalBodyTimerComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`timer\\`\\` | The timer value (in seconds) to apply the styles and formatting to e.g. '90' will be formatted as '1:30' | number | n/a | Yes |\n\n### LgModalTriggerDirective\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgModalTrigger\\`\\` | The unique id of the modal to trigger | string | undefined | Yes |\n\n## Outputs\n\n### LgModalComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`open\\`\\` | Event emitted when the modal is opened | EventEmitter<void> | n/a | No |\n| \\`\\`closed\\`\\` | Event emitted when the modal is closed | EventEmitter<void> | n/a | No |\n\n### LgModalHeaderComponent\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`closed\\`\\` | Event emitted when the close button is clicked | EventEmitter<void> | n/a | No |\n\n### LgModalTriggerDirective\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`clicked\\`\\` | Event emitted when the trigger button is clicked | EventEmitter<void> | n/a | No |\n\n`"
                 }
             ],
-            "projects/canopy/src/lib/primary-message/primary-message.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/primary-message/primary-message.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nThe Primary Message is used to communicate key information to the user.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgPrimaryMessageModule ],\n})\n~~~\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`hasRole\\`\\` | If false, removes the role \\`\\`alert\\`\\` from the component | boolean | true | No |\n`"
-                }
-            ],
             "projects/canopy/src/lib/promo-card/promo-card.notes.ts": [
                 {
                     "name": "notes",
@@ -55812,6 +55998,30 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\nPromo Cards allow you to arrange content in a card-like manner for promotional purposes. Promo Cards are organised by a\nPromo Card List and will be displayed in columns on desktops and stacked on mobile devices.\n\n### Content guidelines\n\nEach Promo Card should respect the following conventions:\n\n- Title - max 33 characters (with spaces)\n- Content - max 140 characters (with spaces)\n- Button - max 20 characters (with spaces)\n- Image - max 620px x 620px\n\nThis is not enforced in the code, but it should be followed as close as possible to ensure optimal user experience.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgPromoCardModule ],\n})\n~~~\n\nand in your HTML, place your Promo Cards in your Promo Card List:\n\n~~~html\n<lg-promo-card-list>\n  <lg-separator [variant]=\"dotted\" lgMargin=\"none\"></lg-separator>\n  <lg-promo-card-list-title [headingLevel]=\"headingLevel\">\n    Get more from Legal &amp; General\n  </lg-promo-card-list-title>\n  <lg-promo-card\n    [variant]=\"variant\">\n    <lg-promo-card-image [imageUrl]=\"imageUrl\"></lg-promo-card-image>\n    <lg-promo-card-title [headingLevel]=\"headingLevelInner\">\n      Need help with Care?\n    </lg-promo-card-title>\n    <lg-promo-card-content>\n      <p>Our care service can help you understand, find and fund care for you or a loved one.</p>\n    </lg-promo-card-content>\n    <lg-promo-card-footer>\n      <button\n        lgMarginBottom=\"none\"\n        lg-button\n        type=\"button\"\n        [variant]=\"variant\">\n        Find out more\n      </button>\n    </lg-promo-card-footer>\n  </lg-promo-card>\n</lg-promo-card-list>\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`headingLevel\\`\\` | Allows the card (list) heading level to be set | number | n/a | Yes |\n| \\`\\`variant\\`\\` | The variant of promo card: \\`\\`solid-white\\`\\`, \\`\\`solid-green\\`\\` | PromoCardVariant | 'solid-white' | No |\n| \\`\\`imageUrl\\`\\` | Identifies the card image | string | n/a | Yes |\n`"
+                }
+            ],
+            "projects/canopy/src/lib/page/page.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/page/page.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nProvides a page layout with content projection slots for standard header and footer.\n\n## Usage\nThe page component works best when combined with the <a href=\"./?path=/docs/directives-grid--grid\">grid module</a> which can be used to provide a responsive layout for the main content.\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgGridModule, LgPageModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-page>\n  <header lg-header></header>\n  <div lgContainer>\n    <div lgRow>\n      <div\n          lgCol=\"12\"\n          lgColMd=\"8\"\n          lgColMdOffset=\"2\"\n          lgColLg=\"6\"\n          lgColLgOffset=\"3\"\n        >\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card1Content}}</lg-card-content></lg-card>\n        <lg-card lgMarginHorizontal=\"none\"><lg-card-content>{{card2Content}}</lg-card-content></lg-card>\n      </div>\n    </div>\n  </div>\n  <footer lg-footer></footer>\n</lg-page>\n~~~\n\n## Inputs\n\n### LgPageComponent\n\nContent projection slots\n\n| Name | Description |\n|------|-------------|\n| \\`\\`lg-header\\`\\` | Provides a slot for the standard header component\n| \\`\\`lg-footer\\`\\` | Provides a slot for the standard footer component\n| \\`\\`<default>\\`\\` | Any other components are projected into the central column\n\nIt is possible to wrap the lg-header and lg-footer components and still use the page component.\nYou can do this by using the <a href=\"https://medium.com/ignite-ui/using-ng-content-ngprojectas-1664d7c1d3b\" target=\"_blank\">ngProjectAs</a> attribute.\n\n~~~html\n<lg-page>\n  <app-header ngProjectAs=\"[lg-header]\"></app-header>\n  <router-outlet></router-outlet>\n  <app-footer ngProjectAs=\"[lg-footer]\"></app-footer>\n</lg-page>\n~~~\n`"
+                }
+            ],
+            "projects/canopy/src/lib/primary-message/primary-message.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/primary-message/primary-message.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nThe Primary Message is used to communicate key information to the user.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgPrimaryMessageModule ],\n})\n~~~\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`hasRole\\`\\` | If false, removes the role \\`\\`alert\\`\\` from the component | boolean | true | No |\n`"
                 }
             ],
             "projects/canopy/src/lib/quick-action/quick-action.notes.ts": [
@@ -55862,18 +56072,6 @@
                     "defaultValue": "`\nThis utility directive allows for mobile-first media queries to be added to components, so they can be shown at the desired breakpoint, without the need to write additional CSS.\n\nFor example, you may need to show a component only when the viewport is wide enough, e.g. desktop.\n\nIt uses global CSS responsive utility classes to add the relevant classes.\n\nIt has a sibling directive: \\`\\`LgHideAt\\`\\`.\n\n## Usage\n\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgShowAtModule ],\n})\n~~~\n\n## Inputs\n\nThe current available breakpoints are \\`sm\\`, \\`md\\`, \\`lg\\`, \\`xl\\`, and \\`xxl\\`.\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgShowAt\\`\\` | The name of the breakpoint applied | string | null | No |\n`"
                 }
             ],
-            "projects/canopy/src/lib/side-nav/side-nav.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/side-nav/side-nav.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nSide Navs are components that allow the user to define a series of navigation items that display content in a predefined area.\n\n### Side Nav Bar\nHere is where the navigation menu items are put. The links, once clicked on, will display their routes'\ncontent in the Side Nav Content component.\nOn mobile devices, the menu is below the content area, instead of to the left.\n\n### Side Nav Bar Link\nThis \\`lgSideNavBarLink\\` directive applies the appropriate styling to the links. It also emits an event when the link is activated.\n\n### Side Nav Bar Footer\nThe footer is below the navigation items and can hold different kinds of content (e.g. a button).\n\n### Side Nav Content\nThis is the predefined area where content is shown. It should always contain a router outlet to be able to display\nthe different nav item routes.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSideNavModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-side-nav>\n  <lg-side-nav-bar label=\"Side Nav Demo\">\n    <a id=\"side-nav-0\"\n       [routerLink]=\"'firstPage'\"\n       [isActive]=\"true\"\n       lgSideNavBarLink\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Overview</lg-side-nav-bar-item-heading>\n      </lg-side-nav-bar-item>\n    </a>\n    <a id=\"side-nav-1\"\n       [routerLink]=\"'secondPage'\"\n       lgSideNavBarLink\n      >\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Personal details</lg-side-nav-bar-item-heading>\n          <lg-side-nav-bar-item-content>Your name, date of birth, marital status and National Insurance Number.</lg-side-nav-bar-item-content>\n      </lg-side-nav-bar-item>\n    </a>\n    <lg-side-nav-bar-footer>\n      <a lg-button lgMarginTop=\"xxl\" variant=\"secondary-dark\" [fullWidth]=\"false\" href=\"#\">Logout</a>\n    </lg-side-nav-bar-footer>\n  </lg-side-nav-bar>\n  <lg-side-nav-content tabindex=\"0\">\n    <router-outlet></router-outlet>\n  </lg-side-nav-content>\n</lg-side-nav>\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-------:|:--------:|\n| isActive | specifies whether or not the navigation link is in an active state | boolean | false | No\n`"
-                }
-            ],
             "projects/canopy/src/lib/skeleton/skeleton.notes.ts": [
                 {
                     "name": "notes",
@@ -55886,28 +56084,16 @@
                     "defaultValue": "`\nThe skeleton directive adds a skeleton loading state to a component or element.\n\n## Usage\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSkeletonModule ],\n})\n~~~\n\nThe directive works on components that output text or projected content. On composite components that\nare made up of other child components, it is best to add the skeleton loading directive to the child\ncomponents or even wrap the projected content inside another element. E.g. In the example,\nthe \\`lg-data-point-label\\` projects the content into an \\`lg-heading\\` component,\nso the directive is added to a span wrapping the content. However, the \\`lg-data-point-value\\` component\nsimply projects the content only so the directive can be applied to the component itself.\n\n~~~html\n<lg-data-point>\n  <lg-data-point-label [headingLevel]=\"4\">\n    <span lgSkeleton lgSkeletonWidth=\"10\">{{ data?.label }}</span>\n  </lg-data-point-label>\n  <lg-data-point-value lgSkeleton lgSkeletonWidth=\"8\">\n    {{ data?.value }}\n  </lg-data-point-value>\n</lg-data-point>\n~~~\n\n## Inputs\n\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgSkeletonWidth\\`\\` | Override the default width with the desired value in ems | string | 100% | No |\n| \\`\\`lgSkeletonHeight\\`\\` | Override the default height with the desired value in ems | string | auto | No |\n\n`"
                 }
             ],
-            "projects/canopy/src/lib/spacing/spacing.notes.ts": [
+            "projects/canopy/src/lib/side-nav/side-nav.notes.ts": [
                 {
                     "name": "notes",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/canopy/src/lib/spacing/spacing.notes.ts",
+                    "file": "projects/canopy/src/lib/side-nav/side-nav.notes.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "(name: string) => `\nThis directive allows for custom ${name.toLowerCase()} to be added without the need to write additional CSS. It's useful for overriding the default ${name.toLowerCase()} on Canopy components, as well as general use within your app. Using this directive ensures that your ${name.toLowerCase()} adheres to the prededfined spacing variables and breakpoints in Canopy. The spacing variables are also available as CSS custom properties (CSS variables) which can be viewed in _**canopy/projects/canopy/src/styles/spacing.scss**_.\n\n## Usage\n\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., Lg${name}Module ],\n})\n~~~\n\nIn your HTML apply the directive to the relevant component. If the default \\`\\`lg${name}\\`\\` attribute has no value, the default ${name.toLowerCase()} will remain. You can also override individual ${name.toLowerCase()} such as \\`\\`${name.toLowerCase()}-top\\`\\` by applying the relevant selector/input (.e.g \\`\\`Lg${name}Top\\`\\` - see **Inputs** below).\n\nPass in either a **Standard Spacing Variant** or a **Responsive Spacing object** (see below).\n\n~~~html\nStandard spacing variant\n<lg-card lg${name}=\"sm\"></lg-card>\n\nResponsive spacing object\n<lg-card [lg${name}]=\"{ md: 'lg', lg: 'xxxl' }\"></lg-card>\n~~~\n\n## Standard vs Responsive Spacing\n\n### Standard Spacing Variant\n\nThis is set of predefined variants which will apply the same ${name.toLowerCase()} at all breakpoints, as defined by the \\`\\`SpacingVariant\\`\\` type. These are:\n\n~~~bash\n'none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxxl'\n~~~\n\n### Repsonsive Spacing Object\n\nYou can apply a responsive spacing object instead, which will apply different ${name.toLowerCase()} at the specified breakpoints, as defined by the \\`\\`SpacingResponsive\\`\\` type. Example:\n\n~~~js\n{\n  md: \"lg\",\n  lg: \"xxxl\"\n}\n~~~\n\nEach **key** is a mobile-first breakpoint from the standard list of available breakpoints: \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`.\n\nEach **value** is a standard spacing variant.\n\nIn the example above, the ${name.toLowerCase()} at the \\`\\`md\\`\\` breakpoint will be \\`\\`lg\\`\\`, and at the \\`\\`lg\\`\\` will be \\`\\`xxxl\\`\\`.\n\n\n### Standard variant examples\n\nApply \\`\\`xxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}Bottom=\"xxl\"></lg-card>\n\n~~~\n\nApply \\`\\`sm\\`\\` ${name.toLowerCase()} to the left and right\n\n~~~html\n\n<lg-card lg${name}Horizontal=\"sm\"></lg-card>\n\n~~~\n\nApply \\`\\`xl\\`\\` ${name.toLowerCase()} all round, but \\`\\`xxxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}=\"xl\" lg${name}Bottom=\"xxxl\"></lg-card>\n\n~~~\n\nApply \\`\\`lg\\`\\` ${name.toLowerCase()} to the top and bottom\n\n~~~html\n\n<lg-card lg${name}Vertical=\"lg\"></lg-card>\n\n~~~\n\n### Responsive examples\n\n\nAt the \\`\\`sm\\`\\` breakpoint apply \\`\\`xl\\`\\` ${name.toLowerCase()}, then at the \\`\\`md\\`\\` breakpoint apply \\`\\`xxxl\\`\\` ${name.toLowerCase()}, all around the component.\n\n~~~html\n\n<lg-card [lg${name}]=\"{ sm: 'lg', md: 'xxxl' }\"></lg-card>\n\n~~~\n\nAt the \\`\\`md\\`\\` breakpoint apply \\`\\`md\\`\\` ${name.toLowerCase()}, then at the \\`\\`lg\\`\\` breakpoint apply \\`\\`sm\\`\\` ${name.toLowerCase()}, at the bottom of the component.\n\n~~~html\n\n<lg-card [lg${name}Bottom]=\"{ md: 'md', lg: 'sm' }\"></lg-card>\n\n~~~\n\n## Inputs\n\nThe current available spacing variants are \\`\\`none\\`\\`, \\`\\`xxxs\\`\\`, \\`\\`xxs\\`\\`, \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`, \\`\\`xxxl\\`\\`, \\`\\`xxxxxl\\`\\`.\n\nThe current available breakpoints are \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lg${name}\\`\\` | The ${name.toLowerCase()} variant applied to all sides | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Top\\`\\` | The ${name.toLowerCase()} variant applied to the top | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Right\\`\\` | The ${name.toLowerCase()} variant applied to the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Bottom\\`\\` | The ${name.toLowerCase()} variant applied to the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Left\\`\\` | The ${name.toLowerCase()} variant applied to the left | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Horizontal\\`\\` | The ${name.toLowerCase()} variant applied to the left and the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Vertical\\`\\` | The ${name.toLowerCase()} variant applied to the top and the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n`"
-                }
-            ],
-            "projects/canopy/src/lib/spinner/spinner.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/spinner/spinner.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nLoading spinners are used to notify the users that the next action is being loaded.\nThey are normally used on form submissions or loading cards when the data retrieval is typically slow.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSpinnerModule ],\n})\n~~~\n\nThe spinner component should always be used together with the \\`\\`LgSrAlertMessageDirective\\`\\` as screen reader users should\nbe notified when something has finished loading.\n\n## Inputs\n\n### LgSpinnerComponent\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`variant\\`\\` | The spinner variant | SpinnerVariant ['dark', 'light', 'color', 'inherit'] | 'dark' | No |\n| \\`\\`size\\`\\` | The size of the spinner | SpinnerSize ['sm', 'md'] | 'md' | No |\n| \\`\\`text\\`\\` | The text to show under the spinner | string | undefined | No |\n\nIf the \\`\\`variant\\`\\` is set to  \\`\\`'inherit'\\`\\`, then it will inherit the font colour of it's parent element. This is used on the loading button, where the spinner inherits the font colour of the button.\n`"
+                    "defaultValue": "`\nSide Navs are components that allow the user to define a series of navigation items that display content in a predefined area.\n\n### Side Nav Bar\nHere is where the navigation menu items are put. The links, once clicked on, will display their routes'\ncontent in the Side Nav Content component.\nOn mobile devices, the menu is below the content area, instead of to the left.\n\n### Side Nav Bar Link\nThis \\`lgSideNavBarLink\\` directive applies the appropriate styling to the links. It also emits an event when the link is activated.\n\n### Side Nav Bar Footer\nThe footer is below the navigation items and can hold different kinds of content (e.g. a button).\n\n### Side Nav Content\nThis is the predefined area where content is shown. It should always contain a router outlet to be able to display\nthe different nav item routes.\n\n## Usage\n\nImport the component in your module:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSideNavModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-side-nav>\n  <lg-side-nav-bar label=\"Side Nav Demo\">\n    <a id=\"side-nav-0\"\n       [routerLink]=\"'firstPage'\"\n       [isActive]=\"true\"\n       lgSideNavBarLink\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Overview</lg-side-nav-bar-item-heading>\n      </lg-side-nav-bar-item>\n    </a>\n    <a id=\"side-nav-1\"\n       [routerLink]=\"'secondPage'\"\n       lgSideNavBarLink\n      >\n      <lg-side-nav-bar-item>\n          <lg-side-nav-bar-item-heading>Personal details</lg-side-nav-bar-item-heading>\n          <lg-side-nav-bar-item-content>Your name, date of birth, marital status and National Insurance Number.</lg-side-nav-bar-item-content>\n      </lg-side-nav-bar-item>\n    </a>\n    <lg-side-nav-bar-footer>\n      <a lg-button lgMarginTop=\"xxl\" variant=\"secondary-dark\" [fullWidth]=\"false\" href=\"#\">Logout</a>\n    </lg-side-nav-bar-footer>\n  </lg-side-nav-bar>\n  <lg-side-nav-content tabindex=\"0\">\n    <router-outlet></router-outlet>\n  </lg-side-nav-content>\n</lg-side-nav>\n~~~\n\n## Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-------:|:--------:|\n| isActive | specifies whether or not the navigation link is in an active state | boolean | false | No\n`"
                 }
             ],
             "projects/canopy/src/lib/sr-alert-message/sr-alert-message.notes.ts": [
@@ -55922,6 +56108,18 @@
                     "defaultValue": "`\nThis directive allows for temporary visually hidden alert messages to be read out by screen readers. For example when something has finished loading.\n\n## Usage\n\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSrAlertMessageModule ],\n})\n~~~\n\nIn your HTML apply the directive to the relevant element.\n\nPass in a boolean value to indicate when the message should be read out. When \\`\\`true\\`\\` the message will be read by the screen reader and will be removed after a set period (default is 8000ms).\n\nThis directive can be used together with the \\`\\`LgSpinnerComponent\\`\\` to show a spinner while something is loading and then send a message to screen readers when it has finished loading.\n\n~~~html\n# Display a spinner while loading\n<lg-spinner *ngIf=\"!loaded\"></lg-spinner>\n\n# Tell screen reader to read a message when loading is finished\n<p [lgSrAlertMessage]=\"loaded\">Loading complete</p>\n~~~\n\n## Inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgSrAlertMessage\\`\\` | Whether the message should be read or not | \\`\\`boolean\\`\\` | null | Yes |\n| \\`\\`timer\\`\\` | The time (in ms) that needs to pass before the message become hidden to screen readers | \\`\\`number\\`\\` | 8000 | No |\n\n`"
                 }
             ],
+            "projects/canopy/src/lib/spacing/spacing.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/spacing/spacing.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(name: string) => `\nThis directive allows for custom ${name.toLowerCase()} to be added without the need to write additional CSS. It's useful for overriding the default ${name.toLowerCase()} on Canopy components, as well as general use within your app. Using this directive ensures that your ${name.toLowerCase()} adheres to the prededfined spacing variables and breakpoints in Canopy. The spacing variables are also available as CSS custom properties (CSS variables) which can be viewed in _**canopy/projects/canopy/src/styles/spacing.scss**_.\n\n## Usage\n\nImport the module in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., Lg${name}Module ],\n})\n~~~\n\nIn your HTML apply the directive to the relevant component. If the default \\`\\`lg${name}\\`\\` attribute has no value, the default ${name.toLowerCase()} will remain. You can also override individual ${name.toLowerCase()} such as \\`\\`${name.toLowerCase()}-top\\`\\` by applying the relevant selector/input (.e.g \\`\\`Lg${name}Top\\`\\` - see **Inputs** below).\n\nPass in either a **Standard Spacing Variant** or a **Responsive Spacing object** (see below).\n\n~~~html\nStandard spacing variant\n<lg-card lg${name}=\"sm\"></lg-card>\n\nResponsive spacing object\n<lg-card [lg${name}]=\"{ md: 'lg', lg: 'xxxl' }\"></lg-card>\n~~~\n\n## Standard vs Responsive Spacing\n\n### Standard Spacing Variant\n\nThis is set of predefined variants which will apply the same ${name.toLowerCase()} at all breakpoints, as defined by the \\`\\`SpacingVariant\\`\\` type. These are:\n\n~~~bash\n'none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxxl'\n~~~\n\n### Repsonsive Spacing Object\n\nYou can apply a responsive spacing object instead, which will apply different ${name.toLowerCase()} at the specified breakpoints, as defined by the \\`\\`SpacingResponsive\\`\\` type. Example:\n\n~~~js\n{\n  md: \"lg\",\n  lg: \"xxxl\"\n}\n~~~\n\nEach **key** is a mobile-first breakpoint from the standard list of available breakpoints: \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`.\n\nEach **value** is a standard spacing variant.\n\nIn the example above, the ${name.toLowerCase()} at the \\`\\`md\\`\\` breakpoint will be \\`\\`lg\\`\\`, and at the \\`\\`lg\\`\\` will be \\`\\`xxxl\\`\\`.\n\n\n### Standard variant examples\n\nApply \\`\\`xxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}Bottom=\"xxl\"></lg-card>\n\n~~~\n\nApply \\`\\`sm\\`\\` ${name.toLowerCase()} to the left and right\n\n~~~html\n\n<lg-card lg${name}Horizontal=\"sm\"></lg-card>\n\n~~~\n\nApply \\`\\`xl\\`\\` ${name.toLowerCase()} all round, but \\`\\`xxxl\\`\\` ${name.toLowerCase()} to the bottom\n\n~~~html\n\n<lg-card lg${name}=\"xl\" lg${name}Bottom=\"xxxl\"></lg-card>\n\n~~~\n\nApply \\`\\`lg\\`\\` ${name.toLowerCase()} to the top and bottom\n\n~~~html\n\n<lg-card lg${name}Vertical=\"lg\"></lg-card>\n\n~~~\n\n### Responsive examples\n\n\nAt the \\`\\`sm\\`\\` breakpoint apply \\`\\`xl\\`\\` ${name.toLowerCase()}, then at the \\`\\`md\\`\\` breakpoint apply \\`\\`xxxl\\`\\` ${name.toLowerCase()}, all around the component.\n\n~~~html\n\n<lg-card [lg${name}]=\"{ sm: 'lg', md: 'xxxl' }\"></lg-card>\n\n~~~\n\nAt the \\`\\`md\\`\\` breakpoint apply \\`\\`md\\`\\` ${name.toLowerCase()}, then at the \\`\\`lg\\`\\` breakpoint apply \\`\\`sm\\`\\` ${name.toLowerCase()}, at the bottom of the component.\n\n~~~html\n\n<lg-card [lg${name}Bottom]=\"{ md: 'md', lg: 'sm' }\"></lg-card>\n\n~~~\n\n## Inputs\n\nThe current available spacing variants are \\`\\`none\\`\\`, \\`\\`xxxs\\`\\`, \\`\\`xxs\\`\\`, \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`, \\`\\`xxxl\\`\\`, \\`\\`xxxxxl\\`\\`.\n\nThe current available breakpoints are \\`\\`xs\\`\\`, \\`\\`sm\\`\\`, \\`\\`md\\`\\`, \\`\\`lg\\`\\`, \\`\\`xl\\`\\`, \\`\\`xxl\\`\\`\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lg${name}\\`\\` | The ${name.toLowerCase()} variant applied to all sides | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Top\\`\\` | The ${name.toLowerCase()} variant applied to the top | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Right\\`\\` | The ${name.toLowerCase()} variant applied to the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Bottom\\`\\` | The ${name.toLowerCase()} variant applied to the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Left\\`\\` | The ${name.toLowerCase()} variant applied to the left | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Horizontal\\`\\` | The ${name.toLowerCase()} variant applied to the left and the right | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n| \\`\\`lg${name}Vertical\\`\\` | The ${name.toLowerCase()} variant applied to the top and the bottom | \\`\\`SpacingVariant | SpacingResponsive\\`\\` | null | No |\n`"
+                }
+            ],
             "projects/canopy/src/lib/table/table.notes.ts": [
                 {
                     "name": "notes",
@@ -55932,6 +56130,30 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\nThe table component provides a way to present tabular data in a responsive format. On small screens, the layout of the table changes to display the table headers alongside each value, providing an easier way for users to read the data as they scroll down the list of rows.\n\nThere are several options that allow you to customise the table behaviour at for different uses cases and screen sizes.\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgTableModule ],\n})\n~~~\n\n### Simple example\n\n~~~html\n<table lg-table>\n  <thead lg-table-head>\n    <tr lg-table-row>\n      <th lg-table-head-cell>Author</th>\n      <th lg-table-head-cell>Book</th>\n      <th lg-table-head-cell>Published</th>\n    </tr>\n  </thead>\n  <tbody lg-table-body>\n    <tr lg-table-row>\n      <td lg-table-cell>Orhan Pamuk</td>\n      <td lg-table-cell>Strangeness in my Mind</td>\n      <td lg-table-cell>2016</td>\n    </tr>\n    <tr lg-table-row>\n      <td lg-table-cell>Albert Camus</td>\n      <td lg-table-cell>The Plague</td>\n      <td lg-table-cell>1947</td>\n    </tr>\n  </tbody>\n</table>\n~~~\n\n### Table with expandable detail rows\n\nThis table adds the \\`\\`LgTableRowToggleComponent\\`\\`, and then an expandable detail row. This creates a table that allows the user to expand a row for more information. This can be seen on the <a href=\"/story/components-table--detail\">Expandable Detail story</a>.\n\n~~~html\n<table lg-table>\n  <thead lg-table-head>\n    <tr lg-table-row>\n      <th lg-table-head-cell>Author</th>\n      <th lg-table-head-cell>Book</th>\n      <th lg-table-head-cell>Published</th>\n    </tr>\n  </thead>\n\n  <tbody lg-table-body>\n    <tr lg-table-row>\n      <td>\n        <lg-table-row-toggle\n          (click)=\"<function-to-handle-click>\"\n          [isActive]=\"<logic-to-handle-toggle>\"\n        >\n        </lg-table-row-toggle>\n      </td>\n    <td lg-table-cell>Orhan Pamuk</td>\n      <td lg-table-cell>Strangeness in my Mind</td>\n      <td lg-table-cell>2016</td>\n    </tr>\n    <tr lg-table-row [isHidden]=\"<logic-to-handle-row>\">\n      <td lg-table-cell>\n        <lg-table-expanded-detail>\n          Detail content goes here\n        </lg-table-expanded-detail>\n      </td>\n    </tr>\n  </tbody>\n</table>\n~~~\n\n### Table with long copy\n\nSometimes a table can be used to display large amounts of copy, including buttons, links and headings.\n\nNote that each \\`\\`LgTableCellComponent\\`\\` has the \\`\\`stack\\`\\` Input set to \\`\\`true\\`\\`, which stacks the label and content on top of each other on small screens, instead of side by side. Also note the use of \\`\\`<colgroup>\\`\\` to control width of the columns on large screens. This can be seen on the <a href=\"/story/components-table--with-long-copy\">Table With Long Copy story</a>.\n\nAlso note the use of the \\`\\`LgMarginDirective\\`\\`, such as \\`\\`lgMarginBottom=\"xs\"\\`\\`, to add extra space around content, making it more readable.\n\n~~~html\n<table lg-table>\n  <colgroup>\n    <col span=\"1\" style=\"width: 65%;\" />\n    <col span=\"1\" style=\"width: 35%;\" />\n  </colgroup>\n  <thead lg-table-head>\n    <tr lg-table-row>\n      <th lg-table-head-cell>Item</th>\n      <th lg-table-head-cell>More information</th>\n    </tr>\n  </thead>\n\n  <tbody lg-table-body>\n    <tr lg-table-row>\n      <td lg-table-cell [stack]=\"true\">\n        <h3 lgMarginVertical=\"xs\">Item one: Lorem ipsum dolor sit amet</h3>\n        <p lgMarginBottom=\"xs\">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>\n      </td>\n      <td lg-table-cell [showLabel]=\"false\" [stack]=\"true\">\n        <p>Sed ut perspiciatis</p>\n        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n        <button lg-quick-action><lg-icon name=\"information-fill\"></lg-icon>Find out more</button>\n      </td>\n    </tr>\n  </tbody>\n</table>\n~~~\n\n\n## Inputs\n\n### LgTableComponent\nA component that acts as a standard table.\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`showColumnsAt\\`\\` | Sets the minimum screen width from which the column layout is displayed. Accepts \\`sm\\`, \\`md\\` or \\`lg\\` | string | 'md' | No |\n| \\`\\`variant\\`\\` | The variant of table. Accepts \\`striped\\` or \\`bordered\\` | string | 'striped' | No |\n\n\n### LgTableBodyComponent\nA component that acts as a standard table body.\n\n### LgTableCellComponent\nA component that acts as a standard table cell.\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`stack\\`\\` | On small screens, stack the label and the content on top of each other, instead of side by side | boolean | false | No |\n| \\`\\`colspan\\`\\` | Sets the colspan attribute on the column when specified | number | undefined | No |\n\n### LgTableExpandedDetailComponent\nA component that provides the ability to add content to expandable rows.\n\n### LgTableHeadComponent\nA component that acts as a standard table head.\n\n### LgTableHeadCellComponent\nA component that acts as a standard table header cell.\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`align\\`\\` | Alignment option for the header and its respective column | \\`\\`start\\`\\`, \\`\\`end\\`\\` | n/a | No |\n| \\`\\`showLabel\\`\\` | Whether to show label for this header in each row in non-column layout | boolean | true | No |\n\n### LgTableRowComponent\nA component that acts as a standard table row.\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`isHidden\\`\\` | Determines if the row is hidden | boolean | false | No |\n\n### LgTableRowToggleComponent\nA component that creates a icon for toggling the expanded state.\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`isActive\\`\\` | Determines if the toggle displays in the active state | boolean | false | No |\n`"
+                }
+            ],
+            "projects/canopy/src/lib/spinner/spinner.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/spinner/spinner.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nLoading spinners are used to notify the users that the next action is being loaded.\nThey are normally used on form submissions or loading cards when the data retrieval is typically slow.\n\n## Usage\nImport the component in your application:\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgSpinnerModule ],\n})\n~~~\n\nThe spinner component should always be used together with the \\`\\`LgSrAlertMessageDirective\\`\\` as screen reader users should\nbe notified when something has finished loading.\n\n## Inputs\n\n### LgSpinnerComponent\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`variant\\`\\` | The spinner variant | SpinnerVariant ['dark', 'light', 'color', 'inherit'] | 'dark' | No |\n| \\`\\`size\\`\\` | The size of the spinner | SpinnerSize ['sm', 'md'] | 'md' | No |\n| \\`\\`text\\`\\` | The text to show under the spinner | string | undefined | No |\n\nIf the \\`\\`variant\\`\\` is set to  \\`\\`'inherit'\\`\\`, then it will inherit the font colour of it's parent element. This is used on the loading button, where the spinner inherits the font colour of the button.\n`"
+                }
+            ],
+            "projects/canopy/src/lib/variant/variant.notes.ts": [
+                {
+                    "name": "notes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/canopy/src/lib/variant/variant.notes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\nThis directive allows you to add one of the five common colour variants to any Canopy component, such as \\`\\`info\\`\\` and \\`\\`success\\`\\`.\n\nThey are already applied to existing Canopy components which use these variants out of the box, such as <a href=\"./?path=/story/components-alert--standard\">Alert</a>, <a href=\"./?path=/story/components-details--standard\">Detail</a> and <a href=\"./?path=/story/components-form-form-validation--form-validation\">Form Validation</a>, but this directive allows you to use them anywhere where required.\n\nThis can be useful where you need the particular colour treatment (like the \\`\\`success\\`\\` variant for example), but your use-case does not fit one of the existing components.\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgVariantModule ],\n})\n~~~\n\n## Inputs\n\nThe current available variants are:\n* \\`\\`generic\\`\\`\n* \\`\\`info\\`\\`\n* \\`\\`success\\`\\`\n* \\`\\`warning\\`\\`\n* \\`\\`error\\`\\`\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgVariant\\`\\` | The name of variant desired | string | null | No |\n`"
                 }
             ],
             "projects/canopy/src/lib/tabs/tabs.notes.ts": [
@@ -55954,18 +56176,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\nThe tabbed navigation bar provides a tab-like UI for navigating between routes or urls. The tabbed navigatiom bar is router agnostic, so you will need to place the \\`router-outlet\\` anywhere in your view. Don't forget to add the \\`aria-labelledby\\` attribute to the content output by the \\`router-outlet\\`.\nThe \\`isActive\\` property is used to select the current active tab.\n\n\n## Usage\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgTabsModule ],\n})\n~~~\n\nand in your HTML:\n\n~~~html\n<lg-tab-nav-bar label=\"Tabbed navigtion label\">\n  <a lgTabNavBarLink id=\"tabbed-nav-1\" [isActive]=\"true\" [routerLink]=\"\">Tab 1</a>\n  <a lgTabNavBarLink id=\"tabbed-nav-2\" [routerLink]=\"\">Tab 2</a>\n  <a lgTabNavBarLink id=\"tabbed-nav-3\" [routerLink]=\"\">Tab 3</a>\n</lg-tab-nav-bar>\n<lg-tab-nav-content [selectedTabId]=\"tabbed-nav-1\">\n  <p>Insert router-outlet here.</p>\n</lg-tab-nav-content>\n~~~\n\n## \\`lg-tab-nav-bar\\` inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`label\\`\\` | Label for the tab list| string | Tabs | No |\n\n## \\`lgTabNavBarLink\\`\n\n### Inputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`index\\`\\` | Sets the tab index position in tab list | number | 0 | No |\n| \\`\\`isActive\\`\\` | Sets the active state of the tab | boolean | false | No |\n| \\`\\`isFocused\\`\\` | Sets the focus state of the tab | boolean | false | No |\n\n### Outputs\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`isActive\\`\\` | Sets the current active tab | boolean | undefined | No |\n\n## \\`lg-tab-nav-content\\` inputs\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`selectedTabId\\`\\` | Sets the id of the current selected tab | string | undefined | No |\n\n`"
-                }
-            ],
-            "projects/canopy/src/lib/variant/variant.notes.ts": [
-                {
-                    "name": "notes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/canopy/src/lib/variant/variant.notes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\nThis directive allows you to add one of the five common colour variants to any Canopy component, such as \\`\\`info\\`\\` and \\`\\`success\\`\\`.\n\nThey are already applied to existing Canopy components which use these variants out of the box, such as <a href=\"./?path=/story/components-alert--standard\">Alert</a>, <a href=\"./?path=/story/components-details--standard\">Detail</a> and <a href=\"./?path=/story/components-form-form-validation--form-validation\">Form Validation</a>, but this directive allows you to use them anywhere where required.\n\nThis can be useful where you need the particular colour treatment (like the \\`\\`success\\`\\` variant for example), but your use-case does not fit one of the existing components.\n\n~~~js\n@NgModule({\n  ...\n  imports: [ ..., LgVariantModule ],\n})\n~~~\n\n## Inputs\n\nThe current available variants are:\n* \\`\\`generic\\`\\`\n* \\`\\`info\\`\\`\n* \\`\\`success\\`\\`\n* \\`\\`warning\\`\\`\n* \\`\\`error\\`\\`\n\n| Name | Description | Type | Default | Required |\n|------|-------------|:----:|:-----:|:-----:|\n| \\`\\`lgVariant\\`\\` | The name of variant desired | string | null | No |\n`"
                 }
             ],
             "projects/canopy/src/lib/forms/checkbox-group/checkbox-group.notes.ts": [
@@ -63929,6 +64139,84 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "typographyTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WelcomeBenefitsCardsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WelcomeHeadingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "benefitsStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "benefitsTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "headingStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "headingTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "welcomeBenefitsCards",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/canopy/src/lib/docs/welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "welcomeHeadingTemplate",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,6 +1,7 @@
 module.exports = {
   stories: [
     '../projects/canopy/src/lib/docs/welcome.stories.mdx',
+    '../projects/canopy/src/lib/docs/welcome.stories.ts',
     '../projects/canopy/src/lib/docs/principles/writing.stories.mdx',
     '../projects/canopy/src/lib/docs/foundation/colours/colours.stories.mdx',
     '../projects/canopy/src/lib/docs/foundation/colours/colours.stories.ts',
