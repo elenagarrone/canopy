@@ -203,7 +203,7 @@ defaultCard.storyName = 'Standard';
 defaultCard.args = {
   headingLevel: 2,
   title: 'The title',
-  link: '',
+  link: '#',
   cardContent: content,
 };
 

@@ -11,11 +11,14 @@
   @include lg-breakpoint('md') {
     flex-direction: row;
   }
+
+  &--nav {
+    padding-bottom: var(--card-anchor-padding-bottom);
+  }
 }
 
 .lg-card-header__title {
   @include lg-breakpoint('md') {
     flex: 1 1 0;
-    margin-right: var(--space-lg);
   }
 }

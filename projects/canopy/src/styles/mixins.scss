@@ -242,7 +242,7 @@ $breakpoints: (
   background-color: var(--card-bg-color);
   border-radius: var(--border-radius-lg);
   margin-bottom: var(--grid-gutter);
-  padding: var(--component-padding);
+  padding: var(--space-md) var(--component-padding);
 }
 
 @mixin lg-typography-default {
