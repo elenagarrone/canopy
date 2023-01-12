@@ -13,7 +13,7 @@
     min-width: var(--table-toggle-width);
     min-height: var(--table-toggle-width);
 
-    &:focus {
+    &:focus-visible {
       @include lg-inner-focus-outline(var(--default-focus-color));
     }
   }

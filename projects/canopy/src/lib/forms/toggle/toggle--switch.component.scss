@@ -49,7 +49,7 @@
     border-color: var(--border-hover-color);
   }
 
-  .lg-toggle__input:focus + & {
+  .lg-toggle__input:focus-visible + & {
     border-color: var(--border-focus-color);
     @include lg-outer-focus-outline();
   }

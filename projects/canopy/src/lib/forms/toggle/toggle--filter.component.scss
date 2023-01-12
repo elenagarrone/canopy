@@ -75,7 +75,7 @@
   }
 }
 
-.lg-toggle__input:focus {
+.lg-toggle__input:focus-visible {
   + .lg-toggle__label--filter {
     @include lg-outer-focus-outline();
   }

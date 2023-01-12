@@ -65,7 +65,7 @@
       color: var(--breadcrumb-dark-color);
     }
 
-    a:focus {
+    a:focus-visible {
       @include lg-outer-focus-outline(var(--default-focus-color));
 
       background-color: transparent;

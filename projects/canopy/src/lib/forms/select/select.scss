@@ -17,7 +17,7 @@
     border-color: var(--border-hover-color);
   }
 
-  &:focus {
+  &:focus-visible {
     border-left-width: var(--keyline-width);
     border-color: var(--border-focus-color);
     padding-left: calc(var(--space-sm) - var(--keyline-width) + var(--border-width));
@@ -35,7 +35,7 @@
     color: var(--form-error-color);
     border-color: var(--form-error-border-color);
 
-    &:focus {
+    &:focus-visible {
       color: inherit;
       border-color: inherit;
     }

@@ -31,7 +31,7 @@
       cursor: pointer;
     }
 
-    &:focus {
+    &:focus-visible {
       outline: 0;
 
       > .lg-icon {

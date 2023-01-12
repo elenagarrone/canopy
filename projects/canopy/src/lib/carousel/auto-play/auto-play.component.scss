@@ -16,7 +16,7 @@
     padding: 0;
     width: var(--space-xxl);
 
-    &:focus {
+    &:focus-visible {
       @include lg-outer-focus-outline(var(--default-focus-color));
     }
 

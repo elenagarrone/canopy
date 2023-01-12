@@ -69,9 +69,9 @@
       );
     }
 
-    &:focus,
-    &:focus:hover,
-    &:focus:hover:hover {
+    &:focus-visible,
+    &:focus-visible:hover,
+    &:focus-visible:hover:hover {
       background: transparent;
       border-bottom: var(--card-active-focus-border-bottom-width) solid
         var(--link-active-color);
@@ -93,7 +93,7 @@
       );
     }
 
-    &:focus,
+    &:focus-visible,
     &:active {
       .lg-icon {
         background: var(--link-active-color);

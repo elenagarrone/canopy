@@ -33,7 +33,7 @@
     display: inline-block;
     @include lg-unstyled-link;
 
-    &:focus {
+    &:focus-visible {
       background-color: transparent;
       @include lg-inner-focus-outline(var(--default-focus-color));
     }

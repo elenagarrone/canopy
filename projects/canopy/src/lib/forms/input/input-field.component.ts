@@ -41,7 +41,7 @@ export class LgInputFieldComponent implements AfterContentInit, OnDestroy {
   /*
   The input field control element mimics the border of the input field.
   This allows us to add buttons and icons inside the input field.
-  Lack of IE11 support for :focus-within necessitates us doing this in JS
+  Lack of IE11 support for :focus-visible-within necessitates us doing this in JS
 */
   private hasFocus = false;
   private hasHover = false;

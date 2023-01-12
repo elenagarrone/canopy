@@ -60,8 +60,8 @@
     outline: 0;
   }
 
-  &:focus,
-  &:focus:hover {
+  &:focus-visible,
+  &:focus-visible:hover {
     background-color: $focus-bg-color;
     border-bottom: 0;
     color: $focus-color;
@@ -87,14 +87,14 @@
   }
 
   &:active,
-  &:focus,
-  &:focus:hover {
+  &:focus-visible,
+  &:focus-visible:hover {
     background-color: transparent;
     color: inherit;
   }
 
-  &:focus,
-  &:focus:hover {
+  &:focus-visible,
+  &:focus-visible:hover {
     @include lg-outer-focus-outline;
   }
 }
@@ -364,9 +364,8 @@ $breakpoints: (
     width: auto;
   }
 
-  &:focus,
-  &:hover:focus,
-  &:focus-visible {
+  &:focus-visible,
+  &:hover:focus-visible {
     background-color: var(--nav-item-bg-color-hover);
     color: var(--nav-item-color-hover);
 
@@ -407,7 +406,7 @@ $breakpoints: (
 
     &[type='button'],
     &[type='button']:hover,
-    &[type='button']:hover:focus {
+    &[type='button']:hover:focus-visible {
       background-color: var(--nav-item-bg-color-expanded);
       color: var(--nav-item-color-expanded);
 

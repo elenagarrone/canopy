@@ -42,7 +42,7 @@
     }
   }
 
-  &:focus {
+  &:focus-visible {
     outline: none;
   }
 
@@ -56,7 +56,7 @@
     }
   }
 
-  &[keyboard-focus]:focus {
+  &[keyboard-focus]:focus-visible {
     @include lg-outer-focus-outline();
   }
 }

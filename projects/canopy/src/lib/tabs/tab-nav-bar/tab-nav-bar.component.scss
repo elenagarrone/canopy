@@ -40,12 +40,12 @@
   @include lg-tab-item;
 
   &:hover,
-  &:hover:focus,
+  &:hover:focus-visible,
   &:hover:active {
     color: var(--tabs-hover-color);
   }
 
-  &:focus {
+  &:focus-visible {
     box-shadow: none;
   }
 
@@ -53,13 +53,13 @@
     color: var(--tabs-list-item-color);
   }
 
-  &:focus,
+  &:focus-visible,
   &:visited {
     color: var(--tabs-list-item-color);
   }
 
   &--selected {
-    &:focus,
+    &:focus-visible,
     &:visited,
     &:active {
       color: var(--tabs-active-color);
