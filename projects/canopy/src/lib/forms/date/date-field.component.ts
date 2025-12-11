@@ -56,6 +56,7 @@ const labelFieldMap = {
     LgInputFieldComponent,
     LgMarginDirective,
     LgInputDirective,
+    LgHintComponent,
   ],
 })
 export class LgDateFieldComponent implements OnInit, ControlValueAccessor, OnDestroy {
@@ -86,7 +87,7 @@ export class LgDateFieldComponent implements OnInit, ControlValueAccessor, OnDes
 
   @HostBinding('class.lg-date-field') class = true;
 
-  @ContentChild(LgHintComponent)
+  @ViewChild(LgHintComponent)
   set hintElement(element: LgHintComponent) {
     this.ariaDescribedBy = this.domService.toggleIdInStringProperty(
       this.ariaDescribedBy,
