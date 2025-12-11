@@ -1,5 +1,4 @@
 import { Meta, moduleMetadata } from '@storybook/angular';
-import { NgIf } from '@angular/common';
 
 import { LgPaddingDirective } from '../padding.directive';
 import { LgCardComponent, LgCardContentComponent } from '../../../card';
@@ -27,7 +26,7 @@ export default {
   tags: [ 'pending' ],
   decorators: [
     moduleMetadata({
-      imports: [ LgCardComponent, LgCardContentComponent, LgPaddingDirective, NgIf ],
+      imports: [ LgCardComponent, LgCardContentComponent, LgPaddingDirective ],
     }),
   ],
   parameters: {
@@ -142,11 +141,21 @@ export const Padding = {
         [lgPaddingLeft]="paddingLeftResponsive !== 'undefined' ? paddingLeftResponsive : null">
           <lg-card-content>
             <strong>Responsive Spacing Object</strong> applied using directive
-            <div *ngIf="paddingResponsive"><code>paddingResponsive: {{paddingResponsive | json}}</code></div>
-            <div *ngIf="paddingTopResponsive"><code>paddingTopResponsive: {{paddingTopResponsive | json}}</code></div>
-            <div *ngIf="paddingRightResponsive"><code>paddingRightResponsive: {{paddingRightResponsive | json}}</code></div>
-            <div *ngIf="paddingBottomResponsive"><code>paddingBottomResponsive: {{paddingBottomResponsive | json}}</code></div>
-            <div *ngIf="paddingLeftResponsive"><code>paddingLeftResponsive: {{paddingLeftResponsive | json}}</code></div>
+            @if (paddingResponsive) {
+              <div><code>paddingResponsive: {{paddingResponsive | json}}</code></div>
+            }
+            @if (paddingTopResponsive) {
+              <div><code>paddingTopResponsive: {{paddingTopResponsive | json}}</code></div>
+            }
+            @if (paddingRightResponsive) {
+              <div><code>paddingRightResponsive: {{paddingRightResponsive | json}}</code></div>
+            }
+            @if (paddingBottomResponsive) {
+              <div><code>paddingBottomResponsive: {{paddingBottomResponsive | json}}</code></div>
+            }
+            @if (paddingLeftResponsive) {
+              <div><code>paddingLeftResponsive: {{paddingLeftResponsive | json}}</code></div>
+            }
           </lg-card-content>
       </lg-card>
       <lg-card><lg-card-content>Card without directive applied</lg-card-content></lg-card>

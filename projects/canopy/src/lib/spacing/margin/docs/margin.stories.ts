@@ -1,5 +1,4 @@
 import { Meta, moduleMetadata } from '@storybook/angular';
-import { NgIf } from '@angular/common';
 
 import { LgMarginDirective } from '../margin.directive';
 import { LgCardComponent, LgCardContentComponent } from '../../../card';
@@ -27,10 +26,7 @@ export default {
   tags: [ 'pending' ],
   decorators: [
     moduleMetadata({
-      imports: [ LgCardComponent, LgCardContentComponent, LgMarginDirective, NgIf ],
-    }),
-    moduleMetadata({
-      imports: [ LgMarginDirective, NgIf ],
+      imports: [ LgCardComponent, LgCardContentComponent, LgMarginDirective ],
     }),
   ],
   parameters: {
@@ -135,11 +131,21 @@ export const Margin = {
         [lgMarginLeft]="marginLeft !== 'undefined' ? marginLeft : null">
           <lg-card-content>
             <strong>Standard spacing variant</strong>
-            <div *ngIf="margin"><code>margin: {{margin | json}}</code></div>
-            <div *ngIf="marginTop !== 'undefined'"><code>marginTop: {{marginTop | json}}</code></div>
-            <div *ngIf="marginRight !== 'undefined'"><code>marginRight: {{marginRight | json}}</code></div>
-            <div *ngIf="marginBottom !== 'undefined'"><code>marginBottom: {{marginBottom | json}}</code></div>
-            <div *ngIf="marginLeft !== 'undefined'"><code>marginLeft: {{marginLeft | json}}</code></div>
+            @if (margin) {
+              <div><code>margin: {{margin | json}}</code></div>
+            }
+            @if (marginTop !== 'undefined') {
+              <div><code>marginTop: {{marginTop | json}}</code></div>
+            }
+            @if (marginRight !== 'undefined') {
+              <div><code>marginRight: {{marginRight | json}}</code></div>
+            }
+            @if (marginBottom !== 'undefined') {
+              <div><code>marginBottom: {{marginBottom | json}}</code></div>
+            }
+            @if (marginLeft !== 'undefined') {
+              <div><code>marginLeft: {{marginLeft | json}}</code></div>
+            }
           </lg-card-content>
       </lg-card>
       <lg-card
@@ -150,11 +156,21 @@ export const Margin = {
         [lgMarginLeft]="marginLeftResponsive !== 'undefined' ? marginLeftResponsive : null">
           <lg-card-content>
             <strong>Responsive Spacing Object</strong>
-            <div *ngIf="marginResponsive"><code>marginResponsive: {{marginResponsive | json}}</code></div>
-            <div *ngIf="marginTopResponsive"><code>marginTopResponsive: {{marginTopResponsive | json}}</code></div>
-            <div *ngIf="marginRightResponsive"><code>marginRightResponsive: {{marginRightResponsive | json}}</code></div>
-            <div *ngIf="marginBottomResponsive"><code>marginBottomResponsive: {{marginBottomResponsive | json}}</code></div>
-            <div *ngIf="marginLeftResponsive"><code>marginLeftResponsive: {{marginLeftResponsive | json}}</code></div>
+            @if (marginResponsive) {
+              <div><code>marginResponsive: {{marginResponsive | json}}</code></div>
+            }
+            @if (marginTopResponsive) {
+              <div><code>marginTopResponsive: {{marginTopResponsive | json}}</code></div>
+            }
+            @if (marginRightResponsive) {
+              <div><code>marginRightResponsive: {{marginRightResponsive | json}}</code></div>
+            }
+            @if (marginBottomResponsive) {
+              <div><code>marginBottomResponsive: {{marginBottomResponsive | json}}</code></div>
+            }
+            @if (marginLeftResponsive) {
+              <div><code>marginLeftResponsive: {{marginLeftResponsive | json}}</code></div>
+            }
           </lg-card-content>
       </lg-card>
       <lg-card><lg-card-content>Card without directive applied</lg-card-content></lg-card>
