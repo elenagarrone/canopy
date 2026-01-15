@@ -60,6 +60,8 @@ async function evaluatePullChecks({ sha, github, repo, owner }) {
     ref: sha
   });
 
+  console.info('listCheckRuns', listCheckRuns);
+
   return listCheckRuns.every(({ conclusion }) => conclusion === 'success');
 }
 
